@@ -1,6 +1,6 @@
-site_name: Model Documentation
+site_name: RegTAP Data Model
 docs_dir: doc/site
-repo_url: 'https://github.com/ivoa/DataModelTemplate'
+repo_url: 'https://github.com/ivoa/RegTAPDM'
 
 theme:
   name: material

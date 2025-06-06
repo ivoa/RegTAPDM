@@ -1,0 +1,55 @@
+<m:mappedModels xmlns:m="http://www.ivoa.net/xml/vodml-binding/v0.9.1">
+    <!-- ========================================
+    This binding covers all of the registry models
+     -->
+
+    <model>
+        <name>RegTAP</name>
+        <file>RegTAP.vo-dml.xml</file>
+        <java-package>org.ivoa.dm.regtap</java-package>
+        <xml-targetnamespace prefix="regtap">http://ivoa.net/dm/models/vo-dml/experiment/regtap</xml-targetnamespace>
+        <xml elementFormDefault="qualified"/>
+        <rdb naturalJoin="true">
+            <rdbmap vodml-id="Subject">
+                <tableName>res_subject</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="Role">
+                <tableName>res_role</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="Schema">
+                <tableName>res_schema</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="Table">
+                <tableName>res_table</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="Column">
+                <tableName>table_column</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="InterfaceParam">
+                <tableName>intf_param</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="ResDate">
+                <tableName>res_date</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="Detail">
+                <tableName>res_detail</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="AltIdentifier">
+                <tableName>alt_identifier</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="STCSpatial">
+                <tableName>stc_spatial</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="STCTemporal">
+                <tableName>stc_temporal</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="STCSpectral">
+                <tableName>stc_spectral</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="TAPTable">
+                <tableName>tap_table</tableName>
+            </rdbmap>
+        </rdb>
+    </model>
+
+</m:mappedModels>
