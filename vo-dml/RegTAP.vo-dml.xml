@@ -9,7 +9,7 @@
       <title></title>
       <author>Paul Harrison</author>
       <version>1.0</version>
-      <lastModified>2025-06-06T09:52:58Z</lastModified>
+      <lastModified>2025-06-06T13:27:14Z</lastModified>
       <import>
         <name>ivoa</name>
         <version>1.0</version>
@@ -67,7 +67,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -139,7 +139,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -151,7 +151,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -163,7 +163,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -175,19 +175,19 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
                <attribute>
                  <vodml-id>Resource.res_version</vodml-id>
                  <name>res_version</name>
-                 <description>Label associated with creation or availablilty of a version of a resource.</description>	    
+                 <description>Label associated with creation or availability of a version of a resource.</description>	    
                  <datatype>
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -199,7 +199,7 @@
                     <vodml-ref>ivoa:real</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -211,7 +211,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -223,7 +223,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -235,7 +235,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>

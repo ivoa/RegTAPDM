@@ -5,6 +5,10 @@ package org.ivoa.dm.regtap;
 
 import org.ivoa.vodml.testing.AutoRoundTripWithValidationTest;
 
+import java.util.Date;
+
+
+
 /**
  * This will run a XML and JSON round trip test on the model inst
  */
@@ -15,7 +19,15 @@ public class RegTAPBasiclModelTest extends AutoRoundTripWithValidationTest<RegTA
         RegTAPModel retval = new RegTAPModel();
         retval.addContent(Resource.createResource( r -> {
             r.ivoid="ivo://test/something";
-            //TODO add more to make a realistic example
+            r.res_type= "vr:Resource";
+            r.created = new Date();
+            r.short_name="short name";
+            r.res_title="title";
+            r.updated = new Date();
+            r.content_level = "level";
+            r.res_description="description";
+            r.reference_url="reference url";
+
               }
 
         ));

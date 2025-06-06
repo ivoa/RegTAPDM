@@ -13,7 +13,7 @@ include "../build/tmp/IVOA-v1.0.vodsl"
 
  created: ivoa:datetime "The UTC date and time this resource metadata description was created.";
 
- short_name: ivoa:string "A short name or abbreviation given to something, for presentation in space-constrained fields (up to 16 characters).";
+ short_name: ivoa:string @? "A short name or abbreviation given to something, for presentation in space-constrained fields (up to 16 characters).";
 
  res_title: ivoa:string "The full name given to the resource.";
 
@@ -25,23 +25,23 @@ include "../build/tmp/IVOA-v1.0.vodsl"
 
  reference_url: ivoa:string "URL pointing to a human-readable document describing this resource.";
 
- creator_seq: ivoa:string "The creator(s) of the resource in the order given by the resource record author, separated by semicolons.";
+ creator_seq: ivoa:string @? "The creator(s) of the resource in the order given by the resource record author, separated by semicolons.";
 
- content_type: ivoa:string "A hash-separated list of natures or genres of the content of the resource.";
+ content_type: ivoa:string  @?  "A hash-separated list of natures or genres of the content of the resource.";
 
- source_format: ivoa:string "The format of source_value. This, in particular, can be ``bibcode''.";
+ source_format: ivoa:string @? "The format of source_value. This, in particular, can be ``bibcode''.";
 
- source_value: ivoa:string "A bibliographic reference from which the present resource is derived or extracted.";
+ source_value: ivoa:string @?  "A bibliographic reference from which the present resource is derived or extracted.";
 
- res_version: ivoa:string "Label associated with creation or availablilty of a version of a resource.";
+ res_version: ivoa:string @? "Label associated with creation or availability of a version of a resource.";
 
- region_of_regard: ivoa:real "A single numeric value representing the angle, given in decimal degrees, by which a positional query against this resource should be ``blurred'' in order to get an appropriate match.";
+ region_of_regard: ivoa:real @? "A single numeric value representing the angle, given in decimal degrees, by which a positional query against this resource should be ``blurred'' in order to get an appropriate match.";
 
- waveband: ivoa:string "A hash-separated list of regions of the electro-magnetic spectrum that the resource's spectral coverage overlaps with.";
+ waveband: ivoa:string @? "A hash-separated list of regions of the electro-magnetic spectrum that the resource's spectral coverage overlaps with.";
 
- rights: ivoa:string "A statement of usage conditions (license, attribution, embargo, etc).";
+ rights: ivoa:string  @?  "A statement of usage conditions (license, attribution, embargo, etc).";
 
- rights_uri: ivoa:string "A URI identifying a license the data is made available under.";
+ rights_uri: ivoa:string  @?  "A URI identifying a license the data is made available under.";
  
  //IMPL all of these compositions are really direct children in the VOResource model
  
@@ -75,7 +75,7 @@ include "../build/tmp/IVOA-v1.0.vodsl"
  tapTables: TAPTable @* as composition "TAP tables"; // IMPL quite a departure from the original VOResource ideas...
 
  }
-
+// TODO - need to review all the multiplicities below.
  otype Role "Entities (persons or organizations) operating on re-
 sources: creators, contacts, publishers, contributors." {
 
