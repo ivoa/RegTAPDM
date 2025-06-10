@@ -32,6 +32,7 @@ dependencies {
     //all data models will want to depend on the base model at least
     api("org.javastro.ivoa.vo-dml:ivoa-base:1.0-SNAPSHOT") // IMPL using API so that it appears in transitive compile
 
+    implementation("net.sf.saxon:Saxon-HE:12.5")
     // the dependencies below are related to testing
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.2")
