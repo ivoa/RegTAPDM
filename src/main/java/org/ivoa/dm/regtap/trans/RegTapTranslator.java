@@ -39,7 +39,10 @@ public class RegTapTranslator {
     private final XsltExecutable exp;
     private final Processor processor;
 
-    public RegTapTranslator() {
+   /**
+    * construct a Translator.
+    */
+   public RegTapTranslator() {
        processor = new Processor(false);
        XsltCompiler compiler = processor.newXsltCompiler();
        try (InputStream xslFileStream = RegTapTranslator.class
@@ -51,6 +54,11 @@ public class RegTapTranslator {
        }
     }
 
+   /**
+    * Translate a VOResource instance to RegTAP XML instance.
+    * @param is stream with VOResource XML instance.
+    * @return string of RegTAP instance
+    */
     public String translate(InputStream is) {
         Xslt30Transformer xsltTransformer = exp.load30();
         StringWriter sw = new StringWriter();
