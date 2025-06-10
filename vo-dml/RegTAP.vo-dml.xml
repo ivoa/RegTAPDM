@@ -9,7 +9,7 @@
       <title></title>
       <author>Paul Harrison</author>
       <version>1.0</version>
-      <lastModified>2025-06-06T13:27:14Z</lastModified>
+      <lastModified>2025-06-10T13:37:18Z</lastModified>
       <import>
         <name>ivoa</name>
         <version>1.0</version>
@@ -252,8 +252,8 @@
                  </multiplicity>
                </composition>
                <composition>
-                 <vodml-id>Resource.altIds</vodml-id>
-                 <name>altIds</name>
+                 <vodml-id>Resource.altId</vodml-id>
+                 <name>altId</name>
                  <description>altIds</description>	    
                  <datatype>
                     <vodml-ref>RegTAP:AltIdentifier</vodml-ref>
@@ -264,8 +264,8 @@
                  </multiplicity>
                </composition>
                <composition>
-                 <vodml-id>Resource.roles</vodml-id>
-                 <name>roles</name>
+                 <vodml-id>Resource.role</vodml-id>
+                 <name>role</name>
                  <description>roles</description>	    
                  <datatype>
                     <vodml-ref>RegTAP:Role</vodml-ref>
@@ -276,8 +276,8 @@
                  </multiplicity>
                </composition>
                <composition>
-                 <vodml-id>Resource.subjects</vodml-id>
-                 <name>subjects</name>
+                 <vodml-id>Resource.subject</vodml-id>
+                 <name>subject</name>
                  <description>subjects</description>	    
                  <datatype>
                     <vodml-ref>RegTAP:Subject</vodml-ref>
@@ -288,8 +288,8 @@
                  </multiplicity>
                </composition>
                <composition>
-                 <vodml-id>Resource.dates</vodml-id>
-                 <name>dates</name>
+                 <vodml-id>Resource.date</vodml-id>
+                 <name>date</name>
                  <description>dates</description>	    
                  <datatype>
                     <vodml-ref>RegTAP:ResDate</vodml-ref>
@@ -300,23 +300,11 @@
                  </multiplicity>
                </composition>
                <composition>
-                 <vodml-id>Resource.relationships</vodml-id>
-                 <name>relationships</name>
+                 <vodml-id>Resource.relationship</vodml-id>
+                 <name>relationship</name>
                  <description>relationships</description>	    
                  <datatype>
                     <vodml-ref>RegTAP:Relationship</vodml-ref>
-                 </datatype>
-                 <multiplicity>
-                   <minOccurs>0</minOccurs>
-                   <maxOccurs>-1</maxOccurs>
-                 </multiplicity>
-               </composition>
-               <composition>
-                 <vodml-id>Resource.capabilities</vodml-id>
-                 <name>capabilities</name>
-                 <description>capabilities</description>	    
-                 <datatype>
-                    <vodml-ref>RegTAP:Capability</vodml-ref>
                  </datatype>
                  <multiplicity>
                    <minOccurs>0</minOccurs>
@@ -360,8 +348,20 @@
                  </multiplicity>
                </composition>
                <composition>
-                 <vodml-id>Resource.interfaces</vodml-id>
-                 <name>interfaces</name>
+                 <vodml-id>Resource.capability</vodml-id>
+                 <name>capability</name>
+                 <description>capabilities</description>	    
+                 <datatype>
+                    <vodml-ref>RegTAP:Capability</vodml-ref>
+                 </datatype>
+                 <multiplicity>
+                   <minOccurs>0</minOccurs>
+                   <maxOccurs>-1</maxOccurs>
+                 </multiplicity>
+               </composition>
+               <composition>
+                 <vodml-id>Resource.interface</vodml-id>
+                 <name>interface</name>
                  <description>interfaces</description>	    
                  <datatype>
                     <vodml-ref>RegTAP:Interface</vodml-ref>
@@ -372,23 +372,11 @@
                  </multiplicity>
                </composition>
                <composition>
-                 <vodml-id>Resource.params</vodml-id>
-                 <name>params</name>
+                 <vodml-id>Resource.param</vodml-id>
+                 <name>param</name>
                  <description>params</description>	    
                  <datatype>
                     <vodml-ref>RegTAP:InterfaceParam</vodml-ref>
-                 </datatype>
-                 <multiplicity>
-                   <minOccurs>0</minOccurs>
-                   <maxOccurs>-1</maxOccurs>
-                 </multiplicity>
-               </composition>
-               <composition>
-                 <vodml-id>Resource.detail</vodml-id>
-                 <name>detail</name>
-                 <description>detail</description>	    
-                 <datatype>
-                    <vodml-ref>RegTAP:Detail</vodml-ref>
                  </datatype>
                  <multiplicity>
                    <minOccurs>0</minOccurs>
@@ -408,8 +396,8 @@
                  </multiplicity>
                </composition>
                <composition>
-                 <vodml-id>Resource.tables</vodml-id>
-                 <name>tables</name>
+                 <vodml-id>Resource.table</vodml-id>
+                 <name>table</name>
                  <description>tables</description>	    
                  <datatype>
                     <vodml-ref>RegTAP:Table</vodml-ref>
@@ -420,8 +408,8 @@
                  </multiplicity>
                </composition>
                <composition>
-                 <vodml-id>Resource.columns</vodml-id>
-                 <name>columns</name>
+                 <vodml-id>Resource.column</vodml-id>
+                 <name>column</name>
                  <description>columns</description>	    
                  <datatype>
                     <vodml-ref>RegTAP:Column</vodml-ref>
@@ -437,6 +425,18 @@
                  <description>TAP tables</description>	    
                  <datatype>
                     <vodml-ref>RegTAP:TAPTable</vodml-ref>
+                 </datatype>
+                 <multiplicity>
+                   <minOccurs>0</minOccurs>
+                   <maxOccurs>-1</maxOccurs>
+                 </multiplicity>
+               </composition>
+               <composition>
+                 <vodml-id>Resource.detail</vodml-id>
+                 <name>detail</name>
+                 <description>detail</description>	    
+                 <datatype>
+                    <vodml-ref>RegTAP:Detail</vodml-ref>
                  </datatype>
                  <multiplicity>
                    <minOccurs>0</minOccurs>
@@ -481,7 +481,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -493,7 +493,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -505,7 +505,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -517,7 +517,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -628,7 +628,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -652,7 +652,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -664,7 +664,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -681,7 +681,7 @@
                     <vodml-ref>ivoa:nonnegativeInteger</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -693,7 +693,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -729,7 +729,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -741,7 +741,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -753,7 +753,19 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
+                   <maxOccurs>1</maxOccurs>
+                 </multiplicity>
+               </attribute>
+               <attribute>
+                 <vodml-id>Table.nrows</vodml-id>
+                 <name>nrows</name>
+                 <description>An estimate for the number of rows in the table.</description>	    
+                 <datatype>
+                    <vodml-ref>ivoa:nonnegativeInteger</vodml-ref>
+                 </datatype>
+                 <multiplicity>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -794,7 +806,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -806,7 +818,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -818,7 +830,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -842,7 +854,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -854,7 +866,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -866,7 +878,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -878,7 +890,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -890,7 +902,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -902,7 +914,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -914,7 +926,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -926,7 +938,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -1027,7 +1039,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -1109,18 +1121,6 @@
                  </multiplicity>
                </attribute>
                <attribute>
-                 <vodml-id>InterfaceParam.ucd</vodml-id>
-                 <name>ucd</name>
-                 <description>A unified content descriptor that describes the scientific content of the parameter.</description>	    
-                 <datatype>
-                    <vodml-ref>ivoa:string</vodml-ref>
-                 </datatype>
-                 <multiplicity>
-                   <minOccurs>1</minOccurs>
-                   <maxOccurs>1</maxOccurs>
-                 </multiplicity>
-               </attribute>
-               <attribute>
                  <vodml-id>InterfaceParam.unit</vodml-id>
                  <name>unit</name>
                  <description>The unit associated with all values in the parameter.</description>	    
@@ -1128,7 +1128,19 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
+                   <maxOccurs>1</maxOccurs>
+                 </multiplicity>
+               </attribute>
+               <attribute>
+                 <vodml-id>InterfaceParam.ucd</vodml-id>
+                 <name>ucd</name>
+                 <description>A unified content descriptor that describes the scientific content of the parameter.</description>	    
+                 <datatype>
+                    <vodml-ref>ivoa:string</vodml-ref>
+                 </datatype>
+                 <multiplicity>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -1140,7 +1152,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -1164,7 +1176,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -1176,7 +1188,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -1188,7 +1200,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -1200,7 +1212,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -1212,7 +1224,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -1224,7 +1236,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -1236,7 +1248,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -1321,7 +1333,7 @@
                     <vodml-ref>ivoa:nonnegativeInteger</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
@@ -1368,7 +1380,7 @@
                     <vodml-ref>ivoa:nonnegativeInteger</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>

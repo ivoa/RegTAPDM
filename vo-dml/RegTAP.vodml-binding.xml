@@ -7,7 +7,7 @@
         <name>RegTAP</name>
         <file>RegTAP.vo-dml.xml</file>
         <java-package>org.ivoa.dm.regtap</java-package>
-        <xml-targetnamespace prefix="regtap">http://ivoa.net/dm/models/vo-dml/experiment/regtap</xml-targetnamespace>
+        <xml-targetnamespace prefix="regtap">http://www.ivoa.net/xml/RegTAP/v1.0</xml-targetnamespace>
         <xml elementFormDefault="qualified" compositionStyle="unwrapped"/>
         <rdb naturalJoin="true">
             <rdbmap vodml-id="Subject">
@@ -50,6 +50,19 @@
                 <tableName>tap_table</tableName>
             </rdbmap>
         </rdb>
-    </model>
+        <type-detail vodml-id="AltIdentifier.alt_identifier">
+            <isAttribute/>
+        </type-detail>
+        <type-detail vodml-id="ResDate.value_role">
+            <isAttribute/>
+        </type-detail>
+        <type-detail vodml-id="Role.role_ivoid">
+            <isAttribute/>
+        </type-detail>
+        <type-detail vodml-id="Role.base_role">
+            <isAttribute/>
+        </type-detail>
+
+     </model>
 
 </m:mappedModels>
