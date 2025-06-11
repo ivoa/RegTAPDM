@@ -1,6 +1,10 @@
+
 plugins {
     // this plugin provides all the vo-dml functionality
     id("net.ivoa.vo-dml.vodmltools") version "0.5.20"
+    `maven-publish`
+    id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
+    signing
 }
 group = "org.javastro.ivoa.dm"
 version = "0.1-SNAPSHOT"
@@ -45,6 +49,56 @@ dependencies {
     testImplementation("org.javastro:jaxbjpa-utils:0.2.3:test")
 }
 
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+
+            pom {
+                name.set("RegTAP Data Model")
+                description.set("The RegTAP Data Model defined in VO-DML")
+                url.set("https://www.ivoa.net/documents/RegTAP/")
+                licenses {
+                    license {
+                        name.set("The Apache License, Version 2.0")
+                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("pahjbo")
+                        name.set("Paul Harrison")
+                        email.set("paul.harrison@manchester.ac.uk")
+                    }
+                }
+                scm {
+                    connection.set("scm:git:git://github.com/ivoa/RegTAPDM.git")
+                    developerConnection.set("scm:git:ssh://github.com/ivoa/RegTAPDM.git")
+                    url.set("https://github.com/ivoa/RegTAPDM")
+                }
+            }
+        }
+    }
+}
+signing {
+    useGpgCmd()
+    sign(publishing.publications["mavenJava"])
+
+}
+nexusPublishing {
+    repositories {
+        //TODO this is a rather unsatisfactory kludge, but still seems better than the suggested JReleaser which is not really gradle friendly
+        // see https://central.sonatype.org/publish/publish-portal-ossrh-staging-api/#configuration
+        sonatype {
+            nexusUrl.set(uri("https://ossrh-staging-api.central.sonatype.com/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://central.sonatype.com/repository/maven-snapshots/"))
+        }
+    }
+}
+tasks.withType<Jar>() {
+    exclude("META-INF/persistence.xml")
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
 
 // site tasks
 tasks.register<Copy>("copyJavaDocForSite") {
@@ -85,4 +139,6 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(17))
     }
+    withJavadocJar()
+    withSourcesJar()
 }
