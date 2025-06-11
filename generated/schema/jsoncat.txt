@@ -1,0 +1,1 @@
+https://ivoa.net/dm/RegTAP.vo-dml.json RegTAP.vo-dml.json

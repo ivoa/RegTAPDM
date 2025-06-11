@@ -1,0 +1,134 @@
+
+digraph GVmap {  
+	label = "\n\nRegTAP data model"
+	rankdir=TB
+	
+	node [ 
+	  shape=tab
+	  style=filled
+	]
+	subgraph cluster_packages {
+	  label="Model"
+	  rankdir=TB
+      style=filled
+      fillcolor="/set312/1"
+	  
+	}
+	
+	node [
+	shape=record
+	fontsize=8
+	style=filled] 
+    "RegTAP:Resource" [
+    URL="../RegTAP/Resource"
+    label = "{Resource|+ivoid : ivoa:string\l+res_type : ivoa:string\l+created : ivoa:datetime\l+short_name : ivoa:string\l+res_title : ivoa:string\l+updated : ivoa:datetime\l+content_level : ivoa:string\l+res_description : ivoa:string\l+reference_url : ivoa:string\l+creator_seq : ivoa:string\l+content_type : ivoa:string\l+source_format : ivoa:string\l+source_value : ivoa:string\l+res_version : ivoa:string\l+region_of_regard : ivoa:real\l+waveband : ivoa:string\l+rights : ivoa:string\l+rights_uri : ivoa:string\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:Role" [
+    URL="../RegTAP/Role"
+    label = "{Role|+role_name : ivoa:string\l+role_ivoid : ivoa:string\l+street_address : ivoa:string\l+email : ivoa:string\l+telephone : ivoa:string\l+logo : ivoa:string\l+base_role : ivoa:string\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:Subject" [
+    URL="../RegTAP/Subject"
+    label = "{Subject|+res_subject : ivoa:string\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:Capability" [
+    URL="../RegTAP/Capability"
+    label = "{Capability|+cap_index : ivoa:nonnegativeInteger\l+cap_type : ivoa:string\l+cap_description : ivoa:string\l+standard_id : ivoa:string\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:Schema" [
+    URL="../RegTAP/Schema"
+    label = "{Schema|+schema_index : ivoa:nonnegativeInteger\l+schema_description : ivoa:string\l+schema_name : ivoa:string\l+schema_title : ivoa:string\l+schema_utype : ivoa:string\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:Table" [
+    URL="../RegTAP/Table"
+    label = "{Table|+schema_index : ivoa:nonnegativeInteger\l+table_description : ivoa:string\l+table_name : ivoa:string\l+table_index : ivoa:nonnegativeInteger\l+table_title : ivoa:string\l+table_type : ivoa:string\l+table_utype : ivoa:string\l+nrows : ivoa:nonnegativeInteger\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:Column" [
+    URL="../RegTAP/Column"
+    label = "{Column|+table_index : ivoa:nonnegativeInteger\l+name : ivoa:string\l+ucd : ivoa:string\l+unit : ivoa:string\l+utype : ivoa:string\l+std : ivoa:integer\l+datatype : ivoa:string\l+extended_schema : ivoa:string\l+extended_type : ivoa:string\l+arraysize : ivoa:string\l+delim : ivoa:string\l+type_system : ivoa:string\l+flag : ivoa:string\l+column_description : ivoa:string\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:Interface" [
+    URL="../RegTAP/Interface"
+    label = "{Interface|+cap_index : ivoa:nonnegativeInteger\l+intf_index : ivoa:nonnegativeInteger\l+intf_type : ivoa:string\l+intf_role : ivoa:string\l+std_version : ivoa:string\l+query_type : ivoa:string\l+result_type : ivoa:string\l+wsdl_url : ivoa:string\l+url_use : ivoa:string\l+access_url : ivoa:string\l+mirror_url : ivoa:string\l+authenticated_only : ivoa:integer\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:InterfaceParam" [
+    URL="../RegTAP/InterfaceParam"
+    label = "{InterfaceParam|+intf_index : ivoa:nonnegativeInteger\l+name : ivoa:string\l+unit : ivoa:string\l+ucd : ivoa:string\l+utype : ivoa:string\l+std : ivoa:integer\l+datatype : ivoa:string\l+extended_schema : ivoa:string\l+extended_type : ivoa:string\l+arraysize : ivoa:string\l+delim : ivoa:string\l+param_use : ivoa:string\l+param_description : ivoa:string\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:Relationship" [
+    URL="../RegTAP/Relationship"
+    label = "{Relationship|+relationship_type : ivoa:string\l+related_id : ivoa:string\l+related_name : ivoa:string\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:Validation" [
+    URL="../RegTAP/Validation"
+    label = "{Validation|+validated_by : ivoa:string\l+val_level : ivoa:integer\l+cap_index : ivoa:nonnegativeInteger\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:ResDate" [
+    URL="../RegTAP/ResDate"
+    label = "{ResDate|+date_value : ivoa:datetime\l+value_role : ivoa:string\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:Detail" [
+    URL="../RegTAP/Detail"
+    label = "{Detail|+cap_index : ivoa:nonnegativeInteger\l+detail_xpath : ivoa:string\l+detail_value : ivoa:string\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:AltIdentifier" [
+    URL="../RegTAP/AltIdentifier"
+    label = "{AltIdentifier|+alt_identifier : ivoa:string\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:STCSpatial" [
+    URL="../RegTAP/STCSpatial"
+    label = "{STCSpatial|+coverage : ivoa:string\l+ref_system_name : ivoa:string\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:STCTemporal" [
+    URL="../RegTAP/STCTemporal"
+    label = "{STCTemporal|+time_start : ivoa:real\l+time_end : ivoa:real\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:STCSpectral" [
+    URL="../RegTAP/STCSpectral"
+    label = "{STCSpectral|+spectral_start : ivoa:real\l+spectral_end : ivoa:real\l}"
+    fillcolor="/set312/1"
+    ] ;
+  "RegTAP:TAPTable" [
+    URL="../RegTAP/TAPTable"
+    label = "{TAPTable|+svcid : ivoa:string\l+table_name : ivoa:string\l+table_title : ivoa:string\l+table_description : ivoa:string\l+table_utype : ivoa:string\l}"
+    fillcolor="/set312/1"
+    ] ;
+  
+ 
+    edge [color="blue", arrowhead="open", arrowtail="diamond",dir="both",fontsize="10"]
+    "RegTAP:Resource" -> "RegTAP:Validation" [headlabel="0..*",label="validation",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:AltIdentifier" [headlabel="0..*",label="altId",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:Role" [headlabel="0..*",label="role",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:Subject" [headlabel="0..*",label="subject",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:ResDate" [headlabel="0..*",label="date",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:Relationship" [headlabel="0..*",label="relationship",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:STCSpatial" [headlabel="0..*",label="spatialCoverage",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:STCTemporal" [headlabel="0..*",label="temporalCoverage",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:STCSpectral" [headlabel="0..*",label="spectralCoverage",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:Capability" [headlabel="0..*",label="capability",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:Interface" [headlabel="0..*",label="interface",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:InterfaceParam" [headlabel="0..*",label="param",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:Schema" [headlabel="0..*",label="schema",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:Table" [headlabel="0..*",label="table",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:Column" [headlabel="0..*",label="column",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:TAPTable" [headlabel="0..*",label="tapTables",labelfontsize=10] ;
+  "RegTAP:Resource" -> "RegTAP:Detail" [headlabel="0..*",label="detail",labelfontsize=10] ;
+    
+}
+  

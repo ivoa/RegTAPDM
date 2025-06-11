@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns/graphml"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.0/ygraphml.xsd">
+   <key xmlns:y="http://www.yworks.com/xml/graphml"
+        attr.name="Title"
+        attr.type="string"
+        for="graph"
+        id="t0">
+      <default xml:space="preserve">RegTAP</default>
+   </key>
+   <key xmlns:y="http://www.yworks.com/xml/graphml"
+        attr.name="description"
+        attr.type="string"
+        for="node"
+        id="k1"/>
+   <key xmlns:y="http://www.yworks.com/xml/graphml"
+        id="k2"
+        for="node"
+        yfiles.type="nodegraphics"/>
+   <key xmlns:y="http://www.yworks.com/xml/graphml"
+        id="k3"
+        for="edge"
+        yfiles.type="edgegraphics"/>
+   <key xmlns:y="http://www.yworks.com/xml/graphml"
+        id="k4"
+        for="graph"
+        yfiles.type="postprocessors"/>
+   <graph edgedefault="directed"><!--nodes-->
+      <node id="RegTAP:Resource">
+         <data key="k1">Resource</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">Resource</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+ivoid : ivoa:string
++res_type : ivoa:string
++created : ivoa:datetime
++short_name : ivoa:string
++res_title : ivoa:string
++updated : ivoa:datetime
++content_level : ivoa:string
++res_description : ivoa:string
++reference_url : ivoa:string
++creator_seq : ivoa:string
++content_type : ivoa:string
++source_format : ivoa:string
++source_value : ivoa:string
++res_version : ivoa:string
++region_of_regard : ivoa:real
++waveband : ivoa:string
++rights : ivoa:string
++rights_uri : ivoa:string
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:Role">
+         <data key="k1">Role</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">Role</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+role_name : ivoa:string
++role_ivoid : ivoa:string
++street_address : ivoa:string
++email : ivoa:string
++telephone : ivoa:string
++logo : ivoa:string
++base_role : ivoa:string
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:Subject">
+         <data key="k1">Subject</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">Subject</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+res_subject : ivoa:string
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:Capability">
+         <data key="k1">Capability</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">Capability</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+cap_index : ivoa:nonnegativeInteger
++cap_type : ivoa:string
++cap_description : ivoa:string
++standard_id : ivoa:string
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:Schema">
+         <data key="k1">Schema</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">Schema</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+schema_index : ivoa:nonnegativeInteger
++schema_description : ivoa:string
++schema_name : ivoa:string
++schema_title : ivoa:string
++schema_utype : ivoa:string
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:Table">
+         <data key="k1">Table</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">Table</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+schema_index : ivoa:nonnegativeInteger
++table_description : ivoa:string
++table_name : ivoa:string
++table_index : ivoa:nonnegativeInteger
++table_title : ivoa:string
++table_type : ivoa:string
++table_utype : ivoa:string
++nrows : ivoa:nonnegativeInteger
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:Column">
+         <data key="k1">Column</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">Column</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+table_index : ivoa:nonnegativeInteger
++name : ivoa:string
++ucd : ivoa:string
++unit : ivoa:string
++utype : ivoa:string
++std : ivoa:integer
++datatype : ivoa:string
++extended_schema : ivoa:string
++extended_type : ivoa:string
++arraysize : ivoa:string
++delim : ivoa:string
++type_system : ivoa:string
++flag : ivoa:string
++column_description : ivoa:string
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:Interface">
+         <data key="k1">Interface</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">Interface</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+cap_index : ivoa:nonnegativeInteger
++intf_index : ivoa:nonnegativeInteger
++intf_type : ivoa:string
++intf_role : ivoa:string
++std_version : ivoa:string
++query_type : ivoa:string
++result_type : ivoa:string
++wsdl_url : ivoa:string
++url_use : ivoa:string
++access_url : ivoa:string
++mirror_url : ivoa:string
++authenticated_only : ivoa:integer
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:InterfaceParam">
+         <data key="k1">InterfaceParam</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">InterfaceParam</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+intf_index : ivoa:nonnegativeInteger
++name : ivoa:string
++unit : ivoa:string
++ucd : ivoa:string
++utype : ivoa:string
++std : ivoa:integer
++datatype : ivoa:string
++extended_schema : ivoa:string
++extended_type : ivoa:string
++arraysize : ivoa:string
++delim : ivoa:string
++param_use : ivoa:string
++param_description : ivoa:string
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:Relationship">
+         <data key="k1">Relationship</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">Relationship</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+relationship_type : ivoa:string
++related_id : ivoa:string
++related_name : ivoa:string
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:Validation">
+         <data key="k1">Validation</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">Validation</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+validated_by : ivoa:string
++val_level : ivoa:integer
++cap_index : ivoa:nonnegativeInteger
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:ResDate">
+         <data key="k1">ResDate</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">ResDate</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+date_value : ivoa:datetime
++value_role : ivoa:string
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:Detail">
+         <data key="k1">Detail</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">Detail</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+cap_index : ivoa:nonnegativeInteger
++detail_xpath : ivoa:string
++detail_value : ivoa:string
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:AltIdentifier">
+         <data key="k1">AltIdentifier</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">AltIdentifier</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+alt_identifier : ivoa:string
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:STCSpatial">
+         <data key="k1">STCSpatial</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">STCSpatial</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+coverage : ivoa:string
++ref_system_name : ivoa:string
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:STCTemporal">
+         <data key="k1">STCTemporal</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">STCTemporal</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+time_start : ivoa:real
++time_end : ivoa:real
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:STCSpectral">
+         <data key="k1">STCSpectral</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">STCSpectral</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+spectral_start : ivoa:real
++spectral_end : ivoa:real
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <node id="RegTAP:TAPTable">
+         <data key="k1">TAPTable</data>
+         <data xmlns:y="http://www.yworks.com/xml/graphml" key="k2">
+            <y:UMLClassNode>
+               <y:Fill color="#BDB992" transparent="false"/>
+               <y:BorderStyle color="#000000" type="line" width="1.0"/>
+               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve" y="3.0">TAPTable</y:NodeLabel>
+               <y:UML clipContent="true"
+                      constraint=""
+                      hasDetailsColor="false"
+                      omitDetails="false"
+                      stereotype=""
+                      use3DEffect="true">
+                  <y:AttributeLabel xml:space="preserve">+svcid : ivoa:string
++table_name : ivoa:string
++table_title : ivoa:string
++table_description : ivoa:string
++table_utype : ivoa:string
+</y:AttributeLabel>
+                  <y:MethodLabel xml:space="preserve"/>
+               </y:UML>
+            </y:UMLClassNode>
+         </data>
+      </node>
+      <!--imported nodes-->
+      <!--edges-->
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e184"
+            source="RegTAP:Resource"
+            target="RegTAP:Validation">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">validation<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e194"
+            source="RegTAP:Resource"
+            target="RegTAP:AltIdentifier">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">altId<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e203"
+            source="RegTAP:Resource"
+            target="RegTAP:Role">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">role<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e212"
+            source="RegTAP:Resource"
+            target="RegTAP:Subject">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">subject<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e221"
+            source="RegTAP:Resource"
+            target="RegTAP:ResDate">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">date<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e230"
+            source="RegTAP:Resource"
+            target="RegTAP:Relationship">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">relationship<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e239"
+            source="RegTAP:Resource"
+            target="RegTAP:STCSpatial">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">spatialCoverage<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e248"
+            source="RegTAP:Resource"
+            target="RegTAP:STCTemporal">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">temporalCoverage<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e257"
+            source="RegTAP:Resource"
+            target="RegTAP:STCSpectral">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">spectralCoverage<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e266"
+            source="RegTAP:Resource"
+            target="RegTAP:Capability">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">capability<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e275"
+            source="RegTAP:Resource"
+            target="RegTAP:Interface">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">interface<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e284"
+            source="RegTAP:Resource"
+            target="RegTAP:InterfaceParam">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">param<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e294"
+            source="RegTAP:Resource"
+            target="RegTAP:Schema">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">schema<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e303"
+            source="RegTAP:Resource"
+            target="RegTAP:Table">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">table<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e312"
+            source="RegTAP:Resource"
+            target="RegTAP:Column">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">column<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e321"
+            source="RegTAP:Resource"
+            target="RegTAP:TAPTable">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">tapTables<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <edge xmlns:y="http://www.yworks.com/xml/graphml"
+            id="d2e330"
+            source="RegTAP:Resource"
+            target="RegTAP:Detail">
+         <data key="k3">
+            <y:PolyLineEdge>
+               <y:LineStyle color="#9393FF" type="line" width="2.0"/>
+               <y:Arrows source="diamond" target="standard"/>
+               <y:BendStyle smoothed="false"/>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="head" preferredPlacement="centered" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">detail<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="center" side="on_edge" sideReference="relative_to_edge_flow"/>
+   </y:EdgeLabel>
+               <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" horizontalTextPosition="center" iconTextGap="4" modelName="six_pos" modelPosition="thead" preferredPlacement="target_on_edge" ratio="0.5" textColor="#000000" verticalTextPosition="bottom" visible="true" xml:space="preserve">0..*<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="target" side="anywhere" sideReference="relative_to_edge_flow"/>
+      </y:EdgeLabel>
+            </y:PolyLineEdge>
+         </data>
+      </edge>
+      <data xmlns:y="http://www.yworks.com/xml/graphml" key="k4">
+         <y:Postprocessors>
+            <y:Processor class="yext.graphml.processor.NodeSizeAdapter">
+               <y:Option name="IGNORE_WIDTHS" value="false"/>
+               <y:Option name="IGNORE_HEIGHTS" value="false"/>
+               <y:Option name="ADAPT_TO_MAXIMUM_NODE" value="false"/>
+            </y:Processor>
+            <y:Processor class="y.module.TreeLayoutModule">
+               <y:Option name="GENERAL.LAYOUT_STYLE" value="AR"/>
+               <y:Option name="AR.BEND_DISTANCE" value="20"/>
+               <y:Option name="AR.VERTICAL_SPACE" value="10"/>
+               <y:Option name="AR.ASPECT_RATIO" value="1.41"/>
+               <y:Option name="AR.HORIZONTAL_SPACE" value="10"/>
+               <y:Option name="AR.USE_VIEW_ASPECT_RATIO" value="true"/>
+            </y:Processor>
+         </y:Postprocessors>
+      </data>
+   </graph>
+</graphml>

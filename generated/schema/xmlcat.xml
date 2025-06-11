@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+   <system systemId="RegTAP.vo-dml.xsd" uri="http://www.ivoa.net/xml/RegTAP/v1.0"/>
+</catalog>
