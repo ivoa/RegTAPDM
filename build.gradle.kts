@@ -1,7 +1,7 @@
 
 plugins {
     // this plugin provides all the vo-dml functionality
-    id("net.ivoa.vo-dml.vodmltools") version "0.5.20"
+    id("net.ivoa.vo-dml.vodmltools") version "0.5.22"
     `maven-publish`
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     signing
