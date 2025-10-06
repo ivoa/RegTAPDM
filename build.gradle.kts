@@ -1,9 +1,10 @@
 
 plugins {
     // this plugin provides all the vo-dml functionality
-    id("net.ivoa.vo-dml.vodmltools") version "0.5.23"
+    id("net.ivoa.vo-dml.vodmltools") version "0.5.28"
     `maven-publish`
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
+    id("org.kordamp.gradle.jandex") version "2.2.0"
     signing
 }
 group = "org.javastro.ivoa.dm"
@@ -98,6 +99,10 @@ nexusPublishing {
 tasks.withType<Jar>() {
     exclude("META-INF/persistence.xml")
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.withType<Javadoc>() {
+    mustRunAfter("jandex") //gradle insists on this - though I do not think that it really does depend on it...
 }
 
 // site tasks
