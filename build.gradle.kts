@@ -3,12 +3,12 @@ plugins {
     // this plugin provides all the vo-dml functionality
     id("net.ivoa.vo-dml.vodmltools") version "0.5.28"
     `maven-publish`
-    id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
+//    id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     id("org.kordamp.gradle.jandex") version "2.2.0"
     signing
 }
 group = "org.javastro.ivoa.dm"
-version = "0.1-SNAPSHOT"
+version = "0.2-SNAPSHOT"
 
 vodml {
     vodmlDir.set(file("vo-dml"))
@@ -80,22 +80,42 @@ publishing {
             }
         }
     }
+    repositories {
+        // TODO really want to publish to a repo run by the IVOA
+        maven {
+            name = "uksrcrepo"
+            credentials {
+                username = (findProperty("uksrcNexusUsername") ?: System.getenv("UKSRC_REPO_USERNAME")) as String?
+                password = (findProperty("uksrcNexusPassword") ?: System.getenv("UKSRC_REPO_PASSWORD")) as String?
+            }
+            val releasesRepoUrl = uri("https://repo.dev.uksrc.org/repository/maven-releases/")
+            val snapshotsRepoUrl = uri("https://repo.dev.uksrc.org/repository/maven-snapshots/")
+            url = uri(if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl)
+
+        }
+
+    }
 }
 signing {
+    setRequired({
+        (!version.toString().endsWith("SNAPSHOT")) && gradle.taskGraph.hasTask("publish")
+    })
     useGpgCmd()
     sign(publishing.publications["mavenJava"])
 
 }
-nexusPublishing {
-    repositories {
-        //TODO this is a rather unsatisfactory kludge, but still seems better than the suggested JReleaser which is not really gradle friendly
-        // see https://central.sonatype.org/publish/publish-portal-ossrh-staging-api/#configuration
-        sonatype {
-            nexusUrl.set(uri("https://ossrh-staging-api.central.sonatype.com/service/local/"))
-            snapshotRepositoryUrl.set(uri("https://central.sonatype.com/repository/maven-snapshots/"))
-        }
-    }
-}
+//TODO move back to maven central publishing when past snapshot phase.
+
+//nexusPublishing {
+//    repositories {
+//        //TODO this is a rather unsatisfactory kludge, but still seems better than the suggested JReleaser which is not really gradle friendly
+//        // see https://central.sonatype.org/publish/publish-portal-ossrh-staging-api/#configuration
+//        sonatype {
+//            nexusUrl.set(uri("https://ossrh-staging-api.central.sonatype.com/service/local/"))
+//            snapshotRepositoryUrl.set(uri("https://central.sonatype.com/repository/maven-snapshots/"))
+//        }
+//    }
+//}
 tasks.withType<Jar>() {
     exclude("META-INF/persistence.xml")
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
