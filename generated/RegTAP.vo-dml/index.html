@@ -1,0 +1,1839 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../schema/">
+      
+      
+        <link rel="next" href="../RegTAP/AltIdentifier/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>Overview - RegTAP Data Model</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#regtap" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="RegTAP Data Model" class="md-header__button md-logo" aria-label="RegTAP Data Model" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RegTAP Data Model
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ivoa/RegTAPDM" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../schema/" class="md-tabs__link">
+        
+  
+    
+  
+  Schema
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  AutoGenerated Documentation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../javadoc" class="md-tabs__link">
+        
+  
+    
+  
+  JavaDoc
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="RegTAP Data Model" class="md-nav__button md-logo" aria-label="RegTAP Data Model" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RegTAP Data Model
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ivoa/RegTAPDM" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    AutoGenerated Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AutoGenerated Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RegTAP model
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            RegTAP model
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overview-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview diagram
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objecttypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      ObjectTypes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imports
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ObjectTypes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            ObjectTypes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/AltIdentifier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AltIdentifier
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/Capability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Capability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/Column/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Column
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/Detail/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Detail
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/Interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/InterfaceParam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InterfaceParam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/Relationship/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Relationship
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/ResDate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ResDate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/Resource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/Role/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Role
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/STCSpatial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STCSpatial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/STCSpectral/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STCSpectral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/STCTemporal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STCTemporal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/Schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/Subject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Subject
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/TAPTable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TAPTable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/Table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RegTAP/Validation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Validation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Imported Models
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Imported Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ivoa model
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            ivoa model
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IVOA-v1.0.vo-dml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1_2" id="__nav_3_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DataTypes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            DataTypes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ivoa/IntegerQuantity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IntegerQuantity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ivoa/Quantity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quantity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ivoa/RealQuantity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RealQuantity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1_3" id="__nav_3_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PrimitiveTypes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            PrimitiveTypes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ivoa/Unit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ivoa/anyURI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    anyURI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ivoa/boolean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    boolean
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ivoa/complex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    complex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ivoa/datetime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    datetime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ivoa/integer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    integer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ivoa/nonnegativeInteger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nonnegativeInteger
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ivoa/rational/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rational
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ivoa/real/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    real
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ivoa/string/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    string
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javadoc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JavaDoc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overview-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview diagram
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objecttypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      ObjectTypes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imports
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/ivoa/RegTAPDM/edit/master/docs/generated/RegTAP.vo-dml.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="regtap">RegTAP</h1>
+<p>version 1.0 <em>2025-06-10</em></p>
+<h2 id="introduction">Introduction</h2>
+<p>the RegTAP model</p>
+<h3 id="authors">Authors</h3>
+<p>Paul Harrison</p>
+<h3 id="overview-diagram">Overview diagram</h3>
+<p>The whole model is represented in a model diagram below</p>
+<div xmlns:bnd="http://www.ivoa.net/xml/vodml-binding/v0.9.1" xmlns:vf="http://www.ivoa.net/xml/VODML/functions" xmlns:vo-dml="http://www.ivoa.net/xml/VODML/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2810pt" height="450pt" viewBox="0.00 0.00 2810.00 450.00" preserveAspectRatio="xMidYMid meet" zoomAndPan="magnify" version="1.1" contentScriptType="text/ecmascript" contentStyleType="text/css"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 446)"><title>GVmap</title><polygon fill="white" stroke="transparent" points="-4,4 -4,-446 2806,-446 2806,4 -4,4"/><text text-anchor="middle" x="1401" y="-7.8" font-family="Times,serif" font-size="14.00">RegTAP data model</text><g id="node1" class="node"><title>RegTAP:Resource</title><g id="a_node1"><a xlink:href="../RegTAP/Resource" xlink:title="{Resource|+ivoid : ivoa:string\l+res_type : ivoa:string\l+created : ivoa:datetime\l+short_name : ivoa:string\l+res_title : ivoa:string\l+updated : ivoa:datetime\l+content_level : ivoa:string\l+res_description : ivoa:string\l+reference_url : ivoa:string\l+creator_seq : ivoa:string\l+content_type : ivoa:string\l+source_format : ivoa:string\l+source_value : ivoa:string\l+res_version : ivoa:string\l+region_of_regard : ivoa:real\l+waveband : ivoa:string\l+rights : ivoa:string\l+rights_uri : ivoa:string\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="1435.5,-254.5 1435.5,-441.5 1568.5,-441.5 1568.5,-254.5 1435.5,-254.5"/>
+<text text-anchor="middle" x="1502" y="-431.1" font-family="Times,serif" font-size="8.00">Resource</text>
+<polyline fill="none" stroke="black" points="1435.5,-424.5 1568.5,-424.5 "/>
+<text text-anchor="start" x="1443.5" y="-414.1" font-family="Times,serif" font-size="8.00">+ivoid : ivoa:string</text>
+<text text-anchor="start" x="1443.5" y="-405.1" font-family="Times,serif" font-size="8.00">+res_type : ivoa:string</text>
+<text text-anchor="start" x="1443.5" y="-396.1" font-family="Times,serif" font-size="8.00">+created : ivoa:datetime</text>
+<text text-anchor="start" x="1443.5" y="-387.1" font-family="Times,serif" font-size="8.00">+short_name : ivoa:string</text>
+<text text-anchor="start" x="1443.5" y="-378.1" font-family="Times,serif" font-size="8.00">+res_title : ivoa:string</text>
+<text text-anchor="start" x="1443.5" y="-369.1" font-family="Times,serif" font-size="8.00">+updated : ivoa:datetime</text>
+<text text-anchor="start" x="1443.5" y="-360.1" font-family="Times,serif" font-size="8.00">+content_level : ivoa:string</text>
+<text text-anchor="start" x="1443.5" y="-351.1" font-family="Times,serif" font-size="8.00">+res_description : ivoa:string</text>
+<text text-anchor="start" x="1443.5" y="-342.1" font-family="Times,serif" font-size="8.00">+reference_url : ivoa:string</text>
+<text text-anchor="start" x="1443.5" y="-333.1" font-family="Times,serif" font-size="8.00">+creator_seq : ivoa:string</text>
+<text text-anchor="start" x="1443.5" y="-324.1" font-family="Times,serif" font-size="8.00">+content_type : ivoa:string</text>
+<text text-anchor="start" x="1443.5" y="-315.1" font-family="Times,serif" font-size="8.00">+source_format : ivoa:string</text>
+<text text-anchor="start" x="1443.5" y="-306.1" font-family="Times,serif" font-size="8.00">+source_value : ivoa:string</text>
+<text text-anchor="start" x="1443.5" y="-297.1" font-family="Times,serif" font-size="8.00">+res_version : ivoa:string</text>
+<text text-anchor="start" x="1443.5" y="-288.1" font-family="Times,serif" font-size="8.00">+region_of_regard : ivoa:real</text>
+<text text-anchor="start" x="1443.5" y="-279.1" font-family="Times,serif" font-size="8.00">+waveband : ivoa:string</text>
+<text text-anchor="start" x="1443.5" y="-270.1" font-family="Times,serif" font-size="8.00">+rights : ivoa:string</text>
+<text text-anchor="start" x="1443.5" y="-261.1" font-family="Times,serif" font-size="8.00">+rights_uri : ivoa:string</text>
+</a></g></g><g id="node2" class="node"><title>RegTAP:Role</title><g id="a_node2"><a xlink:href="../RegTAP/Role" xlink:title="{Role|+role_name : ivoa:string\l+role_ivoid : ivoa:string\l+street_address : ivoa:string\l+email : ivoa:string\l+telephone : ivoa:string\l+logo : ivoa:string\l+base_role : ivoa:string\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="0,-87 0,-175 130,-175 130,-87 0,-87"/>
+<text text-anchor="middle" x="65" y="-164.6" font-family="Times,serif" font-size="8.00">Role</text>
+<polyline fill="none" stroke="black" points="0,-158 130,-158 "/>
+<text text-anchor="start" x="8" y="-147.6" font-family="Times,serif" font-size="8.00">+role_name : ivoa:string</text>
+<text text-anchor="start" x="8" y="-138.6" font-family="Times,serif" font-size="8.00">+role_ivoid : ivoa:string</text>
+<text text-anchor="start" x="8" y="-129.6" font-family="Times,serif" font-size="8.00">+street_address : ivoa:string</text>
+<text text-anchor="start" x="8" y="-120.6" font-family="Times,serif" font-size="8.00">+email : ivoa:string</text>
+<text text-anchor="start" x="8" y="-111.6" font-family="Times,serif" font-size="8.00">+telephone : ivoa:string</text>
+<text text-anchor="start" x="8" y="-102.6" font-family="Times,serif" font-size="8.00">+logo : ivoa:string</text>
+<text text-anchor="start" x="8" y="-93.6" font-family="Times,serif" font-size="8.00">+base_role : ivoa:string</text>
+</a></g></g><g id="edge3" class="edge"><title>RegTAP:Resource-&gt;RegTAP:Role</title><path fill="none" stroke="blue" d="M1423.25,-342.36C1230.02,-330.41 717.32,-295.3 293,-236 224.02,-226.36 200.48,-239.72 139,-207 127.16,-200.7 116.04,-191.86 106.18,-182.44"/><polygon fill="blue" stroke="blue" points="1423.26,-342.36 1429.49,-338.73 1435.23,-343.1 1429,-346.72 1423.26,-342.36"/><polygon fill="blue" stroke="blue" points="98.91,-175.17 109.16,-179.06 102.44,-178.7 105.98,-182.24 105.98,-182.24 105.98,-182.24 102.44,-178.7 102.8,-185.42 98.91,-175.17 98.91,-175.17"/><text text-anchor="middle" x="303" y="-228" font-family="Times,serif" font-size="10.00">role</text><text text-anchor="middle" x="89.91" y="-178.17" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node3" class="node"><title>RegTAP:Subject</title><g id="a_node3"><a xlink:href="../RegTAP/Subject" xlink:title="{Subject|+res_subject : ivoa:string\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="148.5,-113 148.5,-149 265.5,-149 265.5,-113 148.5,-113"/>
+<text text-anchor="middle" x="207" y="-138.1" font-family="Times,serif" font-size="8.00">Subject</text>
+<polyline fill="none" stroke="black" points="148.5,-131 265.5,-131 "/>
+<text text-anchor="start" x="156.5" y="-120.1" font-family="Times,serif" font-size="8.00">+res_subject : ivoa:string</text>
+</a></g></g><g id="edge4" class="edge"><title>RegTAP:Resource-&gt;RegTAP:Subject</title><path fill="none" stroke="blue" d="M1423.42,-339.53C1251.08,-322.93 827.03,-280.88 473,-236 384.33,-224.76 352.73,-249.32 274,-207 252.65,-195.53 234.76,-174.45 222.85,-157.55"/><polygon fill="blue" stroke="blue" points="1423.44,-339.53 1429.8,-336.13 1435.39,-340.68 1429.03,-344.09 1423.44,-339.53"/><polygon fill="blue" stroke="blue" points="217.18,-149.17 226.51,-154.93 219.98,-153.31 222.78,-157.45 222.78,-157.45 222.78,-157.45 219.98,-153.31 219.05,-159.97 217.18,-149.17 217.18,-149.17"/><text text-anchor="middle" x="491.5" y="-228" font-family="Times,serif" font-size="10.00">subject</text><text text-anchor="middle" x="208.18" y="-152.17" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node4" class="node"><title>RegTAP:Capability</title><g id="a_node4"><a xlink:href="../RegTAP/Capability" xlink:title="{Capability|+cap_index : ivoa:nonnegativeInteger\l+cap_type : ivoa:string\l+cap_description : ivoa:string\l+standard_id : ivoa:string\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="283.5,-100.5 283.5,-161.5 450.5,-161.5 450.5,-100.5 283.5,-100.5"/>
+<text text-anchor="middle" x="367" y="-151.1" font-family="Times,serif" font-size="8.00">Capability</text>
+<polyline fill="none" stroke="black" points="283.5,-144.5 450.5,-144.5 "/>
+<text text-anchor="start" x="291.5" y="-134.1" font-family="Times,serif" font-size="8.00">+cap_index : ivoa:nonnegativeInteger</text>
+<text text-anchor="start" x="291.5" y="-125.1" font-family="Times,serif" font-size="8.00">+cap_type : ivoa:string</text>
+<text text-anchor="start" x="291.5" y="-116.1" font-family="Times,serif" font-size="8.00">+cap_description : ivoa:string</text>
+<text text-anchor="start" x="291.5" y="-107.1" font-family="Times,serif" font-size="8.00">+standard_id : ivoa:string</text>
+</a></g></g><g id="edge10" class="edge"><title>RegTAP:Resource-&gt;RegTAP:Capability</title><path fill="none" stroke="blue" d="M1423.47,-336.59C1276,-317.04 947.56,-273.39 671,-236 576.76,-223.26 546.22,-244.9 459,-207 438.21,-197.97 418.3,-182.85 402.35,-168.54"/><polygon fill="blue" stroke="blue" points="1423.58,-336.61 1430.05,-333.43 1435.48,-338.19 1429,-341.36 1423.58,-336.61"/><polygon fill="blue" stroke="blue" points="394.86,-161.62 405.25,-165.1 398.53,-165.01 402.2,-168.4 402.2,-168.4 402.2,-168.4 398.53,-165.01 399.15,-171.71 394.86,-161.62 394.86,-161.62"/><text text-anchor="middle" x="696" y="-228" font-family="Times,serif" font-size="10.00">capability</text><text text-anchor="middle" x="385.86" y="-164.62" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node5" class="node"><title>RegTAP:Schema</title><g id="a_node5"><a xlink:href="../RegTAP/Schema" xlink:title="{Schema|+schema_index : ivoa:nonnegativeInteger\l+schema_description : ivoa:string\l+schema_name : ivoa:string\l+schema_title : ivoa:string\l+schema_utype : ivoa:string\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="468.5,-96 468.5,-166 651.5,-166 651.5,-96 468.5,-96"/>
+<text text-anchor="middle" x="560" y="-155.6" font-family="Times,serif" font-size="8.00">Schema</text>
+<polyline fill="none" stroke="black" points="468.5,-149 651.5,-149 "/>
+<text text-anchor="start" x="476.5" y="-138.6" font-family="Times,serif" font-size="8.00">+schema_index : ivoa:nonnegativeInteger</text>
+<text text-anchor="start" x="476.5" y="-129.6" font-family="Times,serif" font-size="8.00">+schema_description : ivoa:string</text>
+<text text-anchor="start" x="476.5" y="-120.6" font-family="Times,serif" font-size="8.00">+schema_name : ivoa:string</text>
+<text text-anchor="start" x="476.5" y="-111.6" font-family="Times,serif" font-size="8.00">+schema_title : ivoa:string</text>
+<text text-anchor="start" x="476.5" y="-102.6" font-family="Times,serif" font-size="8.00">+schema_utype : ivoa:string</text>
+</a></g></g><g id="edge13" class="edge"><title>RegTAP:Resource-&gt;RegTAP:Schema</title><path fill="none" stroke="blue" d="M1423.4,-346.21C1270.26,-342.07 923.82,-319.83 660,-207 640.28,-198.57 620.88,-185.47 604.5,-172.56"/><polygon fill="blue" stroke="blue" points="1423.41,-346.21 1429.51,-342.36 1435.41,-346.51 1429.31,-350.36 1423.41,-346.21"/><polygon fill="blue" stroke="blue" points="596.71,-166.26 607.31,-169.05 600.6,-169.41 604.48,-172.55 604.48,-172.55 604.48,-172.55 600.6,-169.41 601.65,-176.05 596.71,-166.26 596.71,-166.26"/><text text-anchor="middle" x="745" y="-228" font-family="Times,serif" font-size="10.00">schema</text><text text-anchor="middle" x="587.71" y="-169.26" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node6" class="node"><title>RegTAP:Table</title><g id="a_node6"><a xlink:href="../RegTAP/Table" xlink:title="{Table|+schema_index : ivoa:nonnegativeInteger\l+table_description : ivoa:string\l+table_name : ivoa:string\l+table_index : ivoa:nonnegativeInteger\l+table_title : ivoa:string\l+table_type : ivoa:string\l+table_utype : ivoa:string\l+nrows : ivoa:nonnegativeInteger\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="669.5,-82.5 669.5,-179.5 852.5,-179.5 852.5,-82.5 669.5,-82.5"/>
+<text text-anchor="middle" x="761" y="-169.1" font-family="Times,serif" font-size="8.00">Table</text>
+<polyline fill="none" stroke="black" points="669.5,-162.5 852.5,-162.5 "/>
+<text text-anchor="start" x="677.5" y="-152.1" font-family="Times,serif" font-size="8.00">+schema_index : ivoa:nonnegativeInteger</text>
+<text text-anchor="start" x="677.5" y="-143.1" font-family="Times,serif" font-size="8.00">+table_description : ivoa:string</text>
+<text text-anchor="start" x="677.5" y="-134.1" font-family="Times,serif" font-size="8.00">+table_name : ivoa:string</text>
+<text text-anchor="start" x="677.5" y="-125.1" font-family="Times,serif" font-size="8.00">+table_index : ivoa:nonnegativeInteger</text>
+<text text-anchor="start" x="677.5" y="-116.1" font-family="Times,serif" font-size="8.00">+table_title : ivoa:string</text>
+<text text-anchor="start" x="677.5" y="-107.1" font-family="Times,serif" font-size="8.00">+table_type : ivoa:string</text>
+<text text-anchor="start" x="677.5" y="-98.1" font-family="Times,serif" font-size="8.00">+table_utype : ivoa:string</text>
+<text text-anchor="start" x="677.5" y="-89.1" font-family="Times,serif" font-size="8.00">+nrows : ivoa:nonnegativeInteger</text>
+</a></g></g><g id="edge14" class="edge"><title>RegTAP:Resource-&gt;RegTAP:Table</title><path fill="none" stroke="blue" d="M1423.38,-340.68C1299.01,-328.35 1051.45,-294.17 861,-207 848.38,-201.22 835.82,-193.65 824.08,-185.54"/><polygon fill="blue" stroke="blue" points="1423.45,-340.69 1429.8,-337.28 1435.39,-341.84 1429.03,-345.25 1423.45,-340.69"/><polygon fill="blue" stroke="blue" points="815.69,-179.55 826.44,-181.7 819.76,-182.46 823.83,-185.36 823.83,-185.36 823.83,-185.36 819.76,-182.46 821.22,-189.02 815.69,-179.55 815.69,-179.55"/><text text-anchor="middle" x="940" y="-228" font-family="Times,serif" font-size="10.00">table</text><text text-anchor="middle" x="806.69" y="-182.55" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node7" class="node"><title>RegTAP:Column</title><g id="a_node7"><a xlink:href="../RegTAP/Column" xlink:title="{Column|+table_index : ivoa:nonnegativeInteger\l+name : ivoa:string\l+ucd : ivoa:string\l+unit : ivoa:string\l+utype : ivoa:string\l+std : ivoa:integer\l+datatype : ivoa:string\l+extended_schema : ivoa:string\l+extended_type : ivoa:string\l+arraysize : ivoa:string\l+delim : ivoa:string\l+type_system : ivoa:string\l+flag : ivoa:string\l+column_description : ivoa:string\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="870.5,-55.5 870.5,-206.5 1043.5,-206.5 1043.5,-55.5 870.5,-55.5"/>
+<text text-anchor="middle" x="957" y="-196.1" font-family="Times,serif" font-size="8.00">Column</text>
+<polyline fill="none" stroke="black" points="870.5,-189.5 1043.5,-189.5 "/>
+<text text-anchor="start" x="878.5" y="-179.1" font-family="Times,serif" font-size="8.00">+table_index : ivoa:nonnegativeInteger</text>
+<text text-anchor="start" x="878.5" y="-170.1" font-family="Times,serif" font-size="8.00">+name : ivoa:string</text>
+<text text-anchor="start" x="878.5" y="-161.1" font-family="Times,serif" font-size="8.00">+ucd : ivoa:string</text>
+<text text-anchor="start" x="878.5" y="-152.1" font-family="Times,serif" font-size="8.00">+unit : ivoa:string</text>
+<text text-anchor="start" x="878.5" y="-143.1" font-family="Times,serif" font-size="8.00">+utype : ivoa:string</text>
+<text text-anchor="start" x="878.5" y="-134.1" font-family="Times,serif" font-size="8.00">+std : ivoa:integer</text>
+<text text-anchor="start" x="878.5" y="-125.1" font-family="Times,serif" font-size="8.00">+datatype : ivoa:string</text>
+<text text-anchor="start" x="878.5" y="-116.1" font-family="Times,serif" font-size="8.00">+extended_schema : ivoa:string</text>
+<text text-anchor="start" x="878.5" y="-107.1" font-family="Times,serif" font-size="8.00">+extended_type : ivoa:string</text>
+<text text-anchor="start" x="878.5" y="-98.1" font-family="Times,serif" font-size="8.00">+arraysize : ivoa:string</text>
+<text text-anchor="start" x="878.5" y="-89.1" font-family="Times,serif" font-size="8.00">+delim : ivoa:string</text>
+<text text-anchor="start" x="878.5" y="-80.1" font-family="Times,serif" font-size="8.00">+type_system : ivoa:string</text>
+<text text-anchor="start" x="878.5" y="-71.1" font-family="Times,serif" font-size="8.00">+flag : ivoa:string</text>
+<text text-anchor="start" x="878.5" y="-62.1" font-family="Times,serif" font-size="8.00">+column_description : ivoa:string</text>
+</a></g></g><g id="edge15" class="edge"><title>RegTAP:Resource-&gt;RegTAP:Column</title><path fill="none" stroke="blue" d="M1423.54,-331.76C1333.15,-312.22 1181.53,-273.28 1052.87,-207.16"/><polygon fill="blue" stroke="blue" points="1423.6,-331.77 1430.3,-329.11 1435.34,-334.28 1428.64,-336.94 1423.6,-331.77"/><polygon fill="blue" stroke="blue" points="1043.65,-202.35 1054.59,-202.98 1048.08,-204.66 1052.51,-206.97 1052.51,-206.97 1052.51,-206.97 1048.08,-204.66 1050.43,-210.96 1043.65,-202.35 1043.65,-202.35"/><text text-anchor="middle" x="1129" y="-228" font-family="Times,serif" font-size="10.00">column</text><text text-anchor="middle" x="1052.65" y="-205.35" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node8" class="node"><title>RegTAP:Interface</title><g id="a_node8"><a xlink:href="../RegTAP/Interface" xlink:title="{Interface|+cap_index : ivoa:nonnegativeInteger\l+intf_index : ivoa:nonnegativeInteger\l+intf_type : ivoa:string\l+intf_role : ivoa:string\l+std_version : ivoa:string\l+query_type : ivoa:string\l+result_type : ivoa:string\l+wsdl_url : ivoa:string\l+url_use : ivoa:string\l+access_url : ivoa:string\l+mirror_url : ivoa:string\l+authenticated_only : ivoa:integer\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="1061.5,-64.5 1061.5,-197.5 1228.5,-197.5 1228.5,-64.5 1061.5,-64.5"/>
+<text text-anchor="middle" x="1145" y="-187.1" font-family="Times,serif" font-size="8.00">Interface</text>
+<polyline fill="none" stroke="black" points="1061.5,-180.5 1228.5,-180.5 "/>
+<text text-anchor="start" x="1069.5" y="-170.1" font-family="Times,serif" font-size="8.00">+cap_index : ivoa:nonnegativeInteger</text>
+<text text-anchor="start" x="1069.5" y="-161.1" font-family="Times,serif" font-size="8.00">+intf_index : ivoa:nonnegativeInteger</text>
+<text text-anchor="start" x="1069.5" y="-152.1" font-family="Times,serif" font-size="8.00">+intf_type : ivoa:string</text>
+<text text-anchor="start" x="1069.5" y="-143.1" font-family="Times,serif" font-size="8.00">+intf_role : ivoa:string</text>
+<text text-anchor="start" x="1069.5" y="-134.1" font-family="Times,serif" font-size="8.00">+std_version : ivoa:string</text>
+<text text-anchor="start" x="1069.5" y="-125.1" font-family="Times,serif" font-size="8.00">+query_type : ivoa:string</text>
+<text text-anchor="start" x="1069.5" y="-116.1" font-family="Times,serif" font-size="8.00">+result_type : ivoa:string</text>
+<text text-anchor="start" x="1069.5" y="-107.1" font-family="Times,serif" font-size="8.00">+wsdl_url : ivoa:string</text>
+<text text-anchor="start" x="1069.5" y="-98.1" font-family="Times,serif" font-size="8.00">+url_use : ivoa:string</text>
+<text text-anchor="start" x="1069.5" y="-89.1" font-family="Times,serif" font-size="8.00">+access_url : ivoa:string</text>
+<text text-anchor="start" x="1069.5" y="-80.1" font-family="Times,serif" font-size="8.00">+mirror_url : ivoa:string</text>
+<text text-anchor="start" x="1069.5" y="-71.1" font-family="Times,serif" font-size="8.00">+authenticated_only : ivoa:integer</text>
+</a></g></g><g id="edge11" class="edge"><title>RegTAP:Resource-&gt;RegTAP:Interface</title><path fill="none" stroke="blue" d="M1424.51,-311.12C1370.41,-284.87 1297.37,-246.98 1237,-207 1235.32,-205.89 1233.64,-204.76 1231.96,-203.6"/><polygon fill="blue" stroke="blue" points="1424.61,-311.16 1431.75,-310.17 1435.41,-316.38 1428.27,-317.37 1424.61,-311.16"/><polygon fill="blue" stroke="blue" points="1223.53,-197.67 1234.3,-199.74 1227.62,-200.55 1231.71,-203.43 1231.71,-203.43 1231.71,-203.43 1227.62,-200.55 1229.12,-207.11 1223.53,-197.67 1223.53,-197.67"/><text text-anchor="middle" x="1302" y="-228" font-family="Times,serif" font-size="10.00">interface</text><text text-anchor="middle" x="1232.53" y="-200.67" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node9" class="node"><title>RegTAP:InterfaceParam</title><g id="a_node9"><a xlink:href="../RegTAP/InterfaceParam" xlink:title="{InterfaceParam|+intf_index : ivoa:nonnegativeInteger\l+name : ivoa:string\l+unit : ivoa:string\l+ucd : ivoa:string\l+utype : ivoa:string\l+std : ivoa:integer\l+datatype : ivoa:string\l+extended_schema : ivoa:string\l+extended_type : ivoa:string\l+arraysize : ivoa:string\l+delim : ivoa:string\l+param_use : ivoa:string\l+param_description : ivoa:string\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="1246.5,-60 1246.5,-202 1413.5,-202 1413.5,-60 1246.5,-60"/>
+<text text-anchor="middle" x="1330" y="-191.6" font-family="Times,serif" font-size="8.00">InterfaceParam</text>
+<polyline fill="none" stroke="black" points="1246.5,-185 1413.5,-185 "/>
+<text text-anchor="start" x="1254.5" y="-174.6" font-family="Times,serif" font-size="8.00">+intf_index : ivoa:nonnegativeInteger</text>
+<text text-anchor="start" x="1254.5" y="-165.6" font-family="Times,serif" font-size="8.00">+name : ivoa:string</text>
+<text text-anchor="start" x="1254.5" y="-156.6" font-family="Times,serif" font-size="8.00">+unit : ivoa:string</text>
+<text text-anchor="start" x="1254.5" y="-147.6" font-family="Times,serif" font-size="8.00">+ucd : ivoa:string</text>
+<text text-anchor="start" x="1254.5" y="-138.6" font-family="Times,serif" font-size="8.00">+utype : ivoa:string</text>
+<text text-anchor="start" x="1254.5" y="-129.6" font-family="Times,serif" font-size="8.00">+std : ivoa:integer</text>
+<text text-anchor="start" x="1254.5" y="-120.6" font-family="Times,serif" font-size="8.00">+datatype : ivoa:string</text>
+<text text-anchor="start" x="1254.5" y="-111.6" font-family="Times,serif" font-size="8.00">+extended_schema : ivoa:string</text>
+<text text-anchor="start" x="1254.5" y="-102.6" font-family="Times,serif" font-size="8.00">+extended_type : ivoa:string</text>
+<text text-anchor="start" x="1254.5" y="-93.6" font-family="Times,serif" font-size="8.00">+arraysize : ivoa:string</text>
+<text text-anchor="start" x="1254.5" y="-84.6" font-family="Times,serif" font-size="8.00">+delim : ivoa:string</text>
+<text text-anchor="start" x="1254.5" y="-75.6" font-family="Times,serif" font-size="8.00">+param_use : ivoa:string</text>
+<text text-anchor="start" x="1254.5" y="-66.6" font-family="Times,serif" font-size="8.00">+param_description : ivoa:string</text>
+</a></g></g><g id="edge12" class="edge"><title>RegTAP:Resource-&gt;RegTAP:InterfaceParam</title><path fill="none" stroke="blue" d="M1427.58,-253.97C1415.84,-239.31 1403.82,-224.27 1392.39,-209.99"/><polygon fill="blue" stroke="blue" points="1427.76,-254.2 1434.63,-256.38 1435.25,-263.57 1428.38,-261.38 1427.76,-254.2"/><polygon fill="blue" stroke="blue" points="1386.11,-202.14 1395.87,-207.14 1389.24,-206.05 1392.36,-209.95 1392.36,-209.95 1392.36,-209.95 1389.24,-206.05 1388.85,-212.76 1386.11,-202.14 1386.11,-202.14"/><text text-anchor="middle" x="1428" y="-228" font-family="Times,serif" font-size="10.00">param</text><text text-anchor="middle" x="1377.11" y="-205.14" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node10" class="node"><title>RegTAP:Relationship</title><g id="a_node10"><a xlink:href="../RegTAP/Relationship" xlink:title="{Relationship|+relationship_type : ivoa:string\l+related_id : ivoa:string\l+related_name : ivoa:string\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="1432,-105 1432,-157 1572,-157 1572,-105 1432,-105"/>
+<text text-anchor="middle" x="1502" y="-146.6" font-family="Times,serif" font-size="8.00">Relationship</text>
+<polyline fill="none" stroke="black" points="1432,-140 1572,-140 "/>
+<text text-anchor="start" x="1440" y="-129.6" font-family="Times,serif" font-size="8.00">+relationship_type : ivoa:string</text>
+<text text-anchor="start" x="1440" y="-120.6" font-family="Times,serif" font-size="8.00">+related_id : ivoa:string</text>
+<text text-anchor="start" x="1440" y="-111.6" font-family="Times,serif" font-size="8.00">+related_name : ivoa:string</text>
+</a></g></g><g id="edge6" class="edge"><title>RegTAP:Resource-&gt;RegTAP:Relationship</title><path fill="none" stroke="blue" d="M1502,-242.15C1502,-215.15 1502,-187.94 1502,-167.31"/><polygon fill="blue" stroke="blue" points="1502,-242.26 1506,-248.26 1502,-254.26 1498,-248.26 1502,-242.26"/><polygon fill="blue" stroke="blue" points="1502,-157.16 1506.5,-167.16 1502,-162.16 1502,-167.16 1502,-167.16 1502,-167.16 1502,-162.16 1497.5,-167.16 1502,-157.16 1502,-157.16"/><text text-anchor="middle" x="1532.5" y="-228" font-family="Times,serif" font-size="10.00">relationship</text><text text-anchor="middle" x="1493" y="-160.16" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node11" class="node"><title>RegTAP:Validation</title><g id="a_node11"><a xlink:href="../RegTAP/Validation" xlink:title="{Validation|+validated_by : ivoa:string\l+val_level : ivoa:integer\l+cap_index : ivoa:nonnegativeInteger\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="1590.5,-105 1590.5,-157 1757.5,-157 1757.5,-105 1590.5,-105"/>
+<text text-anchor="middle" x="1674" y="-146.6" font-family="Times,serif" font-size="8.00">Validation</text>
+<polyline fill="none" stroke="black" points="1590.5,-140 1757.5,-140 "/>
+<text text-anchor="start" x="1598.5" y="-129.6" font-family="Times,serif" font-size="8.00">+validated_by : ivoa:string</text>
+<text text-anchor="start" x="1598.5" y="-120.6" font-family="Times,serif" font-size="8.00">+val_level : ivoa:integer</text>
+<text text-anchor="start" x="1598.5" y="-111.6" font-family="Times,serif" font-size="8.00">+cap_index : ivoa:nonnegativeInteger</text>
+</a></g></g><g id="edge1" class="edge"><title>RegTAP:Resource-&gt;RegTAP:Validation</title><path fill="none" stroke="blue" d="M1576.29,-254.14C1601.62,-222.47 1628.34,-189.08 1647.42,-165.23"/><polygon fill="blue" stroke="blue" points="1576.24,-254.2 1575.62,-261.38 1568.75,-263.57 1569.37,-256.38 1576.24,-254.2"/><polygon fill="blue" stroke="blue" points="1653.84,-157.21 1651.1,-167.83 1650.71,-161.11 1647.59,-165.01 1647.59,-165.01 1647.59,-165.01 1650.71,-161.11 1644.07,-162.2 1653.84,-157.21 1653.84,-157.21"/><text text-anchor="middle" x="1624.5" y="-228" font-family="Times,serif" font-size="10.00">validation</text><text text-anchor="middle" x="1644.84" y="-160.21" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node12" class="node"><title>RegTAP:ResDate</title><g id="a_node12"><a xlink:href="../RegTAP/ResDate" xlink:title="{ResDate|+date_value : ivoa:datetime\l+value_role : ivoa:string\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="1776,-109.5 1776,-152.5 1902,-152.5 1902,-109.5 1776,-109.5"/>
+<text text-anchor="middle" x="1839" y="-142.1" font-family="Times,serif" font-size="8.00">ResDate</text>
+<polyline fill="none" stroke="black" points="1776,-135.5 1902,-135.5 "/>
+<text text-anchor="start" x="1784" y="-125.1" font-family="Times,serif" font-size="8.00">+date_value : ivoa:datetime</text>
+<text text-anchor="start" x="1784" y="-116.1" font-family="Times,serif" font-size="8.00">+value_role : ivoa:string</text>
+</a></g></g><g id="edge5" class="edge"><title>RegTAP:Resource-&gt;RegTAP:ResDate</title><path fill="none" stroke="blue" d="M1579.58,-313.7C1634.27,-288.4 1707.84,-250.59 1766,-207 1784.08,-193.45 1801.81,-175.37 1815.28,-160.36"/><polygon fill="blue" stroke="blue" points="1579.47,-313.75 1575.68,-319.89 1568.56,-318.75 1572.34,-312.62 1579.47,-313.75"/><polygon fill="blue" stroke="blue" points="1821.91,-152.83 1818.68,-163.31 1818.6,-156.58 1815.3,-160.33 1815.3,-160.33 1815.3,-160.33 1818.6,-156.58 1811.92,-157.36 1821.91,-152.83 1821.91,-152.83"/><text text-anchor="middle" x="1751.5" y="-228" font-family="Times,serif" font-size="10.00">date</text><text text-anchor="middle" x="1812.91" y="-155.83" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node13" class="node"><title>RegTAP:Detail</title><g id="a_node13"><a xlink:href="../RegTAP/Detail" xlink:title="{Detail|+cap_index : ivoa:nonnegativeInteger\l+detail_xpath : ivoa:string\l+detail_value : ivoa:string\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="1920.5,-105 1920.5,-157 2087.5,-157 2087.5,-105 1920.5,-105"/>
+<text text-anchor="middle" x="2004" y="-146.6" font-family="Times,serif" font-size="8.00">Detail</text>
+<polyline fill="none" stroke="black" points="1920.5,-140 2087.5,-140 "/>
+<text text-anchor="start" x="1928.5" y="-129.6" font-family="Times,serif" font-size="8.00">+cap_index : ivoa:nonnegativeInteger</text>
+<text text-anchor="start" x="1928.5" y="-120.6" font-family="Times,serif" font-size="8.00">+detail_xpath : ivoa:string</text>
+<text text-anchor="start" x="1928.5" y="-111.6" font-family="Times,serif" font-size="8.00">+detail_value : ivoa:string</text>
+</a></g></g><g id="edge17" class="edge"><title>RegTAP:Resource-&gt;RegTAP:Detail</title><path fill="none" stroke="blue" d="M1580.58,-328.83C1665.51,-307.25 1803.16,-266.5 1911,-207 1932.23,-195.29 1953.45,-178.64 1970.26,-164"/><polygon fill="blue" stroke="blue" points="1580.34,-328.9 1575.49,-334.24 1568.7,-331.82 1573.55,-326.48 1580.34,-328.9"/><polygon fill="blue" stroke="blue" points="1978.13,-157.01 1973.65,-167.01 1974.4,-160.33 1970.66,-163.65 1970.66,-163.65 1970.66,-163.65 1974.4,-160.33 1967.67,-160.28 1978.13,-157.01 1978.13,-157.01"/><text text-anchor="middle" x="1884.5" y="-228" font-family="Times,serif" font-size="10.00">detail</text><text text-anchor="middle" x="1969.13" y="-160.01" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node14" class="node"><title>RegTAP:AltIdentifier</title><g id="a_node14"><a xlink:href="../RegTAP/AltIdentifier" xlink:title="{AltIdentifier|+alt_identifier : ivoa:string\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="2106,-113 2106,-149 2228,-149 2228,-113 2106,-113"/>
+<text text-anchor="middle" x="2167" y="-138.1" font-family="Times,serif" font-size="8.00">AltIdentifier</text>
+<polyline fill="none" stroke="black" points="2106,-131 2228,-131 "/>
+<text text-anchor="start" x="2114" y="-120.1" font-family="Times,serif" font-size="8.00">+alt_identifier : ivoa:string</text>
+</a></g></g><g id="edge2" class="edge"><title>RegTAP:Resource-&gt;RegTAP:AltIdentifier</title><path fill="none" stroke="blue" d="M1581.14,-342.71C1700.22,-333.22 1929.25,-302.94 2096,-207 2117.44,-194.66 2136.39,-173.84 2149.31,-157.27"/><polygon fill="blue" stroke="blue" points="1580.89,-342.73 1575.21,-347.17 1568.92,-343.64 1574.6,-339.2 1580.89,-342.73"/><polygon fill="blue" stroke="blue" points="2155.5,-149.05 2153.07,-159.75 2152.49,-153.04 2149.48,-157.04 2149.48,-157.04 2149.48,-157.04 2152.49,-153.04 2145.88,-154.33 2155.5,-149.05 2155.5,-149.05"/><text text-anchor="middle" x="2065" y="-228" font-family="Times,serif" font-size="10.00">altId</text><text text-anchor="middle" x="2146.5" y="-152.05" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node15" class="node"><title>RegTAP:STCSpatial</title><g id="a_node15"><a xlink:href="../RegTAP/STCSpatial" xlink:title="{STCSpatial|+coverage : ivoa:string\l+ref_system_name : ivoa:string\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="2246,-109.5 2246,-152.5 2386,-152.5 2386,-109.5 2246,-109.5"/>
+<text text-anchor="middle" x="2316" y="-142.1" font-family="Times,serif" font-size="8.00">STCSpatial</text>
+<polyline fill="none" stroke="black" points="2246,-135.5 2386,-135.5 "/>
+<text text-anchor="start" x="2254" y="-125.1" font-family="Times,serif" font-size="8.00">+coverage : ivoa:string</text>
+<text text-anchor="start" x="2254" y="-116.1" font-family="Times,serif" font-size="8.00">+ref_system_name : ivoa:string</text>
+</a></g></g><g id="edge7" class="edge"><title>RegTAP:Resource-&gt;RegTAP:STCSpatial</title><path fill="none" stroke="blue" d="M1580.88,-346.3C1720.75,-342.04 2018.07,-319.27 2237,-207 2258.98,-195.73 2279.1,-176.43 2293.53,-160.24"/><polygon fill="blue" stroke="blue" points="1580.65,-346.3 1574.77,-350.47 1568.66,-346.63 1574.54,-342.47 1580.65,-346.3"/><polygon fill="blue" stroke="blue" points="2300.14,-152.58 2297.01,-163.09 2296.87,-156.37 2293.61,-160.15 2293.61,-160.15 2293.61,-160.15 2296.87,-156.37 2290.2,-157.21 2300.14,-152.58 2300.14,-152.58"/><text text-anchor="middle" x="2224.5" y="-228" font-family="Times,serif" font-size="10.00">spatialCoverage</text><text text-anchor="middle" x="2291.14" y="-155.58" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node16" class="node"><title>RegTAP:STCTemporal</title><g id="a_node16"><a xlink:href="../RegTAP/STCTemporal" xlink:title="{STCTemporal|+time_start : ivoa:real\l+time_end : ivoa:real\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="2404,-109.5 2404,-152.5 2508,-152.5 2508,-109.5 2404,-109.5"/>
+<text text-anchor="middle" x="2456" y="-142.1" font-family="Times,serif" font-size="8.00">STCTemporal</text>
+<polyline fill="none" stroke="black" points="2404,-135.5 2508,-135.5 "/>
+<text text-anchor="start" x="2412" y="-125.1" font-family="Times,serif" font-size="8.00">+time_start : ivoa:real</text>
+<text text-anchor="start" x="2412" y="-116.1" font-family="Times,serif" font-size="8.00">+time_end : ivoa:real</text>
+</a></g></g><g id="edge8" class="edge"><title>RegTAP:Resource-&gt;RegTAP:STCTemporal</title><path fill="none" stroke="blue" d="M1580.76,-337.85C1720.27,-321.13 2019.7,-283.04 2270,-236 2326.05,-225.47 2346.62,-237.2 2395,-207 2413.14,-195.68 2428.33,-177.05 2439.02,-161.19"/><polygon fill="blue" stroke="blue" points="1580.49,-337.88 1575,-342.56 1568.57,-339.3 1574.06,-334.62 1580.49,-337.88"/><polygon fill="blue" stroke="blue" points="2444.48,-152.73 2442.84,-163.57 2441.77,-156.93 2439.06,-161.13 2439.06,-161.13 2439.06,-161.13 2441.77,-156.93 2435.28,-158.69 2444.48,-152.73 2444.48,-152.73"/><text text-anchor="middle" x="2403.5" y="-228" font-family="Times,serif" font-size="10.00">temporalCoverage</text><text text-anchor="middle" x="2435.48" y="-155.73" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node17" class="node"><title>RegTAP:STCSpectral</title><g id="a_node17"><a xlink:href="../RegTAP/STCSpectral" xlink:title="{STCSpectral|+spectral_start : ivoa:real\l+spectral_end : ivoa:real\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="2526,-109.5 2526,-152.5 2644,-152.5 2644,-109.5 2526,-109.5"/>
+<text text-anchor="middle" x="2585" y="-142.1" font-family="Times,serif" font-size="8.00">STCSpectral</text>
+<polyline fill="none" stroke="black" points="2526,-135.5 2644,-135.5 "/>
+<text text-anchor="start" x="2534" y="-125.1" font-family="Times,serif" font-size="8.00">+spectral_start : ivoa:real</text>
+<text text-anchor="start" x="2534" y="-116.1" font-family="Times,serif" font-size="8.00">+spectral_end : ivoa:real</text>
+</a></g></g><g id="edge9" class="edge"><title>RegTAP:Resource-&gt;RegTAP:STCSpectral</title><path fill="none" stroke="blue" d="M1581.16,-346.3C1746.65,-342.99 2139.94,-325.48 2455,-236 2484.26,-227.69 2492.53,-225.07 2517,-207 2534.66,-193.96 2551.27,-175.8 2563.65,-160.61"/><polygon fill="blue" stroke="blue" points="1580.7,-346.31 1574.77,-350.42 1568.7,-346.53 1574.63,-342.42 1580.7,-346.31"/><polygon fill="blue" stroke="blue" points="2570.08,-152.53 2567.38,-163.16 2566.97,-156.45 2563.85,-160.36 2563.85,-160.36 2563.85,-160.36 2566.97,-156.45 2560.33,-157.56 2570.08,-152.53 2570.08,-152.53"/><text text-anchor="middle" x="2533" y="-228" font-family="Times,serif" font-size="10.00">spectralCoverage</text><text text-anchor="middle" x="2561.08" y="-155.53" font-family="Times,serif" font-size="10.00">0..*</text></g><g id="node18" class="node"><title>RegTAP:TAPTable</title><g id="a_node18"><a xlink:href="../RegTAP/TAPTable" xlink:title="{TAPTable|+svcid : ivoa:string\l+table_name : ivoa:string\l+table_title : ivoa:string\l+table_description : ivoa:string\l+table_utype : ivoa:string\l}" xlink:type="simple" xlink:show="replace" xlink:actuate="onRequest">
+<polygon fill="#8dd3c7" stroke="black" points="2662,-96 2662,-166 2802,-166 2802,-96 2662,-96"/>
+<text text-anchor="middle" x="2732" y="-155.6" font-family="Times,serif" font-size="8.00">TAPTable</text>
+<polyline fill="none" stroke="black" points="2662,-149 2802,-149 "/>
+<text text-anchor="start" x="2670" y="-138.6" font-family="Times,serif" font-size="8.00">+svcid : ivoa:string</text>
+<text text-anchor="start" x="2670" y="-129.6" font-family="Times,serif" font-size="8.00">+table_name : ivoa:string</text>
+<text text-anchor="start" x="2670" y="-120.6" font-family="Times,serif" font-size="8.00">+table_title : ivoa:string</text>
+<text text-anchor="start" x="2670" y="-111.6" font-family="Times,serif" font-size="8.00">+table_description : ivoa:string</text>
+<text text-anchor="start" x="2670" y="-102.6" font-family="Times,serif" font-size="8.00">+table_utype : ivoa:string</text>
+</a></g></g><g id="edge16" class="edge"><title>RegTAP:Resource-&gt;RegTAP:TAPTable</title><path fill="none" stroke="blue" d="M1580.8,-346.54C1760.93,-343.84 2215.53,-327.66 2582,-236 2615.07,-227.73 2624.37,-225.5 2653,-207 2667.47,-197.65 2681.65,-185.46 2693.9,-173.63"/><polygon fill="blue" stroke="blue" points="1580.57,-346.54 1574.62,-350.62 1568.57,-346.71 1574.51,-342.62 1580.57,-346.54"/><polygon fill="blue" stroke="blue" points="2701.27,-166.34 2697.33,-176.57 2697.72,-169.86 2694.16,-173.37 2694.16,-173.37 2694.16,-173.37 2697.72,-169.86 2691,-170.18 2701.27,-166.34 2701.27,-166.34"/><text text-anchor="middle" x="2644" y="-228" font-family="Times,serif" font-size="10.00">tapTables</text><text text-anchor="middle" x="2692.27" y="-169.34" font-family="Times,serif" font-size="10.00">0..*</text></g></g></svg></div>
+
+<h2 id="objecttypes">ObjectTypes</h2>
+<ul>
+<li><a href="../RegTAP/AltIdentifier/">AltIdentifier</a></li>
+<li><a href="../RegTAP/Capability/">Capability</a></li>
+<li><a href="../RegTAP/Column/">Column</a></li>
+<li><a href="../RegTAP/Detail/">Detail</a></li>
+<li><a href="../RegTAP/Interface/">Interface</a></li>
+<li><a href="../RegTAP/InterfaceParam/">InterfaceParam</a></li>
+<li><a href="../RegTAP/Relationship/">Relationship</a></li>
+<li><a href="../RegTAP/ResDate/">ResDate</a></li>
+<li><a href="../RegTAP/Resource/">Resource</a></li>
+<li><a href="../RegTAP/Role/">Role</a></li>
+<li><a href="../RegTAP/STCSpatial/">STCSpatial</a></li>
+<li><a href="../RegTAP/STCSpectral/">STCSpectral</a></li>
+<li><a href="../RegTAP/STCTemporal/">STCTemporal</a></li>
+<li><a href="../RegTAP/Schema/">Schema</a></li>
+<li><a href="../RegTAP/Subject/">Subject</a></li>
+<li><a href="../RegTAP/TAPTable/">TAPTable</a></li>
+<li><a href="../RegTAP/Table/">Table</a></li>
+<li><a href="../RegTAP/Validation/">Validation</a></li>
+</ul>
+<h2 id="imports">Imports</h2>
+<ul>
+<li>ivoa</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "content.action.edit", "content.tooltips"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  </body>
+</html>

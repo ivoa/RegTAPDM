@@ -1,0 +1,823 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "$id" : "https://ivoa.net/dm/RegTAP.vo-dml.json",
+  "title" : "",
+  "description" : "",
+  "type" : "object",
+  "properties" : {
+    "RegTAPModel" : {
+      "type" : "object",
+      "properties" : {
+        "refs" : {
+          "type" : "object",
+          "properties" : {
+            "$comment" : "placeholder to make commas easier!"
+          },
+          "additionalProperties" : false
+        },
+        "content" : {
+          "type" : "array",
+          "items" : {
+            "anyOf" : [ {
+              "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/Resource"
+            } ]
+          },
+          "additionalProperties" : false
+        }
+      },
+      "additionalProperties" : false
+    }
+  },
+  "$defs" : {
+    "$comment" : "placeholder to make commas easier!",
+    "Resource" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "ivoid" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "res_type" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "created" : {
+          "format" : "date-time",
+          "description" : ""
+        },
+        "short_name" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "res_title" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "updated" : {
+          "format" : "date-time",
+          "description" : ""
+        },
+        "content_level" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "res_description" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "reference_url" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "creator_seq" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "content_type" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "source_format" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "source_value" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "res_version" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "region_of_regard" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "waveband" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "rights" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "rights_uri" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "validation" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/Validation"
+          }
+        },
+        "altId" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/AltIdentifier"
+          }
+        },
+        "role" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/Role"
+          }
+        },
+        "subject" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/Subject"
+          }
+        },
+        "date" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/ResDate"
+          }
+        },
+        "relationship" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/Relationship"
+          }
+        },
+        "spatialCoverage" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/STCSpatial"
+          }
+        },
+        "temporalCoverage" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/STCTemporal"
+          }
+        },
+        "spectralCoverage" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/STCSpectral"
+          }
+        },
+        "capability" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/Capability"
+          }
+        },
+        "interface" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/Interface"
+          }
+        },
+        "param" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/InterfaceParam"
+          }
+        },
+        "schema" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/Schema"
+          }
+        },
+        "table" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/Table"
+          }
+        },
+        "column" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/Column"
+          }
+        },
+        "tapTables" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/TAPTable"
+          }
+        },
+        "detail" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "https://ivoa.net/dm/RegTAP.vo-dml.json#/$defs/Detail"
+          }
+        }
+      },
+      "required" : [ "ivoid", "res_type", "created", "res_title", "updated", "content_level", "res_description", "reference_url" ],
+      "additionalProperties" : false
+    },
+    "Role" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "role_name" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "role_ivoid" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "street_address" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "email" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "telephone" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "logo" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "base_role" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "role_name", "role_ivoid", "base_role" ],
+      "additionalProperties" : false
+    },
+    "Subject" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "res_subject" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "res_subject" ],
+      "additionalProperties" : false
+    },
+    "Capability" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "cap_index" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "cap_type" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "cap_description" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "standard_id" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "cap_index", "cap_type", "cap_description", "standard_id" ],
+      "additionalProperties" : false
+    },
+    "Schema" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "schema_index" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "schema_description" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "schema_name" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "schema_title" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "schema_utype" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "schema_index", "schema_name" ],
+      "additionalProperties" : false
+    },
+    "Table" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "schema_index" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "table_description" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "table_name" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "table_index" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "table_title" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "table_type" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "table_utype" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "nrows" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "table_name", "table_index" ],
+      "additionalProperties" : false
+    },
+    "Column" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "table_index" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "name" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "ucd" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "unit" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "utype" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "std" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "datatype" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "extended_schema" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "extended_type" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "arraysize" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "delim" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "type_system" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "flag" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "column_description" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "table_index", "name", "std" ],
+      "additionalProperties" : false
+    },
+    "Interface" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "cap_index" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "intf_index" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "intf_type" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "intf_role" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "std_version" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "query_type" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "result_type" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "wsdl_url" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "url_use" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "access_url" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "mirror_url" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "authenticated_only" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "cap_index", "intf_index", "intf_type", "intf_role", "std_version", "query_type", "result_type", "url_use", "access_url", "mirror_url", "authenticated_only" ],
+      "additionalProperties" : false
+    },
+    "InterfaceParam" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "intf_index" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "name" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "unit" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "ucd" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "utype" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "std" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "datatype" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "extended_schema" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "extended_type" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "arraysize" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "delim" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "param_use" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "param_description" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "intf_index", "name", "std" ],
+      "additionalProperties" : false
+    },
+    "Relationship" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "relationship_type" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "related_id" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "related_name" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "relationship_type", "related_id", "related_name" ],
+      "additionalProperties" : false
+    },
+    "Validation" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "validated_by" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "val_level" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "cap_index" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "validated_by", "val_level" ],
+      "additionalProperties" : false
+    },
+    "ResDate" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "date_value" : {
+          "format" : "date-time",
+          "description" : ""
+        },
+        "value_role" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "date_value", "value_role" ],
+      "additionalProperties" : false
+    },
+    "Detail" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "cap_index" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "detail_xpath" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "detail_value" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "detail_xpath", "detail_value" ],
+      "additionalProperties" : false
+    },
+    "AltIdentifier" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "alt_identifier" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "alt_identifier" ],
+      "additionalProperties" : false
+    },
+    "STCSpatial" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "coverage" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "ref_system_name" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "coverage", "ref_system_name" ],
+      "additionalProperties" : false
+    },
+    "STCTemporal" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "time_start" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "time_end" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "time_start", "time_end" ],
+      "additionalProperties" : false
+    },
+    "STCSpectral" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "spectral_start" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "spectral_end" : {
+          "type" : "number",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "spectral_start", "spectral_end" ],
+      "additionalProperties" : false
+    },
+    "TAPTable" : {
+      "type" : "object",
+      "description" : "",
+      "properties" : {
+        "$comment" : "placeholder to make commas easier!",
+        "@type" : {
+          "type" : "string"
+        },
+        "svcid" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "table_name" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "table_title" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "table_description" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "table_utype" : {
+          "type" : "string",
+          "description" : ""
+        },
+        "_id" : {
+          "type" : "number"
+        }
+      },
+      "required" : [ "svcid", "table_name", "table_title", "table_description", "table_utype" ],
+      "additionalProperties" : false
+    }
+  }
+}

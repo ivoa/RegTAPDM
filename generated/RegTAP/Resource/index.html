@@ -1,0 +1,1771 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ResDate/">
+      
+      
+        <link rel="next" href="../Role/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>Resource - RegTAP Data Model</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#objecttype-resource" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="RegTAP Data Model" class="md-header__button md-logo" aria-label="RegTAP Data Model" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RegTAP Data Model
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Resource
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ivoa/RegTAPDM" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../schema/" class="md-tabs__link">
+        
+  
+    
+  
+  Schema
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../RegTAP.vo-dml/" class="md-tabs__link">
+          
+  
+  AutoGenerated Documentation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../javadoc" class="md-tabs__link">
+        
+  
+    
+  
+  JavaDoc
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="RegTAP Data Model" class="md-nav__button md-logo" aria-label="RegTAP Data Model" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RegTAP Data Model
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ivoa/RegTAPDM" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    AutoGenerated Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AutoGenerated Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RegTAP model
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            RegTAP model
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RegTAP.vo-dml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ObjectTypes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            ObjectTypes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AltIdentifier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AltIdentifier
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Capability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Capability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Column/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Column
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Detail/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Detail
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../InterfaceParam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InterfaceParam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Relationship/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Relationship
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ResDate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ResDate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Resource
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Resource
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#members" class="md-nav__link">
+    <span class="md-ellipsis">
+      Members
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Role/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Role
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STCSpatial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STCSpatial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STCSpectral/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STCSpectral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STCTemporal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    STCTemporal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Subject/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Subject
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TAPTable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TAPTable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Table
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Validation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Validation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Imported Models
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Imported Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ivoa model
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            ivoa model
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IVOA-v1.0.vo-dml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1_2" id="__nav_3_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DataTypes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            DataTypes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ivoa/IntegerQuantity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IntegerQuantity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ivoa/Quantity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quantity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ivoa/RealQuantity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RealQuantity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1_3" id="__nav_3_2_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PrimitiveTypes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            PrimitiveTypes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ivoa/Unit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ivoa/anyURI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    anyURI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ivoa/boolean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    boolean
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ivoa/complex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    complex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ivoa/datetime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    datetime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ivoa/integer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    integer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ivoa/nonnegativeInteger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    nonnegativeInteger
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ivoa/rational/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rational
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ivoa/real/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    real
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ivoa/string/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    string
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javadoc" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JavaDoc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#members" class="md-nav__link">
+    <span class="md-ellipsis">
+      Members
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/ivoa/RegTAPDM/edit/master/docs/generated/RegTAP/Resource.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="objecttype-resource">objectType Resource</h1>
+<p>The resources (like services, data collections, organizations) present in this registry.</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" preserveAspectRatio="xMaxYMax meet" style="width:2118px;height:398px" version="1.1" viewBox="0 0 2118 398" width="100%" zoomAndPan="magnify" class="uml" alt="uml diagram" title=""><defs><filter height="300%" id="f16xbazcmd60hf" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0" /><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" /><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" /><feBlend in="SourceGraphic" in2="blurOut3" mode="normal" /></filter></defs><g><rect fill="#D3D3D3" filter="url(#f16xbazcmd60hf)" height="270.4844" id="Resource" style="stroke: #800080; stroke-width: 2.0;" width="164" x="1003" y="8" /><rect fill="#D3D3D3" height="32" style="stroke: #800080; stroke-width: 2.0;" width="164" x="1003" y="8" /><ellipse cx="1051.25" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #800080; stroke-width: 1.0;" /><path d="M1054.2188,29.6406 Q1053.6406,29.9375 1053,30.0781 Q1052.3594,30.2344 1051.6563,30.2344 Q1049.1563,30.2344 1047.8281,28.5938 Q1046.5156,26.9375 1046.5156,23.8125 Q1046.5156,20.6875 1047.8281,19.0313 Q1049.1563,17.375 1051.6563,17.375 Q1052.3594,17.375 1053,17.5313 Q1053.6563,17.6875 1054.2188,17.9844 L1054.2188,20.7031 Q1053.5938,20.125 1053,19.8594 Q1052.4063,19.5781 1051.7813,19.5781 Q1050.4375,19.5781 1049.75,20.6563 Q1049.0625,21.7188 1049.0625,23.8125 Q1049.0625,25.9063 1049.75,26.9844 Q1050.4375,28.0469 1051.7813,28.0469 Q1052.4063,28.0469 1053,27.7813 Q1053.5938,27.5 1054.2188,26.9219 L1054.2188,29.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="59" x="1071.75" y="28.1543">Resource</text><line style="stroke: #800080; stroke-width: 2.0;" x1="1004" x2="1166" y1="40" y2="40" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="90" x="1009" y="54.2104">ivoa:string ivoid</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="113" x="1009" y="67.0151">ivoa:string res_type</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="124" x="1009" y="79.8198">ivoa:datetime created</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="132" x="1009" y="92.6245">ivoa:string short_name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="110" x="1009" y="105.4292">ivoa:string res_title</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="127" x="1009" y="118.2339">ivoa:datetime updated</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="138" x="1009" y="131.0386">ivoa:string content_level</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="152" x="1009" y="143.8433">ivoa:string res_description</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="140" x="1009" y="156.6479">ivoa:string reference_url</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="132" x="1009" y="169.4526">ivoa:string creator_seq</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="136" x="1009" y="182.2573">ivoa:string content_type</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="147" x="1009" y="195.062">ivoa:string source_format</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="139" x="1009" y="207.8667">ivoa:string source_value</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="131" x="1009" y="220.6714">ivoa:string res_version</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="150" x="1009" y="233.4761">ivoa:real region_of_regard</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="121" x="1009" y="246.2808">ivoa:string waveband</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="97" x="1009" y="259.0854">ivoa:string rights</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="118" x="1009" y="271.8901">ivoa:string rights_uri</text><a href="../Validation" target="_top" title="../Validation" xlink:actuate="onRequest" xlink:href="../Validation" xlink:show="new" xlink:title="../Validation" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="Validation" style="stroke: #A80036; stroke-width: 1.5;" width="94" x="6" y="355" /><ellipse cx="21" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M23.9688,376.6406 Q23.3906,376.9375 22.75,377.0781 Q22.1094,377.2344 21.4063,377.2344 Q18.9063,377.2344 17.5781,375.5938 Q16.2656,373.9375 16.2656,370.8125 Q16.2656,367.6875 17.5781,366.0313 Q18.9063,364.375 21.4063,364.375 Q22.1094,364.375 22.75,364.5313 Q23.4063,364.6875 23.9688,364.9844 L23.9688,367.7031 Q23.3438,367.125 22.75,366.8594 Q22.1563,366.5781 21.5313,366.5781 Q20.1875,366.5781 19.5,367.6563 Q18.8125,368.7188 18.8125,370.8125 Q18.8125,372.9063 19.5,373.9844 Q20.1875,375.0469 21.5313,375.0469 Q22.1563,375.0469 22.75,374.7813 Q23.3438,374.5 23.9688,373.9219 L23.9688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="62" x="35" y="375.1543">Validation</text></a><a href="../AltIdentifier" target="_top" title="../AltIdentifier" xlink:actuate="onRequest" xlink:href="../AltIdentifier" xlink:show="new" xlink:title="../AltIdentifier" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="AltIdentifier" style="stroke: #A80036; stroke-width: 1.5;" width="103" x="135.5" y="355" /><ellipse cx="150.5" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M153.4688,376.6406 Q152.8906,376.9375 152.25,377.0781 Q151.6094,377.2344 150.9063,377.2344 Q148.4063,377.2344 147.0781,375.5938 Q145.7656,373.9375 145.7656,370.8125 Q145.7656,367.6875 147.0781,366.0313 Q148.4063,364.375 150.9063,364.375 Q151.6094,364.375 152.25,364.5313 Q152.9063,364.6875 153.4688,364.9844 L153.4688,367.7031 Q152.8438,367.125 152.25,366.8594 Q151.6563,366.5781 151.0313,366.5781 Q149.6875,366.5781 149,367.6563 Q148.3125,368.7188 148.3125,370.8125 Q148.3125,372.9063 149,373.9844 Q149.6875,375.0469 151.0313,375.0469 Q151.6563,375.0469 152.25,374.7813 Q152.8438,374.5 153.4688,373.9219 L153.4688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="71" x="164.5" y="375.1543">AltIdentifier</text></a><a href="../Role" target="_top" title="../Role" xlink:actuate="onRequest" xlink:href="../Role" xlink:show="new" xlink:title="../Role" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="Role" style="stroke: #A80036; stroke-width: 1.5;" width="59" x="273.5" y="355" /><ellipse cx="288.5" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M291.4688,376.6406 Q290.8906,376.9375 290.25,377.0781 Q289.6094,377.2344 288.9063,377.2344 Q286.4063,377.2344 285.0781,375.5938 Q283.7656,373.9375 283.7656,370.8125 Q283.7656,367.6875 285.0781,366.0313 Q286.4063,364.375 288.9063,364.375 Q289.6094,364.375 290.25,364.5313 Q290.9063,364.6875 291.4688,364.9844 L291.4688,367.7031 Q290.8438,367.125 290.25,366.8594 Q289.6563,366.5781 289.0313,366.5781 Q287.6875,366.5781 287,367.6563 Q286.3125,368.7188 286.3125,370.8125 Q286.3125,372.9063 287,373.9844 Q287.6875,375.0469 289.0313,375.0469 Q289.6563,375.0469 290.25,374.7813 Q290.8438,374.5 291.4688,373.9219 L291.4688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="27" x="302.5" y="375.1543">Role</text></a><a href="../Subject" target="_top" title="../Subject" xlink:actuate="onRequest" xlink:href="../Subject" xlink:show="new" xlink:title="../Subject" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="Subject" style="stroke: #A80036; stroke-width: 1.5;" width="79" x="367.5" y="355" /><ellipse cx="382.5" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M385.4688,376.6406 Q384.8906,376.9375 384.25,377.0781 Q383.6094,377.2344 382.9063,377.2344 Q380.4063,377.2344 379.0781,375.5938 Q377.7656,373.9375 377.7656,370.8125 Q377.7656,367.6875 379.0781,366.0313 Q380.4063,364.375 382.9063,364.375 Q383.6094,364.375 384.25,364.5313 Q384.9063,364.6875 385.4688,364.9844 L385.4688,367.7031 Q384.8438,367.125 384.25,366.8594 Q383.6563,366.5781 383.0313,366.5781 Q381.6875,366.5781 381,367.6563 Q380.3125,368.7188 380.3125,370.8125 Q380.3125,372.9063 381,373.9844 Q381.6875,375.0469 383.0313,375.0469 Q383.6563,375.0469 384.25,374.7813 Q384.8438,374.5 385.4688,373.9219 L385.4688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="47" x="396.5" y="375.1543">Subject</text></a><a href="../ResDate" target="_top" title="../ResDate" xlink:actuate="onRequest" xlink:href="../ResDate" xlink:show="new" xlink:title="../ResDate" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="ResDate" style="stroke: #A80036; stroke-width: 1.5;" width="85" x="481.5" y="355" /><ellipse cx="496.5" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M499.4688,376.6406 Q498.8906,376.9375 498.25,377.0781 Q497.6094,377.2344 496.9063,377.2344 Q494.4063,377.2344 493.0781,375.5938 Q491.7656,373.9375 491.7656,370.8125 Q491.7656,367.6875 493.0781,366.0313 Q494.4063,364.375 496.9063,364.375 Q497.6094,364.375 498.25,364.5313 Q498.9063,364.6875 499.4688,364.9844 L499.4688,367.7031 Q498.8438,367.125 498.25,366.8594 Q497.6563,366.5781 497.0313,366.5781 Q495.6875,366.5781 495,367.6563 Q494.3125,368.7188 494.3125,370.8125 Q494.3125,372.9063 495,373.9844 Q495.6875,375.0469 497.0313,375.0469 Q497.6563,375.0469 498.25,374.7813 Q498.8438,374.5 499.4688,373.9219 L499.4688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="53" x="510.5" y="375.1543">ResDate</text></a><a href="../Relationship" target="_top" title="../Relationship" xlink:actuate="onRequest" xlink:href="../Relationship" xlink:show="new" xlink:title="../Relationship" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="Relationship" style="stroke: #A80036; stroke-width: 1.5;" width="109" x="601.5" y="355" /><ellipse cx="616.5" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M619.4688,376.6406 Q618.8906,376.9375 618.25,377.0781 Q617.6094,377.2344 616.9063,377.2344 Q614.4063,377.2344 613.0781,375.5938 Q611.7656,373.9375 611.7656,370.8125 Q611.7656,367.6875 613.0781,366.0313 Q614.4063,364.375 616.9063,364.375 Q617.6094,364.375 618.25,364.5313 Q618.9063,364.6875 619.4688,364.9844 L619.4688,367.7031 Q618.8438,367.125 618.25,366.8594 Q617.6563,366.5781 617.0313,366.5781 Q615.6875,366.5781 615,367.6563 Q614.3125,368.7188 614.3125,370.8125 Q614.3125,372.9063 615,373.9844 Q615.6875,375.0469 617.0313,375.0469 Q617.6563,375.0469 618.25,374.7813 Q618.8438,374.5 619.4688,373.9219 L619.4688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="77" x="630.5" y="375.1543">Relationship</text></a><a href="../STCSpatial" target="_top" title="../STCSpatial" xlink:actuate="onRequest" xlink:href="../STCSpatial" xlink:show="new" xlink:title="../STCSpatial" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="STCSpatial" style="stroke: #A80036; stroke-width: 1.5;" width="98" x="746" y="355" /><ellipse cx="761" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M763.9688,376.6406 Q763.3906,376.9375 762.75,377.0781 Q762.1094,377.2344 761.4063,377.2344 Q758.9063,377.2344 757.5781,375.5938 Q756.2656,373.9375 756.2656,370.8125 Q756.2656,367.6875 757.5781,366.0313 Q758.9063,364.375 761.4063,364.375 Q762.1094,364.375 762.75,364.5313 Q763.4063,364.6875 763.9688,364.9844 L763.9688,367.7031 Q763.3438,367.125 762.75,366.8594 Q762.1563,366.5781 761.5313,366.5781 Q760.1875,366.5781 759.5,367.6563 Q758.8125,368.7188 758.8125,370.8125 Q758.8125,372.9063 759.5,373.9844 Q760.1875,375.0469 761.5313,375.0469 Q762.1563,375.0469 762.75,374.7813 Q763.3438,374.5 763.9688,373.9219 L763.9688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="66" x="775" y="375.1543">STCSpatial</text></a><a href="../STCTemporal" target="_top" title="../STCTemporal" xlink:actuate="onRequest" xlink:href="../STCTemporal" xlink:show="new" xlink:title="../STCTemporal" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="STCTemporal" style="stroke: #A80036; stroke-width: 1.5;" width="113" x="879.5" y="355" /><ellipse cx="894.5" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M897.4688,376.6406 Q896.8906,376.9375 896.25,377.0781 Q895.6094,377.2344 894.9063,377.2344 Q892.4063,377.2344 891.0781,375.5938 Q889.7656,373.9375 889.7656,370.8125 Q889.7656,367.6875 891.0781,366.0313 Q892.4063,364.375 894.9063,364.375 Q895.6094,364.375 896.25,364.5313 Q896.9063,364.6875 897.4688,364.9844 L897.4688,367.7031 Q896.8438,367.125 896.25,366.8594 Q895.6563,366.5781 895.0313,366.5781 Q893.6875,366.5781 893,367.6563 Q892.3125,368.7188 892.3125,370.8125 Q892.3125,372.9063 893,373.9844 Q893.6875,375.0469 895.0313,375.0469 Q895.6563,375.0469 896.25,374.7813 Q896.8438,374.5 897.4688,373.9219 L897.4688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="81" x="908.5" y="375.1543">STCTemporal</text></a><a href="../STCSpectral" target="_top" title="../STCSpectral" xlink:actuate="onRequest" xlink:href="../STCSpectral" xlink:show="new" xlink:title="../STCSpectral" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="STCSpectral" style="stroke: #A80036; stroke-width: 1.5;" width="107" x="1027.5" y="355" /><ellipse cx="1042.5" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M1045.4688,376.6406 Q1044.8906,376.9375 1044.25,377.0781 Q1043.6094,377.2344 1042.9063,377.2344 Q1040.4063,377.2344 1039.0781,375.5938 Q1037.7656,373.9375 1037.7656,370.8125 Q1037.7656,367.6875 1039.0781,366.0313 Q1040.4063,364.375 1042.9063,364.375 Q1043.6094,364.375 1044.25,364.5313 Q1044.9063,364.6875 1045.4688,364.9844 L1045.4688,367.7031 Q1044.8438,367.125 1044.25,366.8594 Q1043.6563,366.5781 1043.0313,366.5781 Q1041.6875,366.5781 1041,367.6563 Q1040.3125,368.7188 1040.3125,370.8125 Q1040.3125,372.9063 1041,373.9844 Q1041.6875,375.0469 1043.0313,375.0469 Q1043.6563,375.0469 1044.25,374.7813 Q1044.8438,374.5 1045.4688,373.9219 L1045.4688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="75" x="1056.5" y="375.1543">STCSpectral</text></a><a href="../Capability" target="_top" title="../Capability" xlink:actuate="onRequest" xlink:href="../Capability" xlink:show="new" xlink:title="../Capability" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="Capability" style="stroke: #A80036; stroke-width: 1.5;" width="92" x="1170" y="355" /><ellipse cx="1185" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M1187.9688,376.6406 Q1187.3906,376.9375 1186.75,377.0781 Q1186.1094,377.2344 1185.4063,377.2344 Q1182.9063,377.2344 1181.5781,375.5938 Q1180.2656,373.9375 1180.2656,370.8125 Q1180.2656,367.6875 1181.5781,366.0313 Q1182.9063,364.375 1185.4063,364.375 Q1186.1094,364.375 1186.75,364.5313 Q1187.4063,364.6875 1187.9688,364.9844 L1187.9688,367.7031 Q1187.3438,367.125 1186.75,366.8594 Q1186.1563,366.5781 1185.5313,366.5781 Q1184.1875,366.5781 1183.5,367.6563 Q1182.8125,368.7188 1182.8125,370.8125 Q1182.8125,372.9063 1183.5,373.9844 Q1184.1875,375.0469 1185.5313,375.0469 Q1186.1563,375.0469 1186.75,374.7813 Q1187.3438,374.5 1187.9688,373.9219 L1187.9688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="60" x="1199" y="375.1543">Capability</text></a><a href="../Interface" target="_top" title="../Interface" xlink:actuate="onRequest" xlink:href="../Interface" xlink:show="new" xlink:title="../Interface" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="Interface" style="stroke: #A80036; stroke-width: 1.5;" width="88" x="1297" y="355" /><ellipse cx="1312" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M1314.9688,376.6406 Q1314.3906,376.9375 1313.75,377.0781 Q1313.1094,377.2344 1312.4063,377.2344 Q1309.9063,377.2344 1308.5781,375.5938 Q1307.2656,373.9375 1307.2656,370.8125 Q1307.2656,367.6875 1308.5781,366.0313 Q1309.9063,364.375 1312.4063,364.375 Q1313.1094,364.375 1313.75,364.5313 Q1314.4063,364.6875 1314.9688,364.9844 L1314.9688,367.7031 Q1314.3438,367.125 1313.75,366.8594 Q1313.1563,366.5781 1312.5313,366.5781 Q1311.1875,366.5781 1310.5,367.6563 Q1309.8125,368.7188 1309.8125,370.8125 Q1309.8125,372.9063 1310.5,373.9844 Q1311.1875,375.0469 1312.5313,375.0469 Q1313.1563,375.0469 1313.75,374.7813 Q1314.3438,374.5 1314.9688,373.9219 L1314.9688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="56" x="1326" y="375.1543">Interface</text></a><a href="../InterfaceParam" target="_top" title="../InterfaceParam" xlink:actuate="onRequest" xlink:href="../InterfaceParam" xlink:show="new" xlink:title="../InterfaceParam" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="InterfaceParam" style="stroke: #A80036; stroke-width: 1.5;" width="128" x="1420" y="355" /><ellipse cx="1435" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M1437.9688,376.6406 Q1437.3906,376.9375 1436.75,377.0781 Q1436.1094,377.2344 1435.4063,377.2344 Q1432.9063,377.2344 1431.5781,375.5938 Q1430.2656,373.9375 1430.2656,370.8125 Q1430.2656,367.6875 1431.5781,366.0313 Q1432.9063,364.375 1435.4063,364.375 Q1436.1094,364.375 1436.75,364.5313 Q1437.4063,364.6875 1437.9688,364.9844 L1437.9688,367.7031 Q1437.3438,367.125 1436.75,366.8594 Q1436.1563,366.5781 1435.5313,366.5781 Q1434.1875,366.5781 1433.5,367.6563 Q1432.8125,368.7188 1432.8125,370.8125 Q1432.8125,372.9063 1433.5,373.9844 Q1434.1875,375.0469 1435.5313,375.0469 Q1436.1563,375.0469 1436.75,374.7813 Q1437.3438,374.5 1437.9688,373.9219 L1437.9688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="96" x="1449" y="375.1543">InterfaceParam</text></a><a href="../Schema" target="_top" title="../Schema" xlink:actuate="onRequest" xlink:href="../Schema" xlink:show="new" xlink:title="../Schema" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="Schema" style="stroke: #A80036; stroke-width: 1.5;" width="82" x="1583" y="355" /><ellipse cx="1598" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M1600.9688,376.6406 Q1600.3906,376.9375 1599.75,377.0781 Q1599.1094,377.2344 1598.4063,377.2344 Q1595.9063,377.2344 1594.5781,375.5938 Q1593.2656,373.9375 1593.2656,370.8125 Q1593.2656,367.6875 1594.5781,366.0313 Q1595.9063,364.375 1598.4063,364.375 Q1599.1094,364.375 1599.75,364.5313 Q1600.4063,364.6875 1600.9688,364.9844 L1600.9688,367.7031 Q1600.3438,367.125 1599.75,366.8594 Q1599.1563,366.5781 1598.5313,366.5781 Q1597.1875,366.5781 1596.5,367.6563 Q1595.8125,368.7188 1595.8125,370.8125 Q1595.8125,372.9063 1596.5,373.9844 Q1597.1875,375.0469 1598.5313,375.0469 Q1599.1563,375.0469 1599.75,374.7813 Q1600.3438,374.5 1600.9688,373.9219 L1600.9688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="50" x="1612" y="375.1543">Schema</text></a><a href="../Table" target="_top" title="../Table" xlink:actuate="onRequest" xlink:href="../Table" xlink:show="new" xlink:title="../Table" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="Table" style="stroke: #A80036; stroke-width: 1.5;" width="66" x="1700" y="355" /><ellipse cx="1715" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M1717.9688,376.6406 Q1717.3906,376.9375 1716.75,377.0781 Q1716.1094,377.2344 1715.4063,377.2344 Q1712.9063,377.2344 1711.5781,375.5938 Q1710.2656,373.9375 1710.2656,370.8125 Q1710.2656,367.6875 1711.5781,366.0313 Q1712.9063,364.375 1715.4063,364.375 Q1716.1094,364.375 1716.75,364.5313 Q1717.4063,364.6875 1717.9688,364.9844 L1717.9688,367.7031 Q1717.3438,367.125 1716.75,366.8594 Q1716.1563,366.5781 1715.5313,366.5781 Q1714.1875,366.5781 1713.5,367.6563 Q1712.8125,368.7188 1712.8125,370.8125 Q1712.8125,372.9063 1713.5,373.9844 Q1714.1875,375.0469 1715.5313,375.0469 Q1716.1563,375.0469 1716.75,374.7813 Q1717.3438,374.5 1717.9688,373.9219 L1717.9688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="34" x="1729" y="375.1543">Table</text></a><a href="../Column" target="_top" title="../Column" xlink:actuate="onRequest" xlink:href="../Column" xlink:show="new" xlink:title="../Column" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="Column" style="stroke: #A80036; stroke-width: 1.5;" width="78" x="1801" y="355" /><ellipse cx="1816" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M1818.9688,376.6406 Q1818.3906,376.9375 1817.75,377.0781 Q1817.1094,377.2344 1816.4063,377.2344 Q1813.9063,377.2344 1812.5781,375.5938 Q1811.2656,373.9375 1811.2656,370.8125 Q1811.2656,367.6875 1812.5781,366.0313 Q1813.9063,364.375 1816.4063,364.375 Q1817.1094,364.375 1817.75,364.5313 Q1818.4063,364.6875 1818.9688,364.9844 L1818.9688,367.7031 Q1818.3438,367.125 1817.75,366.8594 Q1817.1563,366.5781 1816.5313,366.5781 Q1815.1875,366.5781 1814.5,367.6563 Q1813.8125,368.7188 1813.8125,370.8125 Q1813.8125,372.9063 1814.5,373.9844 Q1815.1875,375.0469 1816.5313,375.0469 Q1817.1563,375.0469 1817.75,374.7813 Q1818.3438,374.5 1818.9688,373.9219 L1818.9688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="46" x="1830" y="375.1543">Column</text></a><a href="../TAPTable" target="_top" title="../TAPTable" xlink:actuate="onRequest" xlink:href="../TAPTable" xlink:show="new" xlink:title="../TAPTable" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="TAPTable" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="1914.5" y="355" /><ellipse cx="1929.5" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M1932.4688,376.6406 Q1931.8906,376.9375 1931.25,377.0781 Q1930.6094,377.2344 1929.9063,377.2344 Q1927.4063,377.2344 1926.0781,375.5938 Q1924.7656,373.9375 1924.7656,370.8125 Q1924.7656,367.6875 1926.0781,366.0313 Q1927.4063,364.375 1929.9063,364.375 Q1930.6094,364.375 1931.25,364.5313 Q1931.9063,364.6875 1932.4688,364.9844 L1932.4688,367.7031 Q1931.8438,367.125 1931.25,366.8594 Q1930.6563,366.5781 1930.0313,366.5781 Q1928.6875,366.5781 1928,367.6563 Q1927.3125,368.7188 1927.3125,370.8125 Q1927.3125,372.9063 1928,373.9844 Q1928.6875,375.0469 1930.0313,375.0469 Q1930.6563,375.0469 1931.25,374.7813 Q1931.8438,374.5 1932.4688,373.9219 L1932.4688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="57" x="1943.5" y="375.1543">TAPTable</text></a><a href="../Detail" target="_top" title="../Detail" xlink:actuate="onRequest" xlink:href="../Detail" xlink:show="new" xlink:title="../Detail" xlink:type="simple"><rect fill="#FEFECE" filter="url(#f16xbazcmd60hf)" height="32" id="Detail" style="stroke: #A80036; stroke-width: 1.5;" width="68" x="2039" y="355" /><ellipse cx="2054" cy="371" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;" /><path d="M2056.9688,376.6406 Q2056.3906,376.9375 2055.75,377.0781 Q2055.1094,377.2344 2054.4063,377.2344 Q2051.9063,377.2344 2050.5781,375.5938 Q2049.2656,373.9375 2049.2656,370.8125 Q2049.2656,367.6875 2050.5781,366.0313 Q2051.9063,364.375 2054.4063,364.375 Q2055.1094,364.375 2055.75,364.5313 Q2056.4063,364.6875 2056.9688,364.9844 L2056.9688,367.7031 Q2056.3438,367.125 2055.75,366.8594 Q2055.1563,366.5781 2054.5313,366.5781 Q2053.1875,366.5781 2052.5,367.6563 Q2051.8125,368.7188 2051.8125,370.8125 Q2051.8125,372.9063 2052.5,373.9844 Q2053.1875,375.0469 2054.5313,375.0469 Q2055.1563,375.0469 2055.75,374.7813 Q2056.3438,374.5 2056.9688,373.9219 L2056.9688,376.6406 Z " /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="36" x="2068" y="375.1543">Detail</text></a><path d="M990.02,161.05 C838.52,188.75 533.14,246.64 277,308 C215.59,322.71 145.55,342.61 100.38,355.85 " fill="none" id="Resource&lt;-Validation" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1002.87,158.71,996.2473,155.8569,991.0665,160.8729,997.6892,163.7259,1002.87,158.71" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="61" x="278" y="321.0669">validation</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="104.4396" y="348.7097">0..*</text><path d="M990.23,165.83 C859.07,196.29 614.94,253.93 408,308 C349.78,323.21 283.35,342.05 238.66,354.94 " fill="none" id="Resource&lt;-AltIdentifier" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1002.96,162.87,996.21,160.3327,991.2718,165.5876,998.0217,168.1249,1002.96,162.87" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="27" x="409" y="321.0669">altId</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="229.465" y="343.931">0..*</text><path d="M989.88,169.47 C873.53,200.89 670.74,256.46 498,308 C439.11,325.57 370.76,347.71 332.63,360.22 " fill="none" id="Resource&lt;-Role" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1002.59,166.05,995.7549,163.7518,991.0047,169.1773,997.8397,171.4754,1002.59,166.05" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="24" x="499" y="321.0669">role</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="336.4292" y="352.2224">0..*</text><path d="M990.38,173.65 C888.5,205.82 721.8,259.14 579,308 C533.5,323.57 481.62,342.42 446.84,355.22 " fill="none" id="Resource&lt;-Subject" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1002.78,169.74,995.8542,167.7317,991.3366,173.3523,998.2624,175.3606,1002.78,169.74" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="46" x="580" y="321.0669">subject</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="450.4757" y="347.0887">0..*</text><path d="M990.5,181.71 C907.56,214.85 783.71,264.44 676,308 C636.63,323.92 591.6,342.31 560.83,354.9 " fill="none" id="Resource&lt;-ResDate" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1002.69,176.84,995.6351,175.3472,991.5437,181.2853,998.5986,182.7781,1002.69,176.84" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="29" x="677" y="321.0669">date</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="546.5372" y="343.8772">0..*</text><path d="M990.88,182.22 C919.51,212.67 820.03,258.33 738,308 C714.64,322.14 689.91,341.53 673.8,354.84 " fill="none" id="Resource&lt;-Relationship" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1002.98,177.09,995.895,175.7473,991.9306,181.7708,999.0156,183.1136,1002.98,177.09" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="739" y="321.0669">relationship</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="652.9656" y="343.7966">0..*</text><path d="M991.21,192.26 C940.76,221.25 879.7,261.5 834,308 C820.27,321.97 808.95,341.57 802.1,354.97 " fill="none" id="Resource&lt;-STCSpatial" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1002.8,185.69,995.6082,185.1625,992.3552,191.5982,999.547,192.1257,1002.8,185.69" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="103" x="835" y="321.0669">spatialCoverage</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="777.5875" y="343.9713">0..*</text><path d="M994.67,243.14 C979.17,263.57 964.41,285.69 953,308 C945.33,323.01 940.79,341.88 938.36,354.84 " fill="none" id="Resource&lt;-STCTemporal" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1002.83,232.61,995.9914,234.8976,995.4728,242.09,1002.3114,239.8024,1002.83,232.61" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="119" x="954" y="321.0669">temporalCoverage</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="912.2181" y="343.7966">0..*</text><path d="M1082.29,291.4 C1082.19,297.01 1082.09,302.55 1082,308 C1081.72,324.04 1081.43,342.41 1081.23,354.97 " fill="none" id="Resource&lt;-STCSpectral" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1082.52,278.25,1078.4151,284.1788,1082.309,290.2481,1086.4139,284.3194,1082.52,278.25" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="112" x="1083" y="321.0669">spectralCoverage</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="1054.3559" y="343.9713">0..*</text><path d="M1174.24,260.73 C1183.79,276.15 1192.68,292.12 1200,308 C1207.03,323.24 1211.33,342.08 1213.68,354.96 " fill="none" id="Resource&lt;-Capability" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1167.18,249.62,1167.0217,256.8294,1173.6157,259.7483,1173.7739,252.5389,1167.18,249.62" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="60" x="1208" y="321.0669">capability</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="1185.9294" y="343.9578">0..*</text><path d="M1177.47,220.97 C1209.38,248.06 1245.11,278.98 1277,308 C1294.16,323.62 1313.19,342.22 1326,354.95 " fill="none" id="Resource&lt;-Interface" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1167.26,212.31,1169.257,219.2391,1176.4211,220.0607,1174.4241,213.1316,1167.26,212.31" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="56" x="1296" y="321.0669">interface</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="1293.8906" y="343.9444">0..*</text><path d="M1178.61,197.02 C1269.42,248.46 1401.45,323.24 1457.38,354.92 " fill="none" id="Resource&lt;-InterfaceParam" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1167.19,190.55,1170.443,196.9857,1177.6348,196.4582,1174.3818,190.0225,1167.19,190.55" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="42" x="1399" y="321.0669">param</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="1421.2763" y="343.9041">0..*</text><path d="M1179.36,183.56 C1300.73,234.46 1505.72,320.41 1588.12,354.96 " fill="none" id="Resource&lt;-Schema" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1167.16,178.45,1171.1514,184.4557,1178.2303,183.0813,1174.2389,177.0756,1167.16,178.45" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="51" x="1509" y="321.0669">schema</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="1551.7944" y="345.4249">0..*</text><path d="M1179.6,174.97 C1277.41,207.25 1434.38,259.76 1569,308 C1614.56,324.33 1666.79,344.29 1699.83,357.07 " fill="none" id="Resource&lt;-Table" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1167.08,170.85,1171.525,176.5282,1178.476,174.6091,1174.031,168.9309,1167.08,170.85" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="32" x="1616" y="321.0669">table</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="1668.8732" y="350.3315">0..*</text><path d="M1180.09,169.78 C1293.93,200.98 1490.14,255.84 1657,308 C1706.95,323.61 1763.98,343.22 1800.91,356.16 " fill="none" id="Resource&lt;-Column" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1167.3,166.28,1172.033,171.7205,1178.8753,169.4441,1174.1424,164.0036,1167.3,166.28" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="47" x="1709" y="321.0669">column</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="1769.8472" y="349.677">0..*</text><path d="M1179.94,164.61 C1311.89,193.77 1557.89,250.01 1765,308 C1816.93,322.54 1875.83,341.76 1914.97,354.92 " fill="none" id="Resource&lt;-TAPTable" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1167.14,161.78,1172.1381,166.978,1178.8586,164.3636,1173.8605,159.1656,1167.14,161.78" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="62" x="1820" y="321.0669">tapTables</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="1883.467" y="348.3864">0..*</text><path d="M1179.89,159.26 C1331.52,184.56 1637.21,239.25 1891,308 C1943.36,322.18 2002.58,343.34 2038.85,356.91 " fill="none" id="Resource&lt;-Detail" style="stroke: #0000FF; stroke-width: 1.0;" /><polygon fill="#0000FF" points="1167.03,157.13,1172.2943,162.0582,1178.8681,159.0942,1173.6038,154.1661,1167.03,157.13" style="stroke: #0000FF; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="35" x="1948" y="321.0669">detail</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="2008.0039" y="350.2775">0..*</text></g></svg></p>
+<h2 id="members">Members</h2>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>mult</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ivoid <span class="twemoji" title="natural key"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 18v4h-4v-3h-3v-3h-3l-2.26-2.26c-.55.17-1.13.26-1.74.26a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6c0 .61-.09 1.19-.26 1.74L22 18M7 5a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2Z"/></svg></span></td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td></td>
+<td>Unambiguous reference to the resource conforming to the IVOA standard for identifiers.</td>
+</tr>
+<tr>
+<td>res_type</td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td></td>
+<td>Resource type (something like vg:authority, vs:catalogservice, etc).</td>
+</tr>
+<tr>
+<td>created</td>
+<td><a href="../../ivoa/datetime/" title="primitiveType datetime - Represents a moment in time using a date+timestamp.">ivoa:datetime</a></td>
+<td></td>
+<td>The UTC date and time this resource metadata description was created.</td>
+</tr>
+<tr>
+<td>short_name</td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td>optional</td>
+<td>A short name or abbreviation given to something, for presentation in space-constrained fields (up to 16 characters).</td>
+</tr>
+<tr>
+<td>res_title</td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td></td>
+<td>The full name given to the resource.</td>
+</tr>
+<tr>
+<td>updated</td>
+<td><a href="../../ivoa/datetime/" title="primitiveType datetime - Represents a moment in time using a date+timestamp.">ivoa:datetime</a></td>
+<td></td>
+<td>The UTC date this resource metadata description was last updated.</td>
+</tr>
+<tr>
+<td>content_level</td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td></td>
+<td>A hash-separated list of content levels specifying the intended audience.</td>
+</tr>
+<tr>
+<td>res_description</td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td></td>
+<td>An account of the nature of the resource.</td>
+</tr>
+<tr>
+<td>reference_url</td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td></td>
+<td>URL pointing to a human-readable document describing this resource.</td>
+</tr>
+<tr>
+<td>creator_seq</td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td>optional</td>
+<td>The creator(s) of the resource in the order given by the resource record author, separated by semicolons.</td>
+</tr>
+<tr>
+<td>content_type</td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td>optional</td>
+<td>A hash-separated list of natures or genres of the content of the resource.</td>
+</tr>
+<tr>
+<td>source_format</td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td>optional</td>
+<td>The format of source_value. This, in particular, can be ``bibcode''.</td>
+</tr>
+<tr>
+<td>source_value</td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td>optional</td>
+<td>A bibliographic reference from which the present resource is derived or extracted.</td>
+</tr>
+<tr>
+<td>res_version</td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td>optional</td>
+<td>Label associated with creation or availability of a version of a resource.</td>
+</tr>
+<tr>
+<td>region_of_regard</td>
+<td><a href="../../ivoa/real/" title="primitiveType real - A real number (from R).">ivoa:real</a></td>
+<td>optional</td>
+<td>A single numeric value representing the angle, given in decimal degrees, by which a positional query against this resource should be ``blurred'' in order to get an appropriate match.</td>
+</tr>
+<tr>
+<td>waveband</td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td>optional</td>
+<td>A hash-separated list of regions of the electro-magnetic spectrum that the resource's spectral coverage overlaps with.</td>
+</tr>
+<tr>
+<td>rights</td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td>optional</td>
+<td>A statement of usage conditions (license, attribution, embargo, etc).</td>
+</tr>
+<tr>
+<td>rights_uri</td>
+<td><a href="../../ivoa/string/" title="primitiveType string - A string, represented as an array of characters treated as a single, primitive value. Ala Java, a string can not be updated, that is any update leads to a different string. However in contrast to Java we assume that two strings that are identical in all their constitutent characters are the same. I.e. string has value type semantics.">ivoa:string</a></td>
+<td>optional</td>
+<td>A URI identifying a license the data is made available under.</td>
+</tr>
+<tr>
+<td>validation</td>
+<td><a href="../Validation/" title="objectType">Validation</a></td>
+<td>0 or more</td>
+<td>validation level</td>
+</tr>
+<tr>
+<td>altId</td>
+<td><a href="../AltIdentifier/" title="objectType">AltIdentifier</a></td>
+<td>0 or more</td>
+<td>altIds</td>
+</tr>
+<tr>
+<td>role</td>
+<td><a href="../Role/" title="objectType">Role</a></td>
+<td>0 or more</td>
+<td>roles</td>
+</tr>
+<tr>
+<td>subject</td>
+<td><a href="../Subject/" title="objectType">Subject</a></td>
+<td>0 or more</td>
+<td>subjects</td>
+</tr>
+<tr>
+<td>date</td>
+<td><a href="../ResDate/" title="objectType">ResDate</a></td>
+<td>0 or more</td>
+<td>dates</td>
+</tr>
+<tr>
+<td>relationship</td>
+<td><a href="../Relationship/" title="objectType">Relationship</a></td>
+<td>0 or more</td>
+<td>relationships</td>
+</tr>
+<tr>
+<td>spatialCoverage</td>
+<td><a href="../STCSpatial/" title="objectType">STCSpatial</a></td>
+<td>0 or more</td>
+<td>STC spatial coverage</td>
+</tr>
+<tr>
+<td>temporalCoverage</td>
+<td><a href="../STCTemporal/" title="objectType">STCTemporal</a></td>
+<td>0 or more</td>
+<td>STC Temporal</td>
+</tr>
+<tr>
+<td>spectralCoverage</td>
+<td><a href="../STCSpectral/" title="objectType">STCSpectral</a></td>
+<td>0 or more</td>
+<td>STC Spectral</td>
+</tr>
+<tr>
+<td>capability</td>
+<td><a href="../Capability/" title="objectType">Capability</a></td>
+<td>0 or more</td>
+<td>capabilities</td>
+</tr>
+<tr>
+<td>interface</td>
+<td><a href="../Interface/" title="objectType">Interface</a></td>
+<td>0 or more</td>
+<td>interfaces</td>
+</tr>
+<tr>
+<td>param</td>
+<td><a href="../InterfaceParam/" title="objectType">InterfaceParam</a></td>
+<td>0 or more</td>
+<td>params</td>
+</tr>
+<tr>
+<td>schema</td>
+<td><a href="../Schema/" title="objectType">Schema</a></td>
+<td>0 or more</td>
+<td>schema</td>
+</tr>
+<tr>
+<td>table</td>
+<td><a href="../Table/" title="objectType">Table</a></td>
+<td>0 or more</td>
+<td>tables</td>
+</tr>
+<tr>
+<td>column</td>
+<td><a href="../Column/" title="objectType">Column</a></td>
+<td>0 or more</td>
+<td>columns</td>
+</tr>
+<tr>
+<td>tapTables</td>
+<td><a href="../TAPTable/" title="objectType">TAPTable</a></td>
+<td>0 or more</td>
+<td>TAP tables</td>
+</tr>
+<tr>
+<td>detail</td>
+<td><a href="../Detail/" title="objectType">Detail</a></td>
+<td>0 or more</td>
+<td>detail</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "content.action.edit", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  </body>
+</html>

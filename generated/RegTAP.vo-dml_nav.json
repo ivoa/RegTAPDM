@@ -1,0 +1,20 @@
+
+
+            {
+            "RegTAP model": [
+            {
+            "Overview": "generated/RegTAP.vo-dml.md"
+            }
+
+            
+                ,{
+                "ObjectTypes": [
+
+                {"AltIdentifier" : "generated/RegTAP/AltIdentifier.md"},{"Capability" : "generated/RegTAP/Capability.md"},{"Column" : "generated/RegTAP/Column.md"},{"Detail" : "generated/RegTAP/Detail.md"},{"Interface" : "generated/RegTAP/Interface.md"},{"InterfaceParam" : "generated/RegTAP/InterfaceParam.md"},{"Relationship" : "generated/RegTAP/Relationship.md"},{"ResDate" : "generated/RegTAP/ResDate.md"},{"Resource" : "generated/RegTAP/Resource.md"},{"Role" : "generated/RegTAP/Role.md"},{"STCSpatial" : "generated/RegTAP/STCSpatial.md"},{"STCSpectral" : "generated/RegTAP/STCSpectral.md"},{"STCTemporal" : "generated/RegTAP/STCTemporal.md"},{"Schema" : "generated/RegTAP/Schema.md"},{"Subject" : "generated/RegTAP/Subject.md"},{"TAPTable" : "generated/RegTAP/TAPTable.md"},{"Table" : "generated/RegTAP/Table.md"},{"Validation" : "generated/RegTAP/Validation.md"}
+                ]
+                }
+            
+            ]
+            }
+
+        
