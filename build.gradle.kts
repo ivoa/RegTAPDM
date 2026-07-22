@@ -8,7 +8,7 @@ plugins {
     signing
 }
 group = "org.javastro.ivoa.dm"
-version = "0.2-SNAPSHOT"
+version = "0.3-SNAPSHOT"
 
 vodml {
     vodmlDir.set(file("vo-dml"))
@@ -39,15 +39,15 @@ dependencies {
 
     implementation("net.sf.saxon:Saxon-HE:12.5")
     // the dependencies below are related to testing
-    testImplementation("org.junit.jupiter:junit-jupiter-api:6.1.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.1.1")
+    //testImplementation("org.junit.jupiter:junit-jupiter-api:6.1.1") - cannot do 6 yet
+    testImplementation("org.junit.jupiter:junit-jupiter:5.6.1")
 
     implementation("org.slf4j:slf4j-api:1.7.32")
     testRuntimeOnly("ch.qos.logback:logback-classic:1.5.13")
 
     testImplementation("com.h2database:h2:2.4.240")
     testImplementation("org.javastro:jaxbjpa-utils:0.2.3")
-    testImplementation("org.javastro:jaxbjpa-utils:0.2.3:test")
+   // testImplementation("org.javastro:jaxbjpa-utils:0.2.3:test")
 }
 
 publishing {
