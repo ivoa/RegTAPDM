@@ -9,7 +9,7 @@
       <title></title>
       <author>Paul Harrison</author>
       <version>1.0</version>
-      <lastModified>2025-06-10T13:37:18Z</lastModified>
+      <lastModified>2026-07-22T16:29:03Z</lastModified>
       <import>
         <name>ivoa</name>
         <version>1.0</version>
@@ -1516,11 +1516,11 @@
             <objectType>
                <vodml-id>TAPTable</vodml-id>
                <name>TAPTable</name>
-               <description>TAP-queriable tables.</description>	    
+               <description>TAP-queryable tables.</description>	    
                <attribute>
                  <vodml-id>TAPTable.svcid</vodml-id>
                  <name>svcid</name>
-                 <description>IVOA identifier of the TAP service making this table queriable.</description>	    
+                 <description>IVOA identifier of the TAP service making this table queryable.</description>	    
                  <datatype>
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>

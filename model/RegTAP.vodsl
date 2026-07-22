@@ -309,9 +309,9 @@ spectral_end: ivoa:real "Upper limit (in Joules) of messenger energy interval co
 
  }
 
- otype TAPTable "TAP-queriable tables." {
+ otype TAPTable "TAP-queryable tables." {
 
-svcid: ivoa:string "IVOA identifier of the TAP service making this table queriable.";
+svcid: ivoa:string "IVOA identifier of the TAP service making this table queryable.";
 
 table_name: ivoa:string "The fully qualified name of the table. As per VODataService, this includes all catalog or schema prefixes needed to distinguish it in a query, and it comes with SQL delimiters where necessary.";
 
