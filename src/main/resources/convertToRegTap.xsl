@@ -30,7 +30,7 @@
             <xsl:value-of select="@xsi:type" />
          </res_type>
          <created>
-            <xsl:value-of select="@created" />
+            <xsl:value-of select="l:datefix(@created)" />
          </created>
           <short_name>
               <xsl:value-of select="shortName" />
@@ -39,7 +39,7 @@
               <xsl:value-of select="title"/>
           </res_title>
           <updated>
-              <xsl:value-of select="@updated" />
+              <xsl:value-of select="l:datefix(@updated)" />
           </updated>
           <content_level>
               <xsl:value-of select="content/contentLevel" separator="#"/>
@@ -103,14 +103,7 @@
    <date>
        <xsl:attribute name="value_role" select="@role"/>
       <date_value>
-        <xsl:choose>
-          <xsl:when test="string-length(.) lt 12">
-          <xsl:value-of select="concat(.,'T00:00:00')"/>
-          </xsl:when>
-          <xsl:otherwise>
-          <xsl:value-of select="."/>
-          </xsl:otherwise>
-        </xsl:choose>
+            <xsl:value-of select="l:datefix(.)"/>
       </date_value>
    </date>
    </xsl:template>
@@ -449,5 +442,20 @@ schema/@namespace" />
     <xsl:when test="$pNode instance of element()"><xsl:value-of select="($head, name($pNode))" separator="/"/></xsl:when>
     <xsl:otherwise><xsl:value-of select="($head, name($pNode))" separator="@"/></xsl:otherwise>
   </xsl:choose>
-</xsl:function>    
+</xsl:function>
+
+<xsl:function name="l:datefix" as="xsd:string" >
+  <xsl:param name="pDate" as="xsd:string"/>
+  <xsl:choose>
+    <xsl:when test="string-length($pDate) lt 12">
+      <xsl:value-of select="concat($pDate,'T00:00:00Z')"/>
+    </xsl:when>
+    <xsl:when test="matches($pDate,'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$')">
+      <xsl:value-of select="concat($pDate,'Z')"/>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:value-of select="$pDate"/>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:function>
 </xsl:stylesheet>
