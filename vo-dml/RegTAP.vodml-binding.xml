@@ -2,7 +2,6 @@
     <!-- ========================================
     This binding covers all of the registry models
      -->
-
     <model>
         <name>RegTAP</name>
         <file>RegTAP.vo-dml.xml</file>
@@ -65,7 +64,26 @@
         <type-detail vodml-id="Role.base_role">
             <isAttribute/>
         </type-detail>
-
+        <type-detail vodml-id="Resource.res_description">
+            <length>2048</length>
+        </type-detail>
+        <type-detail vodml-id="Resource.creator_seq">
+            <length>2048</length>
+        </type-detail>
+        <type-detail vodml-id="Role.role_name">
+            <length>2048</length>
+        </type-detail>
+        <type-detail vodml-id="Column.column_description">
+            <length>2048</length>
+        </type-detail>
+        <type-detail vodml-id="Schema.schema_description">
+            <length>2048</length>
+        </type-detail>
+        <type-detail vodml-id="Table.table_description">
+            <length>2048</length>
+        </type-detail>
+        <type-detail vodml-id="Column.extended_schema">
+            <length>2048</length>
+        </type-detail>
      </model>
-
 </m:mappedModels>
