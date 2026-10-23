@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<vi:resource xsi:type="vs:CatalogService" status="active"
+<vi:Resource xsi:type="vs:CatalogService" status="active"
           created="2000-01-01T09:00:00" updated="2000-01-01T09:00:00"
           xmlns:vi="http://www.ivoa.net/xml/RegistryInterface/v1.0"
           xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
@@ -234,4 +234,4 @@
       </schema>
     </tableset>
 
-</vi:resource>
+</vi:Resource>

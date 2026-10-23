@@ -19,7 +19,7 @@
       <xsl:element name="RegTAPModel"
          namespace="http://www.ivoa.net/xml/RegTAP/v1.0"
       >
-         <xsl:apply-templates select="/*/ri:Resource" />
+         <xsl:apply-templates select="//ri:Resource" />
       </xsl:element>
    </xsl:template>
    <xsl:template match="ri:Resource">
@@ -51,7 +51,7 @@
             <xsl:value-of select="content/referenceURL"/>
          </reference_url>
          <creator_seq>
-           <xsl:value-of select="curation/creator/name"/>
+           <xsl:value-of select="curation/creator/name" separator=";"/>
          </creator_seq>
          <content_type>
            <xsl:value-of select="content/type" separator="#"/>
@@ -137,7 +137,7 @@
        <xsl:attribute name="role_ivoid" select="name/@ivo-id"/>
        <xsl:attribute name="base_role" select ="local-name()"/>
        <role_name>
-         <xsl:value-of select="name"/>
+         <xsl:value-of select="name" separator=";"/>
        </role_name>
        <xsl:apply-templates select="node() except name"/>
     </role>
@@ -436,7 +436,7 @@ schema/@namespace" />
 <xsl:function name="l:generateXPath" as="xsd:string" >
   <xsl:param name="pNode" as="node()"/>
   <xsl:variable name="head" >
-  <xsl:value-of select="$pNode/ancestor::*[local-name() !=  'Resource' and local-name() !=  'VOResources' ]/name()" separator="/" />
+  <xsl:value-of select="$pNode/ancestor::*[count(ancestor::ri:Resource)!=0]/name()" separator="/" />
   </xsl:variable>
   <xsl:choose>
     <xsl:when test="$pNode instance of element()"><xsl:value-of select="($head, name($pNode))" separator="/"/></xsl:when>
@@ -450,7 +450,7 @@ schema/@namespace" />
     <xsl:when test="string-length($pDate) lt 12">
       <xsl:value-of select="concat($pDate,'T00:00:00Z')"/>
     </xsl:when>
-    <xsl:when test="matches($pDate,'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$')">
+    <xsl:when test="matches($pDate,'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[.0-9]*$')">
       <xsl:value-of select="concat($pDate,'Z')"/>
     </xsl:when>
     <xsl:otherwise>

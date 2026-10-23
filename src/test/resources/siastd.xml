@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<resource xsi:type="vt:ServiceStandard" status="active"
+<Resource xsi:type="vt:ServiceStandard" status="active"
+       xmlns="http://www.ivoa.net/xml/RegistryInterface/v1.0"
           created="2000-01-01T09:00:00" updated="2000-01-01T09:00:00"
           xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
           xmlns:vt="http://www.ivoa.net/xml/StandardsRegExt/v1.0" 
@@ -162,4 +163,4 @@
        </param>
     </interface>
    
-</resource>
+</Resource>

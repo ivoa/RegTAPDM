@@ -5,6 +5,8 @@ package org.ivoa.dm.regtap;
 
 import org.ivoa.vodml.testing.AutoRoundTripWithValidationTest;
 
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 
@@ -20,10 +22,10 @@ public class RegTAPBasiclModelTest extends AutoRoundTripWithValidationTest<RegTA
         retval.addContent(Resource.createResource( r -> {
             r.ivoid="ivo://test/something";
             r.res_type= "vr:Resource";
-            r.created = new Date();
+            r.created = ZonedDateTime.now(ZoneOffset.UTC);
             r.short_name="short name";
             r.res_title="title";
-            r.updated = new Date();
+            r.updated = ZonedDateTime.now(ZoneOffset.UTC);
             r.content_level = "level";
             r.res_description="description";
             r.reference_url="reference url";
