@@ -1,14 +1,14 @@
 
 plugins {
     // this plugin provides all the vo-dml functionality
-    id("net.ivoa.vo-dml.vodmltools") version "0.7.0"
+    id("net.ivoa.vo-dml.vodmltools") version "0.7.3"
     `maven-publish`
 //    id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     id("org.kordamp.gradle.jandex") version "2.2.0"
     signing
 }
 group = "org.javastro.ivoa.dm"
-version = "0.3-SNAPSHOT"
+version = "0.4-SNAPSHOT"
 
 vodml {
     vodmlDir.set(file("vo-dml"))
@@ -43,11 +43,11 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.1")
 
     implementation("org.slf4j:slf4j-api:1.7.32")
-    testRuntimeOnly("ch.qos.logback:logback-classic:1.5.13")
+    testRuntimeOnly("ch.qos.logback:logback-classic:1.6.3")
 
     testImplementation("com.h2database:h2:2.4.240")
-    testImplementation("org.javastro:jaxbjpa-utils:0.2.3")
-   // testImplementation("org.javastro:jaxbjpa-utils:0.2.3:test")
+  //  testImplementation("org.javastro:jaxbjpa-utils:0.2.3")
+    testImplementation("org.javastro.ivoa:ivoa-schema:0.9.14")
 }
 
 publishing {
