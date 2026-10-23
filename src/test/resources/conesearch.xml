@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ri:resource xsi:type="vs:CatalogService" status="active"
+<ri:Resource xsi:type="vs:CatalogService" status="active"
           created="2000-01-01T09:00:00" updated="2000-01-01T09:00:00"
           xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0"
           xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
@@ -98,4 +98,4 @@
 
     </coverage>
 
-</ri:resource>
+</ri:Resource>

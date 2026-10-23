@@ -1,5 +1,5 @@
-<resource xsi:type="vstd:StandardKeyEnumeration" 
-             xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
+<Resource xsi:type="vstd:StandardKeyEnumeration"
+             xmlns="http://www.ivoa.net/xml/RegistryInterface/v1.0"
              xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" 
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              created="2001-12-31T12:00:00"
@@ -56,4 +56,4 @@
       <name>Python</name>
       <description>The Python programming language</description>
    </key>
-</resource>
+</Resource>
