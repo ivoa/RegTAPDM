@@ -241,17 +241,17 @@
           <xsl:element name="intf_index"><xsl:value-of select="count(preceding::interface[ancestor::ri:Resource/identifier=current()/ancestor::ri:Resource/identifier])+1"/></xsl:element>
           <xsl:element name="name"><xsl:value-of select="name"/></xsl:element>
           <xsl:apply-templates select="(unit,ucd,utype)" />
-          <xsl:apply-templates select="@std" />
+          <xsl:call-template name="std" />
           <xsl:apply-templates select="dataType"/>
           <xsl:apply-templates select="@use"/>
           <param_description><xsl:value-of select="description"/></param_description>
       </param>
     </xsl:template>
     
-    <xsl:template match="@std">
+    <xsl:template name="std">
       <std>
         <xsl:choose>
-         <xsl:when test=".=true()">1</xsl:when>
+         <xsl:when test="@std=true()">1</xsl:when>
          <xsl:otherwise>0</xsl:otherwise>
         </xsl:choose>
       </std>
