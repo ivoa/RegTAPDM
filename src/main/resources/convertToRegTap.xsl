@@ -145,7 +145,7 @@
     </xsl:template>
 
     <xsl:template match="coverage/temporal">
-        <xsl:variable name="tokens" select="tokenize(text(), ' ')"/>
+        <xsl:variable name="tokens" select="tokenize(normalize-space(text()), '[ \t]')"/>
 
         <xsl:for-each select="1 to count($tokens)">
         <xsl:variable name="pos" select="."/>
@@ -159,7 +159,7 @@
     </xsl:template>
 
     <xsl:template match="coverage/spectral">
-        <xsl:variable name="tokens" select="tokenize(text(), ' ')"/>
+        <xsl:variable name="tokens" select="tokenize(normalize-space(text()), '[ \t]')"/>
 
         <xsl:for-each select="1 to count($tokens)">
             <xsl:variable name="pos" select="."/>
