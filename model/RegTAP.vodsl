@@ -289,7 +289,7 @@ from VOResource extensions" {
 
 coverage: ivoa:string "A geometry representing the area a resource contains data for; this should be tight at least with a resolution of degrees.";
 
-ref_system_name: ivoa:string "The reference frame coverage is written in. This is currently reserved and fixed to NULL. Clients should always add a constraint to NULL for this to avoid matching non-celestial resources later.";
+ref_system_name: ivoa:string @? "The reference frame coverage is written in. This is currently reserved and fixed to NULL. Clients should always add a constraint to NULL for this to avoid matching non-celestial resources later.";
 
  }
 
