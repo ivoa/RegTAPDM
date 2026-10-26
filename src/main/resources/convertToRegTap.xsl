@@ -487,15 +487,16 @@ schema/@namespace" />
 
 <xsl:function name="l:datefix" as="xsd:string" >
   <xsl:param name="pDate" as="xsd:string"/>
+  <xsl:variable name="ndate" select="normalize-space($pDate)"/>
   <xsl:choose>
-    <xsl:when test="string-length($pDate) lt 12">
-      <xsl:value-of select="concat($pDate,'T00:00:00Z')"/>
+    <xsl:when test="string-length($ndate) lt 12">
+      <xsl:sequence select="concat($ndate,'T00:00:00Z')"/>
     </xsl:when>
-    <xsl:when test="matches($pDate,'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[.0-9]*$')">
-      <xsl:value-of select="concat($pDate,'Z')"/>
+    <xsl:when test="matches($ndate,'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[.0-9]*$')">
+      <xsl:sequence select="concat($ndate,'Z')"/>
     </xsl:when>
     <xsl:otherwise>
-      <xsl:value-of select="$pDate"/>
+      <xsl:sequence select="$ndate"/>
     </xsl:otherwise>
   </xsl:choose>
 </xsl:function>
