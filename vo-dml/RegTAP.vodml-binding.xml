@@ -9,6 +9,22 @@
         <xml-targetnamespace prefix="regtap">http://www.ivoa.net/xml/RegTAP/v1.0</xml-targetnamespace>
         <xml elementFormDefault="qualified" compositionStyle="unwrapped"/>
         <rdb naturalJoin="true" schema="rr">
+            <rdbmap vodml-id="Resource">
+                <tableName>resource</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="Capability">
+                <tableName>capability</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="Interface">
+                <tableName>interface</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="Validation">
+                <tableName>validation</tableName>
+            </rdbmap>
+            <rdbmap vodml-id="Relationship">
+                <tableName>relationship</tableName>
+            </rdbmap>
+
             <rdbmap vodml-id="Subject">
                 <tableName>res_subject</tableName>
             </rdbmap>
@@ -64,8 +80,11 @@
         <type-detail vodml-id="Role.base_role">
             <isAttribute/>
         </type-detail>
+        <type-detail vodml-id="Relationship.related_name">
+            <length>512</length>
+        </type-detail>
         <type-detail vodml-id="Resource.res_description">
-            <length>2048</length>
+            <length>8192</length>
         </type-detail>
         <type-detail vodml-id="Resource.creator_seq">
             <length>2048</length>
