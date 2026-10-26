@@ -14,14 +14,17 @@ package org.ivoa.dm.regtap.trans;
 
 
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringReader;
 import java.io.StringWriter;
 
 import javax.xml.transform.stream.StreamSource;
 
+import jakarta.xml.bind.*;
+import jakarta.xml.bind.util.ValidationEventCollector;
 import net.sf.saxon.s9api.*;
+import org.ivoa.dm.regtap.RegTAPModel;
 
 
 /**
@@ -57,9 +60,10 @@ public class RegTapTranslator {
    /**
     * Translate a VOResource instance to RegTAP XML instance.
     * @param is stream with VOResource XML instance.
+    * @throws RegTapException if there is an error during transformation.
     * @return string of RegTAP instance
     */
-    public String translate(InputStream is) {
+    public String translateToXML(InputStream is) throws RegTapException {
         Xslt30Transformer xsltTransformer = exp.load30();
         StringWriter sw = new StringWriter();
         Serializer out = processor.newSerializer(sw);
@@ -67,9 +71,36 @@ public class RegTapTranslator {
           xsltTransformer.transform(new StreamSource(is),out);
           return sw.toString();
        } catch (SaxonApiException e) {
-          throw new RuntimeException(e); // TODO will possibly want to make this a checked exception.
+          logger.debug("Error during XSLT transformation", e);
+          throw new RegTapException("Error during XSLT transformation", e);
        }
 
+    }
+
+    /**
+     * Translate a VOResource instance to a RegTAPModel instance.
+     * @param is stream with VOResource XML instance.
+     * @throws RegTapException if there is an error during transformation or unmarshalling.
+     * @return RegTAPModel instance
+     */
+    public RegTAPModel translateToModel(InputStream is) throws RegTapException {
+       String xmlString = translateToXML(is);
+       try {
+          JAXBContext jc = RegTAPModel.contextFactory();
+          Unmarshaller um = jc.createUnmarshaller();
+          ValidationEventCollector vc = new ValidationEventCollector();
+          um.setEventHandler(vc);
+          JAXBElement<RegTAPModel> el = um.unmarshal(new StreamSource(new StringReader(xmlString)), RegTAPModel.class);
+          if (vc.hasEvents()) {
+             logger.debug("JAXB Validation errors RegTAP " );
+             for (ValidationEvent err : vc.getEvents()) {
+                logger.debug(err.getMessage());
+             }
+          }
+          return el.getValue();
+       } catch (JAXBException e) {
+          throw new RegTapException("Error during JAXB unmarshalling of RegTAP", e);
+       }
     }
 
 
