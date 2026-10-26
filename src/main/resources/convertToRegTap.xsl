@@ -82,7 +82,8 @@
           <xsl:apply-templates select="curation/date"/>
           <xsl:apply-templates select="content/relationship"/>
 
-<!--         FIXME do the STC stuff-->
+<!--         IMPL implement the STC stuff-->
+          <xsl:apply-templates select="coverage"/>
 
           <xsl:apply-templates select="capability"/>
           <xsl:apply-templates select="capability/interface"/>
@@ -130,7 +131,47 @@
      </xsl:for-each>
    </xsl:template>
    
-   
+   <xsl:template match="coverage">
+      <xsl:apply-templates select="spatial"/>
+       <xsl:apply-templates select="temporal"/>
+       <xsl:apply-templates select="spectral"/>
+
+   </xsl:template>
+
+    <xsl:template match="coverage/spatial"> <!-- FIXME what about the frame -->
+        <spatialCoverage>
+            <coverage><xsl:value-of select="."/></coverage>
+        </spatialCoverage>
+    </xsl:template>
+
+    <xsl:template match="coverage/temporal">
+        <xsl:variable name="tokens" select="tokenize(text(), ' ')"/>
+
+        <xsl:for-each select="1 to count($tokens)">
+        <xsl:variable name="pos" select="."/>
+        <xsl:if test="$pos mod 2 = 1">
+            <temporalCoverage>
+                <time_start><xsl:value-of select="$tokens[$pos]"/></time_start>
+                <time_end><xsl:value-of select="$tokens[$pos + 1]"/></time_end>
+            </temporalCoverage>
+        </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+
+    <xsl:template match="coverage/spectral">
+        <xsl:variable name="tokens" select="tokenize(text(), ' ')"/>
+
+        <xsl:for-each select="1 to count($tokens)">
+            <xsl:variable name="pos" select="."/>
+
+            <xsl:if test="$pos mod 2 = 1">
+                <spectralCoverage>
+                    <spectral_start><xsl:value-of select="$tokens[$pos]"/></spectral_start>
+                    <spectral_end><xsl:value-of select="$tokens[$pos + 1]"/></spectral_end>
+                </spectralCoverage>
+            </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
    
     <xsl:template match="curation/contact|curation/creator">
     <role>

@@ -104,5 +104,8 @@
         <type-detail vodml-id="Column.extended_schema">
             <length>2048</length>
         </type-detail>
+        <type-detail vodml-id="STCSpatial.coverage">
+            <length>262144</length> <!-- Pretty big, but MOCs can be very large - larger than this!-->
+        </type-detail>
      </model>
 </m:mappedModels>
