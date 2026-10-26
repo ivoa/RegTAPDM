@@ -313,7 +313,7 @@
     <xsl:template match="table/nrows" mode="table">
         <nrows><xsl:value-of select="."/></nrows>
     </xsl:template>
-    <xsl:template match="table/*|table/@*" mode="table">
+    <xsl:template match="table/*[not(self::nrows)]|table/@*" mode="table">
         <xsl:element name="{concat('table_',name(.))}" namespace="http://www.ivoa.net/xml/RegTAP/v1.0">
             <xsl:apply-templates select="@*" />
             <xsl:apply-templates />
