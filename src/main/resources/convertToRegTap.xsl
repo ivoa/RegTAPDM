@@ -122,10 +122,10 @@
      <xsl:for-each select="relatedResource">
        <relationship>
          <relationship_type><!-- FIXME need to map these to new vocab -->
-           <xsl:value-of select="../relationshipType"/>
+           <xsl:value-of select="./relationshipType"/>
          </relationship_type>
-         <related_id><xsl:value-of select="../relatedResource/@ivo-id"/></related_id>
-         <related_name><xsl:value-of select="../relatedResource"/></related_name>
+         <related_id><xsl:value-of select="./relatedResource/@ivo-id"/></related_id>
+         <related_name><xsl:value-of select="./relatedResource"/></related_name>
        </relationship>
      </xsl:for-each>
    </xsl:template>
