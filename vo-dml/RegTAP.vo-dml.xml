@@ -9,7 +9,7 @@
       <title></title>
       <author>Paul Harrison</author>
       <version>1.0</version>
-      <lastModified>2026-07-22T16:29:03Z</lastModified>
+      <lastModified>2026-10-26T13:27:36Z</lastModified>
       <import>
         <name>ivoa</name>
         <version>1.0</version>
@@ -1450,7 +1450,7 @@
                     <vodml-ref>ivoa:string</vodml-ref>
                  </datatype>
                  <multiplicity>
-                   <minOccurs>1</minOccurs>
+                   <minOccurs>0</minOccurs>
                    <maxOccurs>1</maxOccurs>
                  </multiplicity>
                </attribute>
