@@ -1,0 +1,197 @@
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0"
+             xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0"
+             xmlns:g-colstat="http://dc.g-vo.org/ColStats-1"
+             xmlns:oai="http://www.openarchives.org/OAI/2.0/"
+             xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
+             xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1"
+             xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             created="2021-03-12T09:03:00Z"
+             status="active"
+             updated="2026-03-26T13:05:25Z"
+             version="1.2"
+             xsi:type="vs:CatalogResource">
+    <title>MASER TFCat Database</title>
+    <shortName>tfcat.leblanc_nd</shortName>
+    <identifier>ivo://padc.obspm.maser/tfcat/q/leblanc_nda_jupiter_emi</identifier>
+    <curation>
+        <publisher>Paris Astronomical Data Centre</publisher>
+        <creator>
+            <name>Baptiste Cecconi</name>
+        </creator>
+        <date role="Updated">2026-03-26T13:58:20Z</date>
+        <contact>
+            <name>MASER contact</name>
+            <email>contact.maser@obspm.fr</email>
+        </contact>
+    </curation>
+    <content>
+        <subject>solar-system-astronomy</subject>
+        <subject>planetary-science</subject>
+        <subject>planetary-magnetosphere</subject>
+        <subject>radio-astronomy</subject>
+        <subject>magnetospheric-radio-emissions</subject>
+        <subject>earth-planet</subject>
+        <subject>venus</subject>
+        <subject>jupiter</subject>
+        <subject>saturn</subject>
+        <description>TFCat table for Leblanc et al. A&amp;A (1981-1993) Jupiter Radio Emissions
+            Catalogues</description>
+        <referenceURL>http://voparis-tap-maser.obspm.fr/tableinfo/tfcat.leblanc_nda_jupiter_emi</referenceURL>
+        <type>Catalog</type>
+        <contentLevel>Research</contentLevel>
+        <relationship>
+            <relationshipType>IsServedBy</relationshipType>
+            <relatedResource ivo-id="ivo://padc.obspm.maser/tap">PADC TAP Server on voparis-tap-maser.obspm.fr TAP service</relatedResource>
+        </relationship>
+    </content>
+    <capability standardID="ivo://ivoa.net/std/TAP#aux">
+        <interface role="std" version="1.1" xsi:type="vs:ParamHTTP">
+            <accessURL use="full">http://voparis-tap-maser.obspm.fr/tap</accessURL>
+        </interface>
+    </capability>
+    <coverage>
+        <waveband>Radio</waveband>
+    </coverage>
+    <tableset>
+        <schema>
+            <name>tfcat</name>
+            <title>MASER TFCat Database</title>
+            <description> TFCat Database for MASER</description>
+            <table>
+                <name>tfcat.leblanc_nda_jupiter_emi</name>
+                <description>TFCat table for Leblanc et al. A&amp;A (1981-1993) Jupiter Radio Emissions
+                    Catalogues</description>
+                <nrows>2508</nrows>
+                <column>
+                    <name>id</name>
+                    <description>Main identifier of this feature</description>
+                    <ucd>meta.id;meta.main</ucd>
+                    <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+                    <flag>indexed</flag>
+                    <flag>primary</flag>
+                </column>
+                <column g-colstat:fillFactor="1"
+                        g-colstat:max-value="48256"
+                        g-colstat:median="46227.7"
+                        g-colstat:min-value="43511.9"
+                        g-colstat:percentile03="43574.7"
+                        g-colstat:percentile97="48190">
+                    <name>time_start</name>
+                    <description>Minimum time value of feature bounding box</description>
+                    <ucd>time.epoch;stat.min</ucd>
+                    <dataType arraysize="19" extendedType="timestamp" xsi:type="vs:VOTableType">char</dataType>
+                    <flag>nullable</flag>
+                </column>
+                <column g-colstat:fillFactor="1"
+                        g-colstat:max-value="48256.1"
+                        g-colstat:median="46227.7"
+                        g-colstat:min-value="43511.9"
+                        g-colstat:percentile03="43574.7"
+                        g-colstat:percentile97="48190">
+                    <name>time_end</name>
+                    <description>Maximum time value of feature bounding box</description>
+                    <ucd>time.epoch;stat.max</ucd>
+                    <dataType arraysize="19" extendedType="timestamp" xsi:type="vs:VOTableType">char</dataType>
+                    <flag>nullable</flag>
+                </column>
+                <column>
+                    <name>freq_min</name>
+                    <description>Minimum frequency value of feature bounding box</description>
+                    <unit>MHz</unit>
+                    <ucd>em.freq;stat.min;em.radio</ucd>
+                    <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+                    <flag>nullable</flag>
+                </column>
+                <column>
+                    <name>freq_max</name>
+                    <description>Maximum frequency value of feature bounding box</description>
+                    <unit>MHz</unit>
+                    <ucd>em.freq;stat.max;em.radio</ucd>
+                    <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+                    <flag>nullable</flag>
+                </column>
+                <column>
+                    <name>geometry_type</name>
+                    <description>Type of Geometry</description>
+                    <ucd>meta.code</ucd>
+                    <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+                    <flag>nullable</flag>
+                </column>
+                <column>
+                    <name>geometry</name>
+                    <description>Type of Geometry</description>
+                    <ucd>meta.code</ucd>
+                    <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+                    <flag>nullable</flag>
+                </column>
+                <column>
+                    <name>access_url</name>
+                    <description>URL of TFCat file containing this feature.</description>
+                    <ucd>meta.ref.url</ucd>
+                    <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+                    <flag>nullable</flag>
+                </column>
+                <column>
+                    <name>obs_id</name>
+                    <description>Original Observation identifier related to this feature</description>
+                    <ucd>meta.id.parent</ucd>
+                    <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+                    <flag>nullable</flag>
+                </column>
+                <column g-colstat:fillFactor="1"
+                        g-colstat:max-value="359.961"
+                        g-colstat:median="206.006"
+                        g-colstat:min-value="0.923652"
+                        g-colstat:percentile03="50.9411"
+                        g-colstat:percentile97="319.538">
+                    <name>cml_beg</name>
+                    <description>Central Meridian Longitude at begin of event (System III Jovian Longitude)</description>
+                    <unit>deg</unit>
+                    <ucd>pos.bodyrc.lon;time.start</ucd>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                    <flag>nullable</flag>
+                </column>
+                <column g-colstat:fillFactor="1"
+                        g-colstat:max-value="359.263"
+                        g-colstat:median="245.304"
+                        g-colstat:min-value="1.06827"
+                        g-colstat:percentile03="35.3472"
+                        g-colstat:percentile97="342.078">
+                    <name>cml_end</name>
+                    <description>Central Meridian Longitude at end of event (System III Jovian Longitude)</description>
+                    <unit>deg</unit>
+                    <ucd>pos.bodyrc.lon;time.end</ucd>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                    <flag>nullable</flag>
+                </column>
+                <column g-colstat:fillFactor="1"
+                        g-colstat:max-value="506.967"
+                        g-colstat:median="187.603"
+                        g-colstat:min-value="-158.072"
+                        g-colstat:percentile03="-29.4133"
+                        g-colstat:percentile97="415.437">
+                    <name>io_phase_beg</name>
+                    <description>Io phase at begin of event</description>
+                    <unit>deg</unit>
+                    <ucd>pos.bodyrc.lon;time.start</ucd>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                    <flag>nullable</flag>
+                </column>
+                <column g-colstat:fillFactor="1"
+                        g-colstat:max-value="524.658"
+                        g-colstat:median="204.114"
+                        g-colstat:min-value="-172.612"
+                        g-colstat:percentile03="-38.8266"
+                        g-colstat:percentile97="446.951">
+                    <name>io_phase_end</name>
+                    <description>Io phase at end of event</description>
+                    <unit>deg</unit>
+                    <ucd>pos.bodyrc.lon;time.end</ucd>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                    <flag>nullable</flag>
+                </column>
+            </table>
+        </schema>
+    </tableset>
+</ri:Resource>
