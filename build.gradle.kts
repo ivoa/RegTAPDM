@@ -8,7 +8,7 @@ plugins {
     signing
 }
 group = "org.javastro.ivoa.dm"
-version = "0.4-SNAPSHOT"
+version = "0.9"
 
 vodml {
     vodmlDir.set(file("vo-dml"))
