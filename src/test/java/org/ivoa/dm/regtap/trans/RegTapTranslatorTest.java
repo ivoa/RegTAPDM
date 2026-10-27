@@ -11,6 +11,8 @@ import org.junit.jupiter.api.Test;
 import javax.xml.transform.stream.StreamSource;
 import java.io.InputStream;
 import java.io.StringReader;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -44,7 +46,7 @@ class RegTapTranslatorTest extends AbstractBaseValidation {
 //   }
 
    @Test
-   void translate() throws JAXBException {
+   void translate() throws JAXBException, RegTapException {
       for(String resource : resources) {
          RegTAPModel res = trans(resource);
       }
@@ -52,12 +54,40 @@ class RegTapTranslatorTest extends AbstractBaseValidation {
    }
 
    @Test
-   void translateSingle() throws JAXBException {
+   void translateSingle() throws JAXBException, RegTapException {
       //inputvalidate("/ukidss.xml");
-      RegTAPModel ret = trans("/0000.xml");
+      RegTAPModel ret = trans("/vizier.xml");
       assertNotNull(ret);
+      assertEquals(100, ret.getResource().size());
+
+      Map<String, Resource> map = ret.getResource().stream().collect(Collectors.toMap(r -> r.getIvoid(), r -> r));
+
+      assertTrue(map.containsKey("ivo://CDS.VizieR/I/202"));
+
+      Resource res = map.get("ivo://CDS.VizieR/I/202");
+      assertNotNull(res);
+   }
+
+   @Test
+   void translateAmbigTab() throws JAXBException, RegTapException {
+//      inputvalidate("/ambiguousTable.xml");
+      RegTAPModel ret = trans("/ambiguousTable.xml");
+      assertNotNull(ret);
+      assertEquals(1, ret.getResource().size());
+
 
    }
+
+   @Test
+   void translateStds() throws JAXBException, RegTapException {
+      inputvalidate("/stds.xml");
+      RegTAPModel ret = trans("/stds.xml");
+      assertNotNull(ret);
+      assertEquals(26, ret.getResource().size());
+
+
+   }
+
 
 
    private void inputvalidate(String name) {
@@ -74,13 +104,13 @@ class RegTapTranslatorTest extends AbstractBaseValidation {
       assertTrue(ok);
    }
 
-   private RegTAPModel trans(String name) throws JAXBException {
+   private RegTAPModel trans(String name) throws JAXBException, RegTapException {
       System.out.println("translating " + name);
       XMLValidator regValidator = new XMLValidator(new RegTAPModel().management());
       InputStream inp = this.getClass().getResourceAsStream(name);
       assertNotNull(inp);
       RegTapTranslator translator = new RegTapTranslator();
-      String out = translator.translate(inp);
+      String out = translator.translateToXML(inp);
       assertNotNull(out);
       XMLValidator.ValidationResult res = regValidator.validate(out);
       if(!res.isOk)

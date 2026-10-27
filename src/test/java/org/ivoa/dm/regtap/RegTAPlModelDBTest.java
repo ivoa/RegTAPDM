@@ -9,6 +9,7 @@ import org.ivoa.vodml.testing.AutoRoundTripWithValidationTest;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -32,6 +33,13 @@ public class RegTAPlModelDBTest extends AutoDBRoundTripTest<RegTAPModel, String,
                   r.content_level = "level";
                   r.res_description = "description";
                   r.reference_url = "reference url";
+                  r.spatialCoverage = List.of(new STCSpatial("0/0-11",null));
+                  r.spectralCoverage = List.of(new STCSpectral(1e-20,2e-20),
+                        new STCSpectral(4e-20,5e-20));
+                  r.temporalCoverage = List.of(new STCTemporal(59108.0, 59109.0),
+                        new STCTemporal(59208.0, 59209.0));
+
+
 
               }
 
