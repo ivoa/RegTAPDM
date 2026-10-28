@@ -1,0 +1,1815 @@
+<ri:VOResources from="1" more="false" numberReturned="1"
+
+                xmlns:cs="http://www.ivoa.net/xml/ConeSearch/v1.0"
+                xmlns:osn="http://www.ivoa.net/xml/OpenSkyNode/v0.2" xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0">
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2016-09-20T09:45:00" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0                       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0                       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>MOC - HEALPix Multi-Order Coverage map</title>
+      <identifier>ivo://ivoa.net/std/MOC</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Fernique, P.</name>
+         </creator>
+         <creator>
+            <name>Boch, T.</name>
+         </creator>
+         <creator>
+            <name>Donaldson, T.</name>
+         </creator>
+         <creator>
+            <name>Durand, D.</name>
+         </creator>
+         <creator>
+            <name>O'Mullane, W.</name>
+         </creator>
+         <creator>
+            <name>Reinecke, M.</name>
+         </creator>
+         <creator>
+            <name>Taylor, M.</name>
+         </creator>
+         <date role="update">2014-06-02</date>
+         <version>1.0</version>
+         <contact>
+            <name>Applications WG</name>
+            <email>apps@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>Virtual observatory</subject>
+         <description>
+      The Multi-Order Coverage map method (MOC) is dedicated to specify arbitrary sky regions.
+      The goal is to be able to provide a very fast comparison mechanism between coverage maps.
+      The mechanism is based on the HEALPix sky tessellation algorithm.
+      It is essentially a simple way to map regions of the sky into hierarchically
+      grouped predefined cells.
+    </description>
+         <referenceURL>http://ivoa.net/documents/MOC/</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">1.0</endorsedVersion>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2016-10-21T08:34:00Z" status="active" updated="2024-10-02T09:59:00Z" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0   http://www.ivoa.net/xml/VOResource/v1.0  http://www.ivoa.net/xml/StandardsRegExt/v1.0   http://www.ivoa.net/xml/StandardsRegExt/v1.0  http://www.ivoa.net/xml/VOResource/v1.0   http://www.ivoa.net/xml/VOResource/v1.0" xsi:type="vstd:Standard">
+      <title>IVOA Registry Relational Schema</title>
+      <identifier>ivo://ivoa.net/std/RegTAP</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Demleitner, M.</name>
+         </creator>
+         <creator>
+            <name>Harrison, P.</name>
+         </creator>
+         <creator>
+            <name>Molinaro, M.</name>
+         </creator>
+         <creator>
+            <name>Greene, G.</name>
+         </creator>
+         <creator>
+            <name>Dower, T.</name>
+         </creator>
+         <creator>
+            <name>Perdikeas, M.</name>
+         </creator>
+         <date role="update">2024-10-02</date>
+         <version>1.2</version>
+         <contact>
+            <name>IVOA Registry WG</name>
+            <email>registry@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>virtual-observatories</subject>
+         <subject>astronomy-databases</subject>
+         <description>
+Registries provide a mechanism with which VO applications can discover and
+select resources - first and foremost data and services - that are relevant for
+a particular scientific problem. This specification defines an interface for
+searching this resource metadata based on the IVOA's TAP protocol. It specifies
+a set of tables that comprise a useful subset of the information contained in
+the registry records, as well as the table's data content in terms of the XML
+VOResource data model. The general design of the system is geared towards
+allowing easy authoring of queries.
+    </description>
+         <referenceURL>http://www.ivoa.net/documents/RegTAP</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">1.2</endorsedVersion>
+      <key>
+         <name>1.0</name>
+         <description>The data model for the tables making up the relational
+		registriy in version 1.0.  This key is used to locate TAP services
+		implementing RR in TAPRegExt dataModel elements.
+		</description>
+      </key>
+      <key>
+         <name>1.1</name>
+         <description>The data model for the tables making up the relational
+		registriy in version 1.1.  This key is used to locate TAP services
+		implementing RR in TAPRegExt dataModel or VODataService schema/@utype
+		elements.
+		</description>
+      </key>
+      <key>
+         <name>1.2</name>
+         <description>The data model for the tables making up the relational
+		registriy in version 1.2.  This key is used to locate TAP services
+		implementing the RR in TAPRegExt dataModel or VODataService schema/@utype
+		elements.
+		</description>
+      </key>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2016-07-09T08:00:00Z" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>Observation Data Model Core Components and its Implementation in the Table Access
+		Protocol</title>
+      <identifier>ivo://ivoa.net/std/obscore</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Louys, M.</name>
+         </creator>
+         <creator>
+            <name>Tody, D.</name>
+         </creator>
+         <creator>
+            <name>Dowler, P.</name>
+         </creator>
+         <creator>
+            <name>Durand, D.</name>
+         </creator>
+         <creator>
+            <name>Michel, L.</name>
+         </creator>
+         <creator>
+            <name>Bonnarel, F.</name>
+         </creator>
+         <creator>
+            <name>Micol, A.</name>
+         </creator>
+         <date role="update">2017-05-09</date>
+         <version>1.1</version>
+         <contact>
+            <name>IVOA Data Model Working Group</name>
+            <email>dm@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>Virtual observatory</subject>
+         <subject>Metadata modeling</subject>
+         <description>
+			This document defines the core components of the Observation data model
+			that are necessary to perform data discovery when querying data centers
+			for astronomical observations of interest. It exposes use-cases to be carried out,
+			explains the model and provides guidelines for its implementation as a data access
+			service based on the Table Access Protocol (TAP).
+			It aims at providing a simple model easy to understand and to implement by data
+			providers that wish to publish their data into the Virtual Observatory. This
+			interface integrates data modeling and data access aspects in a single service and
+			is named ObsTAP. It will be referenced as such in the IVOA registries.
+			In this document, the Observation Data Model Core Components (ObsCoreDM) defines
+			the core components of queryable metadata required for global discovery of
+			observational data. It is meant to allow a single query to be posed to TAP
+			services at multiple sites to perform global data discovery without having to
+			understand the details of the services present at each site. It defines a minimal
+			set of basic metadata and thus allows for a reasonable cost of implementation by
+			data providers. As with most of the VO Data Models, ObsCoreDM makes use of STC,
+			Utypes, Units and UCDs. The ObsCoreDM can be serialized as a VOTable. ObsCoreDM
+			can make reference to more complete data models such as Characterisation DM,
+			Spectrum DM or Simple Spectral Line Data Model (SSLDM). ObsCore shares a large set
+			of common concepts with DataSet Metadata Data Model (Cresitello-Dittmar et al. 2016)
+			which binds together most of the data model concepts from the above models in a
+			comprehensive and more general frame work. This current specification on the
+			contrary provides guidelines for implementing these concepts using the TAP protocol
+			and answering ADQL queries. It is dedicated to global discovery.
+		</description>
+         <referenceURL>http://ivoa.net/documents/ObsCore/</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">1.1</endorsedVersion>
+      <key>
+         <name>core-1.1</name>
+         <description>The TAP/ADQL table schema for ObsCore version 1.1 .
+			Examples for TAPv1.0
+		</description>
+      </key>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2016-10-21T09:40:00Z" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0                       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0                       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>Resource Metadata for the Virtual Observatory</title>
+      <identifier>ivo://ivoa.net/std/RM</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Hanisch, R.</name>
+         </creator>
+         <date role="update">2007-03-02</date>
+         <version>1.12</version>
+         <contact>
+            <name>IVOA Registry Working Group</name>
+            <email>registry@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>Virtual observatory</subject>
+         <description>
+      An essential capability of the Virtual Observatory is a means for describing
+      what data and computational facilities are available where, and once
+      identified, how to use them. The data themselves have associated metadata
+      (e.g., FITS keywords), and similarly we require metadata about data collections
+      and data services so that VO users can easily find information of interest.
+      Furthermore, such metadata are needed in order to manage distributed queries
+      efficiently; if a user is interested in finding x-ray images there is no point
+      in querying the HST archive, for example. In this document we suggest an
+      architecture for resource and service metadata and describe the relationship of
+      this architecture to emerging Web Services standards. We also define an initial
+      set of metadata concepts.
+    </description>
+         <referenceURL>http://www.ivoa.net/documents/latest/RM.html</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">1.12</endorsedVersion>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2013-03-25T19:21:51.07" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0                       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0                       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0" xsi:type="vstd:Standard">
+      <title>
+    IVOA Spectrum Data Model
+  </title>
+      <shortName> SpectrumDM </shortName>
+      <identifier> ivo://ivoa.net/std/SpectrumDM </identifier>
+      <curation>
+         <publisher ivo-id="ivo://ivoa.net/IVOA">
+      International Virtual Observatory Alliance
+    </publisher>
+         <creator>
+            <name> Jonathan McDowell </name>
+         </creator>
+         <creator>
+            <name> Doug Tody </name>
+         </creator>
+         <creator>
+            <name> Tamas Budavari </name>
+         </creator>
+         <creator>
+            <name> Markus Dolensky </name>
+         </creator>
+         <creator>
+            <name> Inga Kamp </name>
+         </creator>
+         <creator>
+            <name> Kelly McCusker </name>
+         </creator>
+         <creator>
+            <name> Pavlos Protopapas </name>
+         </creator>
+         <creator>
+            <name> Arnold Rots </name>
+         </creator>
+         <creator>
+            <name> Randy Thompson </name>
+         </creator>
+         <creator>
+            <name> Frank Valdes </name>
+         </creator>
+         <creator>
+            <name> Petr Skoda </name>
+         </creator>
+         <creator>
+            <name> Bruno Rino </name>
+         </creator>
+         <creator>
+            <name> Sebastien Derriere </name>
+         </creator>
+         <creator>
+            <name> Jesus Salgado </name>
+         </creator>
+         <creator>
+            <name> Omar Laurino </name>
+         </creator>
+         <date> 2011-11-20 </date>
+         <version> 1.1 </version>
+         <contact>
+            <name> Data Models Working Group </name>
+            <email> dm@ivoa.net </email>
+         </contact>
+      </curation>
+      <content>
+         <subject> software standard </subject>
+         <subject> virtual observatory </subject>
+         <subject> data model </subject>
+         <description>
+        We present a data model describing the structure of
+        spectrophotometric datasets with spectral and temporal
+        coordinates and associated metadata. This data model may be
+        used to represent spectra, time series data, segments of SED
+        (Spectral Energy Distributions) and other spectral or temporal
+        associations.  
+      </description>
+         <referenceURL>
+      http://www.ivoa.net/Documents/SpectrumDM/
+    </referenceURL>
+         <type> Other </type>
+         <contentLevel> Research </contentLevel>
+         <relationship>
+            <relationshipType>related-to</relationshipType>
+            <relatedResource ivo-id="ivo://www.ivoa.net/std/SSA">
+        Simple Spectral Access Protocol
+      </relatedResource>
+         </relationship>
+      </content>
+      <endorsedVersion status="rec"> 1.1 </endorsedVersion>
+      <schema namespace="http://www.ivoa.net/xml/Spectrum/Spectrum-1.01.xsd">
+         <location>http://www.ivoa.net/xml/Spectrum/Spectrum-1.01.xsd</location>
+         <description>
+      the recommended XML schema for serializing a spectral data
+      model instance.
+    </description>
+         <example>http://206-12-97-214.cloud.computecanada.ca/examples/</example>
+      </schema>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2019-12-06T12:49:00" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>Maintenance of the list of UCD words</title>
+      <shortName>UCDmaint</shortName>
+      <identifier>ivo://ivoa.net/std/UCDmaint</identifier>
+      <altIdentifier>doi:10.5479/ADS/bib/2006ivoa.spec.0528M</altIdentifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Genova, F.</name>
+         </creator>
+         <creator>
+            <name>Louys, M.</name>
+         </creator>
+         <creator>
+            <name>Preite Martinez, A.</name>
+         </creator>
+         <creator>
+            <name>Derriere, S.</name>
+         </creator>
+         <creator>
+            <name>Molinaro, M.</name>
+         </creator>
+         <creator>
+            <name>Delmotte, N.</name>
+         </creator>
+         <creator>
+            <name>Gray, N.</name>
+         </creator>
+         <creator>
+            <name>Mann, R.</name>
+         </creator>
+         <creator>
+            <name>McDowell, J.</name>
+         </creator>
+         <creator>
+            <name>Mc Glynn, T.</name>
+         </creator>
+         <creator>
+            <name>Ochsenbein, F.</name>
+         </creator>
+         <creator>
+            <name>Osuna, P.</name>
+         </creator>
+         <creator>
+            <name>Rixon, G.</name>
+         </creator>
+         <creator>
+            <name>Williams, R.</name>
+         </creator>
+         <date role="update">2018-08-23</date>
+         <version>2.0</version>
+         <contact>
+            <name>IVOA Semantics WG</name>
+            <email>semantics@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>Virtual observatory</subject>
+         <subject>Semantics</subject>
+         <description>
+			According to what is stated in the IVOA Recommendation An IVOA standard
+			for Unified Content Descriptors, this procedural document describes the
+			maintenance (add, change, suppress words) of the IVOA list of UCD1+ words
+			The UCD1+ Controlled Vocabulary. All versions of the list after V1.3,
+			IVOA Recommendation 1.3, are IVOA Endorsed Notes.
+    </description>
+         <referenceURL>http://www.ivoa.net/documents/UCDlistMaintenance/</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">2.0</endorsedVersion>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2019-12-06T12:37:00" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>The UCD1+ controlled vocabulary</title>
+      <shortName>ucdvoc</shortName>
+      <identifier>ivo://ivoa.net/std/ucdvoc</identifier>
+      <altIdentifier>doi:10.5479/ADS/bib/2018ivoa.spec.0527M</altIdentifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Preite Martinez, A.</name>
+         </creator>
+         <creator>
+            <name>Louys, M.</name>
+         </creator>
+         <creator>
+            <name>Cecconi, B.</name>
+         </creator>
+         <creator>
+            <name>Derriere, S.</name>
+         </creator>
+         <creator>
+            <name>Ochsenbein, F.</name>
+         </creator>
+         <date role="update">2018-05-27</date>
+         <version>1.3</version>
+         <contact>
+            <name>IVOA Semantics Working Group</name>
+            <email>semantics@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>Virtual observatory</subject>
+         <subject>Semantics</subject>
+         <description>
+			This document describes the list of controlled terms used to build the
+			Unified Content Descriptors, Version 1+ (UCD1+). The document describing
+			the UCD1+ can be found at the URL:
+			http://www.ivoa.net/Documents/latest/UCD.html. This document reviews the
+			structure of the UCD1+ and presents the current vocabulary. This version
+			contains new UCD words for the planetary data community as proposed in
+			the Technical Note by Cecconi et al.. The suggested list of line
+			labels under the em.line branch is not included. A general solution is
+			currently under study to deal with lists of element instances such
+			spectral lines, chemical elements, elementary particles, etc. using
+			either utypes or a vocabulary.
+		</description>
+         <referenceURL>http://www.ivoa.net/documents/UCD1+/</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">1.3</endorsedVersion>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2019-12-04T16:44:00" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0                       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0                       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>Units in the VO</title>
+      <shortName>VOUnits</shortName>
+      <identifier>ivo://ivoa.net/std/VOUnits</identifier>
+      <altIdentifier>doi:10.5479/ADS/bib/2014ivoa.spec.0523D</altIdentifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Derriere, S.</name>
+         </creator>
+         <creator>
+            <name>Gray, N.</name>
+         </creator>
+         <creator>
+            <name>Demleitner, M.</name>
+         </creator>
+         <creator>
+            <name>Louys, M.</name>
+         </creator>
+         <creator>
+            <name>Ochsenbein, F.</name>
+         </creator>
+         <date role="update">2014-05-23</date>
+         <version>1.0</version>
+         <contact>
+            <name>IVOA Semantics WG</name>
+            <email>semantics@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>Virtual observatory</subject>
+         <description>
+    	This document describes a recommended syntax for writing the string
+    	representation of unit labels ("VOUnits"). In addition, it describes a
+    	set of recognised and deprecated units, which is as far as possible
+    	consistent with other relevant standards (BIPM, ISO/IEC and the IAU). The
+    	intention is that units written to conform to this specification will
+    	likely also be parsable by other well-known parsers. To this end, we
+    	include machine-readable grammars for other units syntaxes.
+    </description>
+         <referenceURL>http://ivoa.net/documents/VOUnits/</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">1.0</endorsedVersion>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2016-10-21T08:20:00Z" status="active" updated="2023-05-23T14:03:00Z" version="1.2" xsi:type="vstd:Standard">
+      <title>VODataService: a VOResource Schema Extension for Describing Collections and Services</title>
+      <identifier>ivo://ivoa.net/std/VODataService</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Plante, R.</name>
+         </creator>
+         <creator>
+            <name>Stébé, A.</name>
+         </creator>
+         <creator>
+            <name>Benson, K.</name>
+         </creator>
+         <creator>
+            <name>Dowler, P.</name>
+         </creator>
+         <creator>
+            <name>Graham, M.</name>
+         </creator>
+         <creator>
+            <name>Greene, G.</name>
+         </creator>
+         <creator>
+            <name>Harrison, P.</name>
+         </creator>
+         <creator>
+            <name>Lemson, G.</name>
+         </creator>
+         <creator>
+            <name>Linde, T.</name>
+         </creator>
+         <creator>
+            <name>Rixon, G.</name>
+         </creator>
+         <date role="update">2021-11-02</date>
+         <version>1.2</version>
+         <contact>
+            <name>IVOA Registry WG</name>
+            <email>registry@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>virtual-observatories</subject>
+         <description>
+			VODataService refers to an XML encoding standard for a specialized
+			extension of the IVOA Resource Metadata that is useful for describing
+			data collections and the services that access them. It is defined as an
+			extension of the core resource metadata encoding standard known as
+			VOResource (Plante and Demleitner et al., 2018) using XML Schema. The
+			specialized resource types defined by the VODataService schema allow one
+			to describe how the data underlying the resource cover the sky and the
+			frequency and time axes. VODataService also enables detailed descriptions
+			of tables that includes information useful to the discovery of tabular
+			data. It is intended that the VODataService data types will be
+			particularly useful in describing services that support standard IVOA
+			service protocols.
+    </description>
+         <referenceURL>http://ivoa.net/documents/VODataService/</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">1.2</endorsedVersion>
+      <schema namespace="http://www.ivoa.net/xml/VODataService/v1.1">
+         <location>http://ivoa.net/xml/VODataService/v1.1</location>
+         <description>
+      A schema defining resource types for data and catalog services,
+      including table metadata.
+    </description>
+      </schema>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2017-06-01T09:33:00Z" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0                       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>HiPS -- Hierarchical Progressive Survey</title>
+      <identifier>ivo://ivoa.net/std/hips</identifier>
+      <curation>
+         <publisher>IVOA Apps Working Group</publisher>
+         <creator>
+            <name>Fernique, P.</name>
+         </creator>
+         <creator>
+            <name>Allen, M.</name>
+         </creator>
+         <creator>
+            <name>Boch, T.</name>
+         </creator>
+         <creator>
+            <name>Donaldson, T.</name>
+         </creator>
+         <creator>
+            <name>Durand, D.</name>
+         </creator>
+         <creator>
+            <name>Ebisawa, K.</name>
+         </creator>
+         <creator>
+            <name>Michel, L.</name>
+         </creator>
+         <creator>
+            <name>Salgado, J.</name>
+         </creator>
+         <creator>
+            <name>Stoehr, F.</name>
+         </creator>
+         <date role="created">2017-06-01T09:33:00</date>
+         <contact>
+            <name>IVOA Apps Working Group</name>
+            <email>apps@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>Virtual observatory</subject>
+         <subject>Standards</subject>
+         <subject>HiPS</subject>
+         <description>HiPS: a hierarchical scheme for the description, storage and
+      access of sky survey data. The system is based on hierarchical tiling of sky
+      regions at finer and finer spatial resolution which facilitates a progressive
+      view of a survey, and supports multi-resolution zooming and panning. HiPS uses
+      the HEALPix tessellation of the sky as the basis for the scheme and is
+      implemented as a simple file structure with a direct indexing scheme that
+      leads to practical implementations.</description>
+         <referenceURL>http://ivoa.net/documents/HiPS</referenceURL>
+      </content>
+      <endorsedVersion status="rec" use="preferred">1.0</endorsedVersion>
+      <key>
+         <name>hipslist-1.0</name>
+         <description>A service returning a list of HiPS identifiers
+      and metadata for HiPS. This term is used to form a standardID,
+      for instance for use in vr:Capability.</description>
+      </key>
+      <key>
+         <name>hips-1.0</name>
+         <description>A single HiPS. This term is used to form a standardID,
+      for instance for use in vr:Capability.</description>
+      </key>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2021-07-27T13:21:00" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0                       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0                       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>Observation Locator Table Access Protocol</title>
+      <shortName>ObsLocTAP</shortName>
+      <identifier>ivo://ivoa.net/std/obsloctap</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Ibarra, Aitor</name>
+         </creator>
+         <creator>
+            <name>Salgado, Jesús</name>
+         </creator>
+         <creator>
+            <name>Ehle, Matthias</name>
+         </creator>
+         <creator>
+            <name>Gabriel, Carlos</name>
+         </creator>
+         <creator>
+            <name>Kretschmar, Peter</name>
+         </creator>
+         <creator>
+            <name>Kuulkers, Erik</name>
+         </creator>
+         <creator>
+            <name>Merín, Bruno</name>
+         </creator>
+         <creator>
+            <name>Ness, Jan-Uwe</name>
+         </creator>
+         <creator>
+            <name>Salazar, Emilio</name>
+         </creator>
+         <creator>
+            <name>Saxton, Richard</name>
+         </creator>
+         <creator>
+            <name>Cecconi, Baptiste</name>
+         </creator>
+         <creator>
+            <name>Foster, Karl</name>
+         </creator>
+         <creator>
+            <name>Demleitner, Markus</name>
+         </creator>
+         <creator>
+            <name>Dempsey, James</name>
+         </creator>
+         <creator>
+            <name>Molinaro, Marco</name>
+         </creator>
+         <creator>
+            <name>Sánchez, Celia</name>
+         </creator>
+         <creator>
+            <name>Taylor, Mark</name>
+         </creator>
+         <creator>
+            <name>Trigo, María Díaz</name>
+         </creator>
+         <creator>
+            <name>Kennea, Jaime</name>
+         </creator>
+         <creator>
+            <name>Kettenis, Mark</name>
+         </creator>
+         <creator>
+            <name>Matt, Giorgio</name>
+         </creator>
+         <creator>
+            <name>Osborne, Julian</name>
+         </creator>
+         <creator>
+            <name>de Oña Wilhelmi, Emma</name>
+         </creator>
+         <creator>
+            <name>Salbol, Edward J.</name>
+         </creator>
+         <creator>
+            <name>Sivakoff, Gregory</name>
+         </creator>
+         <creator>
+            <name>Tao, Lian</name>
+         </creator>
+         <creator>
+            <name>Tohuvavohu, Aaron</name>
+         </creator>
+         <creator>
+            <name>Workman, Bill</name>
+         </creator>
+         <date role="update">2021-07-27</date>
+         <version>1.0</version>
+         <contact>
+            <name>IVOA Data Model Working Group</name>
+            <email>dm@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>virtual-observatories</subject>
+         <subject>observatories</subject>
+         <description>
+      The Observation Locator Table Access Protocol (ObsLocTAP) defines a data
+      model for scheduled observations and a method to run queries over
+      compliant data, using several Virtual Observatory technologies.
+
+      The data model builds on the ObsCore data model, removing elements
+      associated with dataset access that are not available during the planning
+      phase. In this way, this standard is focused on access to metadata
+      related to the planning of a certain observatory, more than on access to
+      the scientific data products. Also, the data model will be focused on
+      discovery of planned observations, which is very useful information for
+      multi-wavelength coordination observations, re-planning information
+      propagation, follow-up of Targets of Opportunity alerts, preparation of
+      proposals, etc.
+
+      As with ObsCore, a serialisation into a relational table is defined,
+      which allows users to run complex queries using the IVOA Table Access
+      Protocol. The document also prescribes how to register and discover
+      ObsLocTAP services.
+    </description>
+         <referenceURL>http://ivoa.net/documents/ObsLocTAP/</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">1.0</endorsedVersion>
+      <key>
+         <name>table-1.0</name>
+         <description>The table schema as defined by version 1.0 of
+      the recommendation.
+    </description>
+      </key>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2019-12-06T11:30:00" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>An IVOA Standard for Unified Content Descriptors</title>
+      <shortName>UCD</shortName>
+      <identifier>ivo://ivoa.net/std/UCD</identifier>
+      <altIdentifier>doi:10.5479/ADS/bib/2005ivoa.spec.0819D</altIdentifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Derriere, S.</name>
+         </creator>
+         <creator>
+            <name>Gray, N.</name>
+         </creator>
+         <creator>
+            <name>Mann, R.</name>
+         </creator>
+         <creator>
+            <name>Preite Martinez, A.</name>
+         </creator>
+         <creator>
+            <name>McDowell, J.</name>
+         </creator>
+         <creator>
+            <name>Mc Glynn, T.</name>
+         </creator>
+         <creator>
+            <name>Ochsenbein, F.</name>
+         </creator>
+         <creator>
+            <name>Osuna, P.</name>
+         </creator>
+         <creator>
+            <name>Rixon, G.</name>
+         </creator>
+         <creator>
+            <name>Williams, R.</name>
+         </creator>
+         <date role="update">2005-08-19</date>
+         <version>1.10</version>
+         <contact>
+            <name>IVOA Semantics Working Group</name>
+            <email>semantics@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>Virtual observatory</subject>
+         <subject>Semantics</subject>
+         <description>
+			This document describes the current understanding of the IVOA controlled
+			vocabulary for describing astronomical data quantities, called Unified
+			Content Descriptors (UCDs). The present document defines a new standard
+			(named UCD1+) improving the first generation of UCDs (hereafter UCD1).
+			The basic idea is to adopt a new syntax and vocabulary requiring little
+			effort for people to adapt softwares already using UCD1. This document
+			also addresses the questions of maintenance and evolution of the UCD1+.
+			Examples of use cases within the VO, and tools for using UCD1+ are also
+			described.
+		</description>
+         <referenceURL>http://www.ivoa.net/documents/latest/UCD.html</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">1.10</endorsedVersion>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2015-12-04T11:39:00" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0                       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0                       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>IVOA Single-Sign-On Profile: Authentication Mechanisms</title>
+      <identifier>ivo://ivoa.net/std/sso</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Taffoni, G.</name>
+            <logo>http://www.ivoa.net/icons/ivoa_logo_small.jpg</logo>
+         </creator>
+         <creator>
+            <name>Schaaff, A.</name>
+         </creator>
+         <creator>
+            <name>Rixon, G.</name>
+         </creator>
+         <creator>
+            <name>Major, B.</name>
+         </creator>
+         <date role="representative">2017-05-24</date>
+         <date role="updated">2017-05-24</date>
+         <version>2.0</version>
+         <contact>
+            <name>IVOA GWS WG</name>
+            <email>grid@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>virtual observatory</subject>
+         <description>
+      Approved client-server authentication mechanisms are described for the
+      IVOA single-sign-on profile: No Authentication; HTTP Basic
+      Authentication; TLS with passwords; TLS with client certificates;
+      Cookies; Open Authentication; Security Assertion Markup Language; OpenID.
+      Normative rules are given for the implementation of these mechanisms,
+      mainly by reference to pre-existing standards. The Authorization
+      mechanisms are out of the scope of this document.
+    </description>
+         <referenceURL>http://www.ivoa.net/Documents/SSOAuthMech</referenceURL>
+      </content>
+      <endorsedVersion status="rec">2.0</endorsedVersion>
+      <key>
+         <name>BasicAA</name>
+         <description>
+      Service supports authentication with HTTP basic authentication
+      (RFC2617, sect. 4 of the Recommendation).
+    </description>
+      </key>
+      <key>
+         <name>tls-with-password</name>
+         <description>
+      Service supports authentication with a password transmitted through TLS
+      as per section 7 of the Recommendation.
+    </description>
+      </key>
+      <key>
+         <name>tls-with-password</name>
+         <description>
+      Service supports authentication with a password transmitted through TLS
+      as per section 7 of the Recommendation.
+    </description>
+      </key>
+      <key>
+         <name>tls-with-certificate</name>
+         <description>
+      Service supports authentication with a client-side X.509 certificate
+      as per section 6 of the Recommendation.
+    </description>
+      </key>
+      <key>
+         <name>cookie</name>
+         <description>
+      Service supports authentication with RFC 6265-type cookies
+      as per section 8 of the Recommendation.
+    </description>
+      </key>
+      <key>
+         <name>saml2.0</name>
+         <description>
+      Service supports authentication via SAML (most likely, "Shibboleth")
+      as per section 9 of the Recommendation.
+    </description>
+      </key>
+      <key>
+         <name>OAuth</name>
+         <description>
+      Service supports authentication via Open Authentication 2.0 ("OAuth")
+      as per section 10 of the Recommendation.
+    </description>
+      </key>
+      <key>
+         <name>OpenID</name>
+         <description>
+      Service supports authentication via OpenID
+      as per section 11 of the Recommendation.
+    </description>
+      </key>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2017-01-20T09:00:00" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0                       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0                       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>VO-DML: a consistent modeling language for IVOA data models</title>
+      <identifier>ivo://ivoa.net/std/VODML</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Lemson, G.</name>
+         </creator>
+         <creator>
+            <name>Laurino, O.</name>
+         </creator>
+         <creator>
+            <name>Bourges, L.</name>
+         </creator>
+         <creator>
+            <name>Cresitello-Dittmar, M.</name>
+         </creator>
+         <creator>
+            <name>Demleitner, M.</name>
+         </creator>
+         <creator>
+            <name>Donaldson, T.</name>
+         </creator>
+         <creator>
+            <name>Dowler, P.</name>
+         </creator>
+         <creator>
+            <name>Graham, M.</name>
+         </creator>
+         <creator>
+            <name>Gray, N.</name>
+         </creator>
+         <creator>
+            <name>Michel, L.</name>
+         </creator>
+         <creator>
+            <name>Salgado, J.</name>
+         </creator>
+         <date role="update">2018-05-19</date>
+         <version>1.0</version>
+         <contact>
+            <name>IVOA Data Models WG</name>
+            <email>dm@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>Virtual observatory</subject>
+         <description>
+      This document defines a standard modelling language, or meta-model, for
+      expressing data models in the IVOA. Adopting such a uniform language for all
+      models allows these to be used in a homogeneous manner and allows a
+      consistent definition of reuse of one model by another. The particular language
+      defined here includes a consistent identification mechanism for model which
+      allows these to be referenced in an explicit and uniform manner also from other
+      contexts, in particular from othe IVOA standard formats such as VOTable.
+
+      The language defined in this specification is named VO-DML (VO Data Modeling
+      Language). VO-DML is a conceptual modeling language that is agnostic of
+      serializations, or physical representations. This allows it to be designed to
+      fit as many purposes as possible. VO-DML is directly based on UML, and can be
+      seen as a particular representation of a UML2 Profile. VO-DML is restricted to
+      describing static data structures and from UML it only uses a subset of the
+      elements defined in its language for describing "Class Diagrams". Its concepts
+      can be easily mapped to equivalent data modelling concepts in other
+      representations such as relational databases, XML schemas and object-oriented
+      computer languages.
+
+      VO-DML has a representation as a simple XML dialect named VO-DML/XML
+      that must be used to provide the formal representation of a VO-MDL data model.
+      VO-DML/XML aims to be concise, explicit and easy to parse and use in code that
+      needs to interpret annotated data sets.
+
+      VO-DML as described in this document is an example of a domain specific
+      modeling language, where the domain here is defined as the set of data and
+      meta-data structures handled in the IVOA and Astronomy at large. VO-DML
+      provides a custom representation of such a language and as a side effect allows
+      the creation and use of standards compliant data models outside of the IVOA
+      standards context.
+    </description>
+         <referenceURL>http://ivoa.net/documents/VODML/</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="pr">1.0</endorsedVersion>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2013-03-25T19:21:51.07" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0                       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0                       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>
+    Space-Time Coordinate Metadata for the Virtual Observatory
+  </title>
+      <shortName> STC </shortName>
+      <identifier> ivo://ivoa.net/std/STC </identifier>
+      <curation>
+         <publisher ivo-id="ivo://ivoa.net/IVOA">
+      International Virtual Observatory Alliance
+    </publisher>
+         <creator>
+            <name> Arnold Rots </name>
+         </creator>
+         <date> 2011-11-20 </date>
+         <version> 1.33 </version>
+         <contact>
+            <name> Data Models Working Group </name>
+            <email> dm@ivoa.net </email>
+         </contact>
+      </curation>
+      <content>
+         <subject> software standard </subject>
+         <subject> virtual observatory </subject>
+         <subject> data model </subject>
+         <subject> coordinate system </subject>
+         <description>
+        This document provides a complete design description of the
+        Space-Time Coordinate (STC) metadata for the Virtual
+        Observatory. It explains the various components, highlights
+        some implementation considerations, presents a complete set of
+        UML diagrams, and discusses the relation between STC and
+        certain other parts of the Data Model. Two serializations are
+        discussed: XML Schema (STC-X) and String (STC-S); the former
+        is an integral part of this Recommendation. 
+      </description>
+         <referenceURL>
+      http://www.ivoa.net/Documents/latest/STC.html
+    </referenceURL>
+         <type> Other </type>
+         <contentLevel> Research </contentLevel>
+      </content>
+      <endorsedVersion status="rec"> 1.33 </endorsedVersion>
+      <schema namespace="http://www.ivoa.net/xml/STC/stc-v1.30.xsd">
+         <location>http://www.ivoa.net/xml/STC/stc-v1.30.xsd</location>
+         <description>
+      the STC-X XML schema for serializing descriptions of space-time
+      coordinates and coordinate systems.
+    </description>
+         <example>http://206-12-97-214.cloud.computecanada.ca/examples/</example>
+      </schema>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2016-10-21T09:01:00Z" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0                       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0                       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>Registry Interfaces</title>
+      <identifier>ivo://ivoa.net/std/RegistryInterface</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Dower, T.</name>
+         </creator>
+         <creator>
+            <name>Demleitner, M.</name>
+         </creator>
+         <creator>
+            <name>Benson, K.</name>
+         </creator>
+         <creator>
+            <name>Plante, R.</name>
+         </creator>
+         <creator>
+            <name>Auden, E.</name>
+         </creator>
+         <creator>
+            <name>Graham, M.</name>
+         </creator>
+         <creator>
+            <name>Greene, G.</name>
+         </creator>
+         <creator>
+            <name>Hill, M.</name>
+         </creator>
+         <creator>
+            <name>Linde, T.</name>
+         </creator>
+         <creator>
+            <name>Morris, D.</name>
+         </creator>
+         <creator>
+            <name>O'Mullane, W.</name>
+         </creator>
+         <creator>
+            <name>Rixon, G.</name>
+         </creator>
+         <creator>
+            <name>Stébé, A.</name>
+         </creator>
+         <creator>
+            <name>Andrews, K.</name>
+         </creator>
+         <date role="update">2015-03-10</date>
+         <version>1.1</version>
+         <contact>
+            <name>Registry WG</name>
+            <email>registry@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>Virtual observatory</subject>
+         <subject>Registry</subject>
+         <subject>OAI-PMH</subject>
+         <description>
+      The VO Registry provides a mechanism with which VO applications can discover
+      and select resources that are relevant for a particular scientific problem.
+      This specification defines the operation of this system. It is based on a
+      general, distributed model composed of searchable and publishing registries, as
+      introduced at the beginning of this document. The main body of the
+      specification has two components: (a) an interface for harvesting publishing
+      registries, which builds upon the Open Archives Initiative Protocol for
+      Metadata Harvesting. (b) A VOResource extension for registering registry
+      services and description of a central list of said IVOA registry services.
+      Finally, this specification briefly discusses client interfaces to the Registry
+      as provided by searchable registries.
+    </description>
+         <referenceURL>http://www.ivoa.net/documents/RegistryInterface</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">1.1</endorsedVersion>
+      <schema namespace="http://www.ivoa.net/xml/RegistryInterface/v1.0">
+         <location>http://ivoa.net/xml/RegistryInterface/RegistryInterface-v1.0.xsd</location>
+         <description>A small schema defining the global ri:Resource element used
+      as a root element for VOResource records; it is necessary because
+      VOResoruce itself defines no global elements by design.</description>
+      </schema>
+      <schema namespace="http://www.ivoa.net/xml/VORegistry/v1.0">
+         <location>http://ivoa.net/xml/VORegistry/VORegistry-v1.0.xsd</location>
+         <description>A VOResource extension defining resource and
+      capability types for describing registry services.</description>
+      </schema>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2016-09-19T22:00:00" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0                       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0                       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>Simple Application Messaging Protocol</title>
+      <identifier>ivo://ivoa.net/std/samp</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Taylor, M.</name>
+         </creator>
+         <creator>
+            <name>Boch, T.</name>
+         </creator>
+         <creator>
+            <name>Fitzpatrick, M.</name>
+         </creator>
+         <creator>
+            <name>Allan, A.</name>
+         </creator>
+         <creator>
+            <name>Fay, J.</name>
+         </creator>
+         <creator>
+            <name>Paioro, L.</name>
+         </creator>
+         <creator>
+            <name>Taylor, J.</name>
+         </creator>
+         <creator>
+            <name>Tody, D.</name>
+         </creator>
+         <date role="update">2012-04-11</date>
+         <version>1.3</version>
+         <contact>
+            <name>Applications WG</name>
+            <email>apps@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>Virtual observatory</subject>
+         <description>
+      SAMP is a messaging protocol that enables astronomy software tools
+      to interoperate and communicate. IVOA members have recognised
+      that building a monolithic tool that attempts to fulfil all the
+      requirements of all users is impractical, and it is a better use of
+      our limited resources to enable individual tools to work together
+      better. One element of this is defining common file formats for the
+      exchange of data between different applications. Another important
+      component is a messaging system that enables the applications to
+      share data and take advantage of each other's functionality. SAMP
+      supports communication between applications on the desktop and in
+      web browsers, and is also intended to form a framework for more
+      general messaging requirements.
+    </description>
+         <referenceURL>http://ivoa.net/documents/SAMP/</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">1.3</endorsedVersion>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vot="http://www.ivoa.net/xml/VOTable/v1.3" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2020-05-11T00:00:00Z" status="active" updated="2025-01-30T00:00:00Z" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0   http://www.ivoa.net/xml/VOResource/v1.0  http://www.ivoa.net/xml/StandardsRegExt/v1.0   http://www.ivoa.net/xml/StandardsRegExt/v1.0  http://www.ivoa.net/xml/VOResource/v1.0   http://www.ivoa.net/xml/VOResource/v1.0   http://www.ivoa.net/xml/VOTable/v1.3   http://www.ivoa.net/xml/VOTable/v1.3" xsi:type="vstd:Standard">
+      <title>VO Table Format Definition</title>
+      <identifier>ivo://ivoa.net/std/VOTable</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Francois Ochsenbein</name>
+         </creator>
+         <creator>
+            <name>Roy Williams</name>
+         </creator>
+         <creator>
+            <name>Clive Davenhall</name>
+         </creator>
+         <creator>
+            <name>Markus Demleitner</name>
+         </creator>
+         <creator>
+            <name>Tom Donaldson</name>
+         </creator>
+         <creator>
+            <name>Daniel Durand</name>
+         </creator>
+         <creator>
+            <name>Pierre Fernique</name>
+         </creator>
+         <creator>
+            <name>David Giaretta</name>
+         </creator>
+         <creator>
+            <name>Robert Hanisch</name>
+         </creator>
+         <creator>
+            <name>Tom McGlynn</name>
+         </creator>
+         <creator>
+            <name>Alex Szalay</name>
+         </creator>
+         <creator>
+            <name>Mark Taylor</name>
+         </creator>
+         <creator>
+            <name>Andreas Wicenec</name>
+         </creator>
+         <date role="update">2025-01-30</date>
+         <date role="update">2019-10-21</date>
+         <date role="update">2013-09-20</date>
+         <date role="update">2009-11-30</date>
+         <date role="creation">2004-08-11</date>
+         <version>1.5</version>
+         <contact>
+            <name>Applications WG</name>
+            <email>apps@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>virtual-observatories</subject>
+         <description>
+This document describes the structures making up the VOTable standard. The main part of this document describes the adopted part of the VOTable standard; it is followed by appendices presenting extensions which have been proposed and/or discussed, but which are not part of the standard.
+    </description>
+         <referenceURL>http://www.ivoa.net/documents/VOTable</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">1.5</endorsedVersion>
+      <schema namespace="http://www.ivoa.net/xml/VOTable/v1.3">
+         <location>http://www.ivoa.net/xml/VOTable/v1.3</location>
+         <description>VOTable is meant to serialize tabular documents in the context of Virtual Observatory applications. This schema corresponds to the VOTable document available from http://www.ivoa.net/Documents/latest/VOT.html</description>
+      </schema>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2016-10-21T06:52:00" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0                       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0                       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>IVOA Identifiers</title>
+      <identifier>ivo://ivoa.net/std/Identifiers</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Demleitner, M.</name>
+         </creator>
+         <creator>
+            <name>Plante, R.</name>
+         </creator>
+         <creator>
+            <name>Linde, T.</name>
+         </creator>
+         <creator>
+            <name>Williams, R.</name>
+         </creator>
+         <creator>
+            <name>Noddle, K.</name>
+         </creator>
+         <date role="update">2016-05-23</date>
+         <version>2.0</version>
+         <contact>
+            <name>IVOA Registry WG</name>
+            <email>registry@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>Virtual observatory</subject>
+         <subject>URI</subject>
+         <description>
+      An IVOA Identifier is a globally unique name for a resource within the Virtual
+      Observatory. This name can be used to retrieve a unique description of the
+      resource from an IVOA-compliant registry or to identify an entity like a
+      dataset or a protocol without dereferencing the identifier. This document
+      describes the syntax for IVOA Identifiers as well as how they are created. The
+      syntax has been defined to encourage global-uniqueness naturally and to
+      maximize the freedom of resource providers to control the character content of
+      an identifier.
+    </description>
+         <referenceURL>http://www.ivoa.net/documents/Identifiers</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">2.0</endorsedVersion>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2011-06-07T17:19:00" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>TAPRegExt: a VOResource Schema Extension for Describing TAP Services</title>
+      <identifier>ivo://ivoa.net/std/TAPRegExt</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>IVOA Registry WG</name>
+            <logo>http://www.ivoa.net/icons/ivoa_logo_small.jpg</logo>
+         </creator>
+         <creator>
+            <name>IVOA DAL WG</name>
+            <logo>http://www.ivoa.net/icons/ivoa_logo_small.jpg</logo>
+         </creator>
+         <date role="representative">2012-08-27</date>
+         <version>1.0</version>
+         <contact>
+            <name>IVOA DAL WG</name>
+            <email>dal@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>standard language identifiers</subject>
+         <subject>virtual observatory</subject>
+         <description>
+			This document describes an XML encoding standard for metadata about
+			TAP services. Specifically, it defines how the services' capability
+			element is used to communicate upload methods, data formats, data
+			models and languages supported, the languages' properties, as well as
+			server limits.
+		</description>
+         <referenceURL>http://www.ivoa.net/Documents/TAPRegExt</referenceURL>
+      </content>
+      <endorsedVersion status="rec">1.0</endorsedVersion>
+      <key>
+         <name>upload-inline</name>
+         <description>
+			Table upload inline with the request, as per section
+			2.5.2 of the TAP recommendation 1.0.
+		</description>
+      </key>
+      <key>
+         <name>upload-http</name>
+         <description>
+			Table upload by giving an http URL in the UPLOAD
+			parameter, see section 2.5.1 of the TAP recommendation 1.0.
+		</description>
+      </key>
+      <key>
+         <name>upload-https</name>
+         <description>
+			Table upload by giving an https URL in the UPLOAD
+			parameter, see section 2.5.1 of the TAP recommendation 1.0.
+		</description>
+      </key>
+      <key>
+         <name>upload-ftp</name>
+         <description>
+			Table upload by giving an ftp URL in the UPLOAD
+			parameter, see section 2.5.1 of the TAP recommendation 1.0.
+		</description>
+      </key>
+      <key>
+         <name>output-votable-td</name>
+         <description>VOTable with data in a TABLEDATA element.</description>
+      </key>
+      <key>
+         <name>output-votable-binary</name>
+         <description>VOTable with data in a BINARY stream.</description>
+      </key>
+      <key>
+         <name>output-votable-binary2</name>
+         <description>VOTable with data in a BINARY2 stream.</description>
+      </key>
+      <key>
+         <name>features-udf</name>
+         <description>An enumeration of ADQL or SQL user defined functions
+			with their signatures. See the TAPRegExt specification for details.
+		</description>
+      </key>
+      <key>
+         <name>features-adqlgeo</name>
+         <description>An enumeration of ADQL geometry functions implemented
+			by the server. Support for a geometry function is declared by
+			including a feature having just the function name in its form
+			element. Since ADQL 2.0, there are the features AREA, BOX (deprecated in
+			2.1), CENTROID, CIRCLE, CONTAINS, COORD1, COORD2, DISTANCE, INTERSECTS,
+			REGION, POINT, and POLYGON here.
+		</description>
+      </key>
+      <key>
+         <name>features-adql-string</name>
+         <description>An enumeration of optional string functions implemented
+			by the service. ADQL 2.1 defines the UPPER, LOWER and ILIKE features here.
+		</description>
+      </key>
+      <key>
+         <name>features-adql-common-table</name>
+         <description>Features related to the support of common table expressions
+			in the service's ADQL. ADQL 2.1 only has one feature, WITH, here.
+		</description>
+      </key>
+      <key>
+         <name>features-adql-sets</name>
+         <description>Features related to the support of set operators
+			in the service's ADQL. ADQL 2.1 defines three features here:
+			UNION, EXCEPT, INTERSECT.
+		</description>
+      </key>
+      <key>
+         <name>features-adql-type</name>
+         <description>Features related to the type conversions
+			in the service's ADQL. ADQL 2.1 defines one feature here:
+			CAST.
+		</description>
+      </key>
+      <key>
+         <name>features-adql-unit</name>
+         <description>Features related to the service's support of in-ADQL unit
+			parsing and coversion. ADQL 2.1 has only one feature, IN_UNIT, here.
+		</description>
+      </key>
+      <key>
+         <name>features-adql-offset</name>
+         <description>Features related to the service's support of the ADQL OFFSET
+			construct; ADQL 2.1 has only one feature, OFFSET, here.
+		</description>
+      </key>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2021-05-25T11:10:00" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0                       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0                       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0" xsi:type="vstd:Standard">
+      <title>Vocabularies in the VO</title>
+      <shortName>vocabularies</shortName>
+      <identifier>ivo://ivoa.net/std/vocabularies</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Demleitner, M.</name>
+         </creator>
+         <creator>
+            <name>Gray, N.</name>
+         </creator>
+         <creator>
+            <name>Taylor, M.</name>
+         </creator>
+         <date role="update">2023-02-06</date>
+         <version>2.1</version>
+         <contact>
+            <name>IVOA Semantics WG</name>
+            <email>semantics@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>virtual-observatories</subject>
+         <description>
+    	In this document, we discuss practices related to the use of RDF-based
+    	consensus vocabularies in the Virtual Observatory, that is the creation,
+    	publication, maintenance, and consumption of hierarchical word lists
+    	agreed upon within the IVOA. To cover the wide range of use cases
+    	envisoned, we define different vocabulary types for informal knowledge
+    	organisation on the one hand, and strict hierarchies of classes and
+    	properties on the other. While the framework rests on the solid
+    	foundations of W3C RDF, provisions are made to facilitate using IVOA
+    	vocabularies without specific RDF tooling. Non-normative appendices
+    	detail the current vocabulary-related tooling.
+    </description>
+         <referenceURL>https://ivoa.net/documents/Vocabularies</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">2.1</endorsedVersion>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2013-03-25T19:21:51.07" status="active" updated="2025-04-16T09:07:32.628361" xsi:type="vstd:Standard">
+      <title>
+    VOResource: an XML Encoding Schema for Resource Metadata
+  </title>
+      <shortName>VOResource</shortName>
+      <identifier>ivo://ivoa.net/std/VOResource</identifier>
+      <curation>
+         <publisher ivo-id="ivo://ivoa.net/IVOA">
+      International Virtual Observatory Alliance
+    </publisher>
+         <creator>
+            <name> Raymond Plante </name>
+         </creator>
+         <creator>
+            <name> Kevin Benson </name>
+         </creator>
+         <creator>
+            <name> Markus Demleitner </name>
+         </creator>
+         <creator>
+            <name> Matthew Graham </name>
+         </creator>
+         <creator>
+            <name> Gretchen Greene </name>
+         </creator>
+         <creator>
+            <name> Paul Harrison </name>
+         </creator>
+         <creator>
+            <name> Gerard Lemson </name>
+         </creator>
+         <creator>
+            <name> Tony Linde </name>
+         </creator>
+         <creator>
+            <name> Guy Rixon </name>
+         </creator>
+         <date role="Updated">2025-04-16</date>
+         <date role="Updated">2008-02-22</date>
+         <version>1.2</version>
+         <contact>
+            <name>Registry Working Group</name>
+            <email>registry@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>virtual-observatories</subject>
+         <description>
+			This document describes an XML encoding standard for IVOA Resource
+			Metadata, referred to as VOResource.  This schema is primarily intended
+			to support metadata exchange between interoperable registries and
+			resource discovery within them.  However, any application that needs to
+			describe resources may use this schema.  In this document, we define the
+			types and elements that make up the schema in close alignment to the
+			metadata terms defined in Resource Metadata for the Virtual Observatory
+			(Hanisch 2007), but also taking into account other metadata standards as
+			well as experiences from the operation of the VO Registry.  We also
+			describe the general model for the schema and explain how it is extended
+			to add new metadata terms and describe more specific types of resources.
+    </description>
+         <referenceURL>http://www.ivoa.net/Documents/VOResource</referenceURL>
+         <type>Other</type>
+         <contentLevel> Research </contentLevel>
+         <relationship>
+            <relationshipType>related-to</relationshipType>
+            <relatedResource ivo-id="ivo://www.ivoa.net/std/RM">Resource Metadata for the Virtual Observatory</relatedResource>
+         </relationship>
+      </content>
+      <endorsedVersion status="rec">1.2</endorsedVersion>
+      <schema namespace="http://www.ivoa.net/xml/VOResource/v1.0">
+         <location>http://www.ivoa.net/xml/VOResource/v1.0</location>
+         <description>
+      The core VOResource schema for describing resources
+      in the registry.
+    </description>
+         <example>https://dc.g-vo.org/purx/q/enroll/info</example>
+      </schema>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2026-05-28T06:10:00" status="active" updated="2026-05-28T06:10:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0     https://www.ivoa.net/xml/VOResource/v1.0   http://www.ivoa.net/xml/StandardsRegExt/v1.0     https://www.ivoa.net/xml/StandardsRegExt/v1.0   http://www.ivoa.net/xml/VOResource/v1.0     https://www.ivoa.net/xml/VOResource/v1.0" xsi:type="vstd:Standard">
+      <title>Educational Resources in the Virtual Observatory</title>
+      <shortName>DocRegExt</shortName>
+      <identifier>ivo://ivoa.net/std/DocRegExt</identifier>
+      <curation>
+         <publisher>IVOA</publisher>
+         <creator>
+            <name>Demleitner, M.</name>
+         </creator>
+         <creator>
+            <name>Molinaro, M.</name>
+         </creator>
+         <creator>
+            <name>Iafrate, G.</name>
+         </creator>
+         <creator>
+            <name>Heinl, H.</name>
+         </creator>
+         <date role="update">2026-05-27</date>
+         <version>1.0</version>
+         <contact>
+            <name>IVOA Education IG</name>
+            <email>edu@ivoa.net</email>
+         </contact>
+      </curation>
+      <content>
+         <subject>virtual-observatories</subject>
+         <subject>astronomy-education</subject>
+         <subject>astronomy-software</subject>
+         <description>
+			Following the spirit of the Virtual Observatory (VO), the production and
+			provision of material to teach VO usage, both for introducing VO
+			workflows and as an element of a larger astronomy curriculum, should be a
+			joint, global, and distributed effort. In order to ensure global
+			discoverability of the results of that effort, this standard defines an
+			extension to the VOResource metadata scheme suitable for educational
+			texts, and it describes how RegTAP can be used to then discover
+			educational material registered using that extension.
+    </description>
+         <referenceURL>https://ivoa.net/documents/DocRegExt/</referenceURL>
+         <type>Other</type>
+         <contentLevel>Research</contentLevel>
+      </content>
+      <endorsedVersion status="rec">1.0</endorsedVersion>
+      <schema namespace="http://www.ivoa.net/xml/DocRegExt/v1">
+         <location>http://www.ivoa.net/xml/DocRegExt/v1</location>
+      </schema>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2013-03-25T19:21:51.07" status="active" updated="2023-05-23T14:03:00" xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0 http://www.ivoa.net/xml/VOResource/v1.0                       http://www.ivoa.net/xml/RegistryInterface/v1.0 http://www.ivoa.net/xml/RegistryInterface/v1.0                       http://www.ivoa.net/xml/StandardsRegExt/v1.0 http://www.ivoa.net/xml/StandardsRegExt/v1.0" xsi:type="vstd:Standard">
+      <title> Describing Simple Data Access Services </title>
+      <shortName> SimpleDALRegExt </shortName>
+      <identifier> ivo://ivoa.net/std/SimpleDALRegExt </identifier>
+      <curation>
+         <publisher ivo-id="ivo://ivoa.net/IVOA">
+      International Virtual Observatory Alliance
+    </publisher>
+         <creator>
+            <name> Raymond Plante </name>
+         </creator>
+         <creator>
+            <name> Jesus Delago </name>
+         </creator>
+         <creator>
+            <name> Paul Harrison </name>
+         </creator>
+         <creator>
+            <name> Doug Tody </name>
+         </creator>
+         <date> 2012-10-26 </date>
+         <version> 1.0 </version>
+         <contact>
+            <name> Registry Working Group </name>
+            <email> registry@ivoa.net </email>
+         </contact>
+      </curation>
+      <content>
+         <subject> software standard </subject>
+         <subject> virtual observatory </subject>
+         <subject> registry </subject>
+         <subject> data access layer </subject>
+         <subject> DAL </subject>
+         <description>
+        An application that queries or consumes descriptions of VO
+        resources must be able to recognize a resource's support for
+        standard IVOA protocols. This specification describes how to
+        describe a service that supports any of the four fundamental
+        data access protocols--Simple Cone Search (SCS), Simple Image
+        Access (SIA), Simple Spectral Access (SSA), Simple Line Access
+        (SLA)--using the VOResource XML encoding standard. A key part
+        of this specification is the set of VOResource XML extension
+        schemas that define new metadata that are specific to those
+        protocols. This document describes in particular rules for
+        describing such services within the context of IVOA Registries
+        and data discovery as well as the VO Standard Interface (VOSI)
+        and service self-description. In particular, this document
+        spells out the essential mark-up needed to identify support
+        for a standard protocol and the base URL required to access
+        the interface that supports that protocol.  
+      </description>
+         <referenceURL>
+      http://www.ivoa.net/Documents/SimpleDALRegExt/
+    </referenceURL>
+         <type> Other </type>
+         <contentLevel> Research </contentLevel>
+         <relationship>
+            <relationshipType>related-to</relationshipType>
+            <relatedResource ivo-id="ivo://www.ivoa.net/std/SIA">
+        Simple Image Access Protocol
+      </relatedResource>
+         </relationship>
+         <relationship>
+            <relationshipType>related-to</relationshipType>
+            <relatedResource ivo-id="ivo://www.ivoa.net/std/ConeSearch">
+        Simple Cone Search
+      </relatedResource>
+         </relationship>
+         <relationship>
+            <relationshipType>related-to</relationshipType>
+            <relatedResource ivo-id="ivo://www.ivoa.net/std/SSA">
+        Simple Spectral Access Protocol
+      </relatedResource>
+         </relationship>
+         <relationship>
+            <relationshipType>related-to</relationshipType>
+            <relatedResource ivo-id="ivo://www.ivoa.net/std/SLAP">
+        Simple Line Access Protocol
+      </relatedResource>
+         </relationship>
+         <relationship>
+            <relationshipType>related-to</relationshipType>
+            <relatedResource ivo-id="ivo://www.ivoa.net/std/VOResource">
+        VOResource: an XML Encoding Schema for Resource Metadata
+      </relatedResource>
+         </relationship>
+      </content>
+      <endorsedVersion status="pr"> 1.0 </endorsedVersion>
+      <schema namespace="http://www.ivoa.net/xml/ConeSearch/v1.0">
+         <location>http://www.ivoa.net/xml/ConeSearch/v1.0</location>
+         <description>
+      the VOResource extension schema for describing Simple Cone Search
+      services in the registry.
+    </description>
+         <example>http://206-12-97-214.cloud.computecanada.ca/examples/ </example>
+      </schema>
+      <schema namespace="http://www.ivoa.net/xml/SIA/v1.1">
+         <location>http://www.ivoa.net/xml/SIA/v1.1</location>
+         <description>
+      the VOResource extension schema for describing Simple Image Access
+      services in the registry.
+    </description>
+         <example>http://206-12-97-214.cloud.computecanada.ca/examples/ </example>
+      </schema>
+      <schema namespace="http://www.ivoa.net/xml/SSA/v1.1">
+         <location>http://www.ivoa.net/xml/SSA/v1.1</location>
+         <description>
+      the VOResource extension schema for describing Simple Spectral
+      Access services in the registry.
+    </description>
+         <example>http://206-12-97-214.cloud.computecanada.ca/examples/ </example>
+      </schema>
+      <schema namespace="http://www.ivoa.net/xml/SLAP/v1.0">
+         <location>http://www.ivoa.net/xml/SLAP/v1.0 </location>
+         <description>
+      the VOResource extension schema for describing Simple Line Access
+      services in the registry.
+    </description>
+         <example>http://206-12-97-214.cloud.computecanada.ca/examples/ </example>
+      </schema>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:cs="http://www.ivoa.net/xml/ConeSearch/v1.0" xmlns:g-colstat="http://dc.g-vo.org/ColStats-1" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:ssap="http://www.ivoa.net/xml/SSA/v1.1" xmlns:voe="http://www.ivoa.net/xml/VOEventRegExt/v2" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2019-07-09T14:20:00Z" status="active" updated="2023-04-20T12:19:19Z" version="1.2" xsi:type="vstd:Standard">
+      <title>GAVO ADQL Extensions</title>
+      <identifier>ivo://org.gavo.dc/std/exts</identifier>
+      <curation>
+         <publisher>The GAVO DC team</publisher>
+         <creator>
+            <name>Markus Demleitner</name>
+         </creator>
+         <contact>
+            <name>GAVO Data Centre Team</name>
+            <address>Mönchhofstrasse 12-14, D-69120 Heidelberg</address>
+            <email>gavo@ari.uni-heidelberg.de</email>
+            <telephone>+49 6221 54 1837</telephone>
+         </contact>
+      </curation>
+      <content>
+         <subject>virtual-observatories</subject>
+         <description> This record contains standard keys for various standard extensions
+produced by GAVO.</description>
+         <referenceURL>http://dc.g-vo.org/tap</referenceURL>
+      </content>
+      <endorsedVersion status="n/a" use="preferred">1.0</endorsedVersion>
+      <key>
+         <name>extra-adql-keywords</name>
+         <description>This is a TAPRegExt languageFeature group containing extra ADQL
+keywords implemented by DaCHS. Currently, the following features are
+defined: TABLESAMPLE: Write TABLESAMPLE(10) after a table name to
+retrieve a more or less random (but fast) 10% sample of the table. --
+GENERATE_SERIES: GENERATE_SERIES(lower, upper) generates a table
+consisting of integers between lower and upper inclusive. The column
+is called generate_series (and should be renamed somewhere in the
+query).-- MOC: MOC(str) turns a ASCII MOC into a geometry. -- COALESCE
+is the standard SQL COALESCE function used to provide defaults for
+NULL values. -- VECTORMATH denotes a set of vector operators and
+functions discussed on
+https://wiki.ivoa.net/twiki/bin/view/IVOA/ADQLVectorMath. -- CASE
+indicates support for the SQL92 CASE statement.</description>
+      </key>
+   </ri:Resource>
+<ri:Resource xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:cs="http://www.ivoa.net/xml/ConeSearch/v1.0" xmlns:g-colstat="http://dc.g-vo.org/ColStats-1" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:ssap="http://www.ivoa.net/xml/SSA/v1.1" xmlns:voe="http://www.ivoa.net/xml/VOEventRegExt/v2" xmlns:vstd="http://www.ivoa.net/xml/StandardsRegExt/v1.0" xmlns:doc="http://www.ivoa.net/xml/DocRegExt/v1" xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1" xmlns:slap="http://www.ivoa.net/xml/SLAP/v1.0" xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" xmlns:tr="http://www.ivoa.net/xml/TAPRegExt/v1.0" xmlns:vg="http://www.ivoa.net/xml/VORegistry/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" created="2015-07-14T07:49:00Z" status="active" updated="2023-04-20T12:19:19Z" version="1.2" xsi:type="vstd:Standard">
+      <title>The Global TAP Schema GloTS</title>
+      <identifier>ivo://org.gavo.dc/std/glots</identifier>
+      <curation>
+         <publisher>The GAVO DC team</publisher>
+         <creator>
+            <name>Markus Demleitner</name>
+         </creator>
+         <contact>
+            <name>GAVO Data Centre Team</name>
+            <address>Mönchhofstrasse 12-14, D-69120 Heidelberg</address>
+            <email>gavo@ari.uni-heidelberg.de</email>
+            <telephone>+49 6221 54 1837</telephone>
+         </contact>
+      </curation>
+      <content>
+         <subject>virtual-observatories</subject>
+         <description> The Global TAP schema is an attempt at a simple way to present a
+union of all TAP_SCHEMA instances globally, where right now GloTS only
+contains tables and columns. It is primarily intended as a quick (and
+relatively dirty) way for data collection discovery until other means
+are ready.</description>
+         <referenceURL>http://ivoa.net/documents/discoveringcollections</referenceURL>
+      </content>
+      <endorsedVersion status="n/a" use="preferred">1.0</endorsedVersion>
+      <key>
+         <name>tables-1.0</name>
+         <description>The data model (as used in TAPRegExt's dataModel element), consisting
+of glots.services, glots.tables, and glots.columns.</description>
+      </key>
+   </ri:Resource>
+
+</ri:VOResources>
